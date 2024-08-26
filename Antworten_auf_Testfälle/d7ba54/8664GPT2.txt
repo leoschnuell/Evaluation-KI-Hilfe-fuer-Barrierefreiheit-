@@ -1,0 +1,39 @@
+Um die Barrierefreiheitsprobleme des gegebenen HTML-Codes zu lösen, sind folgende Anpassungen notwendig:
+
+1. **Titel für die Seite**: Füge einen `<title>`-Tag hinzu, um der Seite einen beschreibenden Titel zu geben.
+
+2. **Untertitel oder Transkripte**: Füge Untertitel oder ein Transkript für das Video hinzu, um den Inhalt für hörgeschädigte Nutzer zugänglich zu machen.
+
+3. **Alternative Texte**: Falls das Video visuelle Informationen enthält, kann eine Beschreibung oder alternative Texte hilfreich sein.
+
+Hier ist der überarbeitete Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Accessibility Example</title>
+</head>
+<body>
+    <video controls aria-label="Video about a rabbit" width="640" height="360">
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4" />
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm" />
+        Your browser does not support the video tag.
+    </video>
+    <p>Transkript: Dies ist ein kurzes Video über einen Hasen.</p>
+    <p>Untertitel: <a href="/path/to/subtitles.vtt">Hier klicken, um die Untertitel herunterzuladen.</a></p>
+</body>
+</html>
+```
+
+### Erläuterungen zu den Änderungen:
+
+1. **Titel**: Der `<title>`-Tag gibt der Seite einen klaren Namen, was für die Navigation wichtig ist.
+
+2. **`aria-label`**: Eine Beschreibung für das Video, die von Screenreadern vorgelesen wird.
+
+3. **Transkript und Untertitel**: Dies macht das Video für Nutzer zugänglicher, die Schwierigkeiten mit Audio haben.
+
+Diese Maßnahmen helfen, die Barrierefreiheit zu verbessern und den WCAG-Richtlinien zu entsprechen.

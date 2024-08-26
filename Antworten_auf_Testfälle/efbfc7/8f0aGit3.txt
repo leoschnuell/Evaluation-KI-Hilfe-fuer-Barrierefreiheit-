@@ -1,0 +1,29 @@
+Löse das Problem, dass die erstellung von zufälligen Zahlen nicht gestoppt werden kann.
+Um das Problem zu lösen, dass die Erstellung von zufälligen Zahlen nicht gestoppt werden kann, müssen wir den JavaScript-Code in der Datei script.js anpassen. Da der ursprüngliche JavaScript-Code nicht bereitgestellt wurde, werde ich eine allgemeine Lösung skizzieren, die typischerweise in solchen Fällen angewendet wird.
+
+Schritt-für-Schritt Plan in Pseudocode:
+Initialisierung: Definiere eine Variable, die den setInterval-Aufruf speichert, damit wir später darauf zugreifen und ihn stoppen können.
+Startfunktion (startUpdates): Diese Funktion startet das regelmäßige Aktualisieren der Zufallszahlen. Verwende setInterval, um alle X Sekunden eine neue Zufallszahl zu generieren und im HTML-Dokument anzuzeigen. Speichere den Rückgabewert von setInterval in der zuvor definierten Variable.
+Stoppfunktion (stopUpdates): Diese Funktion stoppt das regelmäßige Aktualisieren der Zufallszahlen. Verwende clearInterval mit der Variable, die den setInterval-Aufruf speichert, um das regelmäßige Aktualisieren zu stoppen.
+HTML-Anpassung: Füge einen Button hinzu, der die stopUpdates-Funktion aufruft, wenn er geklickt wird.
+Implementierung in JavaScript:
+// Variable zum Speichern des setInterval-Aufrufs
+let updateInterval;
+
+// Funktion zum Starten der regelmäßigen Aktualisierungen
+function startUpdates() {
+    updateInterval = setInterval(function() {
+        // Generiere eine neue Zufallszahl und zeige sie im HTML-Dokument an
+        document.getElementById('target').textContent = Math.floor(Math.random() * 100);
+    }, 1000); // Aktualisiere jede Sekunde
+}
+
+// Funktion zum Stoppen der regelmäßigen Aktualisierungen
+function stopUpdates() {
+    clearInterval(updateInterval);
+}
+HTML-Anpassung:
+<button onclick="stopUpdates()">Stop Updates</button>
+Füge den folgenden Button im <body>-Bereich deines HTML-Dokuments hinzu, um die Aktualisierungen zu stoppen:
+
+Diese Lösung setzt voraus, dass du Zugriff auf den Inhalt der Datei script.js hast und diesen entsprechend anpassen kannst.

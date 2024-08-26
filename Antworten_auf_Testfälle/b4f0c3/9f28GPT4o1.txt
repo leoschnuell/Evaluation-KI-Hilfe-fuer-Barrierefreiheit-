@@ -1,0 +1,18 @@
+Der Fehler im HTML-Code befindet sich in der `meta`-Tag-Zeile. Der Wert für das Attribut `maximum-scale` ist ungültig. Der richtige Wert sollte eine Zahl sein, die die maximale Skalierung angibt. Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple page showing random text</title>
+		<meta name="viewport" content="maximum-scale=1.0" />
+	</head>
+	<body>
+		<p>
+			Lorem ipsum
+		</p>
+	</body>
+</html>
+```
+
+In diesem Beispiel wurde der Wert für `maximum-scale` auf `1.0` gesetzt, was eine gültige Zahl ist.

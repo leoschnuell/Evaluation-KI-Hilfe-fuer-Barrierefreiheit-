@@ -1,0 +1,25 @@
+Das Problem mit dem gegebenen HTML-Code liegt darin, dass die Verwendung von `<li>` (List Item) innerhalb eines `<div>`-Elements, das die Rolle `role="list"` hat, nicht korrekt ist. Laut den HTML-Spezifikationen sollten `<li>`-Elemente nur innerhalb von `<ul>` (Unordered List), `<ol>` (Ordered List) oder `<menu>` verwendet werden, wenn sie eine Liste von Elementen repräsentieren.
+
+Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 3</title>
+</head>
+<body>
+	<ul role="list">
+		<li>Item 1</li>
+		<li><span role="link">Item 2</span></li>
+	</ul>
+</body>
+</html>
+```
+
+Änderungen, die vorgenommen wurden:
+- Das `<div>`-Element wurde durch ein `<ul>`-Element ersetzt, um eine korrekte Listenstruktur zu verwenden.
+- Das `<span>`-Element für "Item 2" wurde innerhalb eines `<li>`-Elements platziert, um es als Listenpunkt darzustellen.
+- Die `role="link"` wurde beibehalten, falls das `<span>`-Element tatsächlich als Link fungieren soll.
+
+Diese Korrektur stellt sicher, dass der HTML-Code semantisch korrekt ist und den Standards entspricht.

@@ -1,0 +1,49 @@
+Das Problem mit dem gegebenen HTML-Code liegt in der Art und Weise, wie das `src`-Attribut für das Bild (`<img>`) definiert ist. Hier wird versucht, ein SVG-Bild direkt in der `src`-Eigenschaft einzubetten, anstatt es über einen Dateipfad oder eine URL zu laden.
+
+Der korrekte Ansatz wäre, das SVG-Bild entweder als separate Datei zu speichern und dann den Dateipfad im `src`-Attribut anzugeben, oder das SVG-Bild inline zu verwenden, indem es direkt im `<img>`-Tag kodiert wird. Hier ist eine Lösung für beide Ansätze:
+
+### 1. Verwendung eines separaten SVG-Dateipfads
+
+Wenn das SVG-Bild in einer separaten Datei mit dem Namen `wcag.svg` gespeichert ist:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Example 5</title>
+</head>
+<body>
+	<img
+		alt="WCAG Rocks"
+		src="wcag.svg"
+	/>
+</body>
+</html>
+```
+
+### 2. Inline-Einbettung des SVG-Codes
+
+Wenn das SVG-Bild inline in das `<img>`-Tag eingebettet werden soll:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Example 5</title>
+</head>
+<body>
+	<img
+		alt="WCAG Rocks"
+		src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20px' width='80px'%3E%3Ctext x='0' y='15'%3EWCAG Rocks%3C/text%3E%3C/svg%3E"
+	/>
+</body>
+</html>
+```
+
+### Erläuterung:
+
+- **Separate Datei**: Hier wird das Bild als `wcag.svg` gespeichert und das `src`-Attribut des `<img>`-Tags zeigt auf diese Datei.
+  
+- **Inline-Einbettung**: Der SVG-Code wird direkt in das `src`-Attribut als Daten-URL eingefügt. Beachte, dass der SVG-Code dabei URL-kodiert sein muss.
+
+Die ursprüngliche Version des Codes scheiterte daran, dass der SVG-Code im `src`-Attribut nicht korrekt formatiert war und zusätzlich Leerzeichen enthielt, die zu Problemen führen können. Durch die Verwendung einer der oben genannten korrekten Methoden sollte das Problem behoben sein.

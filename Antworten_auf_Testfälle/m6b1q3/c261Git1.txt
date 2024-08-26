@@ -1,0 +1,34 @@
+Das Problem mit dem gegebenen Code liegt darin, dass er eine schlechte Zugänglichkeitspraxis (Accessibility Practice) aufweist. Bilder ohne Alternativtext (alt-Attribut) können von Screenreadern nicht interpretiert werden, was die Zugänglichkeit für Menschen mit Sehbehinderungen einschränkt. Im gegebenen Code ist das alt-Attribut des <img>-Tags leer. Es sollte eine kurze Beschreibung des Bildinhalts enthalten, um die Zugänglichkeit zu verbessern.
+
+Ein weiteres Problem ist die Verwendung der Klasse .offscreen, um Inhalte visuell aus dem Bildschirm zu verschieben. Dies kann für Screenreader-Nutzer verwirrend sein, da der Inhalt immer noch zugänglich ist, obwohl er visuell verborgen ist. Es ist wichtig, Inhalte, die nicht sichtbar sein sollen, auf eine Weise zu verbergen, die sie auch für Screenreader unsichtbar macht, es sei denn, der Inhalt ist speziell für Screenreader-Nutzer gedacht.
+
+Hier ist eine verbesserte Version des Codes:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .visually-hidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div role="menu" class="visually-hidden">
+        <button role="menuitem">
+            <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/file.svg" alt="Datei-Icon" />
+        </button>
+    </div>
+</body>
+</html>
+Änderungen:
+
+Das alt-Attribut des <img>-Tags wurde mit einer Beschreibung ("Datei-Icon") versehen, um die Zugänglichkeit zu verbessern.
+Die Klasse .offscreen wurde durch .visually-hidden ersetzt, die eine bessere Methode zur Verbergung von Inhalten bietet, sodass sie sowohl visuell als auch für Screenreader unsichtbar sind.

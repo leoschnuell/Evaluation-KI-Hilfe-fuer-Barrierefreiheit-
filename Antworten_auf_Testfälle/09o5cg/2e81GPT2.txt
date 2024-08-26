@@ -1,0 +1,23 @@
+Um die Barrierefreiheitsprobleme im gegebenen HTML-Code zu lösen, müssen wir sicherstellen, dass das `<div>`-Element, das als Button fungiert, für assistive Technologien zugänglich ist. Hier sind die Schritte, die du unternehmen kannst:
+
+1. **Verwendung des `<button>`-Elements:** Statt eines `<div>`-Elements, das als Button dient, solltest du das `<button>`-Element verwenden. Das `<button>`-Element ist standardmäßig für assistive Technologien wie Screenreader zugänglich und stellt sicher, dass Benutzer mit Behinderungen den Button korrekt identifizieren können.
+
+   Ersetze also dein `<div>`-Element durch das `<button>`-Element:
+
+   ```html
+   <button style="color: #555; background: #EEE;">My button!</button>
+   ```
+
+2. **Verwendung von Semantik und Attributen:** Stelle sicher, dass du die richtigen semantischen HTML-Elemente verwendest und die erforderlichen Attribute für bessere Zugänglichkeit hinzufügst.
+
+   - Wenn der Button eine spezifische Funktion ausführt, füge einen `aria-label` hinzu, um den Zweck des Buttons zu beschreiben:
+
+     ```html
+     <button style="color: #555; background: #EEE;" aria-label="Click me to perform action">My button!</button>
+     ```
+
+   - Vermeide es, Inline-Styles zu verwenden, wenn möglich, und verwende stattdessen Klassen oder IDs, um das Styling zu trennen und Wartbarkeit zu verbessern.
+
+3. **Testen der Barrierefreiheit:** Überprüfe die Barrierefreiheit deiner Website oder Anwendung mithilfe von Werkzeugen wie dem WAVE-Toolkit oder Browser-Erweiterungen wie der Accessibility Insights for Web.
+
+Durch diese Änderungen wird sichergestellt, dass der Button für alle Benutzer zugänglich ist, einschließlich Benutzer mit Behinderungen, die assistive Technologien verwenden.

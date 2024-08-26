@@ -1,0 +1,31 @@
+Um die Barrierefreiheitsprobleme in dem gegebenen HTML-Code zu lösen, folgen wir diesen Schritten:
+
+Sprachattribut korrigieren: Das lang-Attribut im <html>-Tag sollte die Sprache des Inhalts widerspiegeln. Wenn der Inhalt auf Deutsch ist, sollte es de statt en sein.
+Alternative Texte für Skripte: Benutzer, die Screenreader verwenden, können den Inhalt von Skripten nicht wahrnehmen. Es ist wichtig, eine alternative Methode zur Bereitstellung der gleichen Information oder Funktionalität anzubieten, falls das Skript visuelle oder auditive Inhalte generiert.
+Dynamische Inhaltsaktualisierungen zugänglich machen: Der Code verwendet ein onload-Event im <body>-Tag, um eine Funktion startUpdates() zu starten, die möglicherweise dynamische Inhaltsaktualisierungen durchführt. Es sollte sichergestellt werden, dass alle Aktualisierungen des Inhalts für Screenreader-Nutzer zugänglich sind, z.B. durch die Verwendung von ARIA-Live-Regionen.
+Kontrast und Textgröße nicht adressiert: Obwohl der gegebene Code keine spezifischen Stile definiert, ist es wichtig, einen ausreichenden Kontrast zwischen Text- und Hintergrundfarben sowie eine angemessene Textgröße zu gewährleisten, um die Lesbarkeit für Nutzer mit Sehbehinderungen zu verbessern.
+Hier ist der verbesserte Code:
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Beispiel 1 Korrigiert</title>
+</head>
+<body onload="startUpdates()">
+    <p>
+        Die W3C Web Accessibility Initiative (WAI) entwickelt Standards und unterstützende Materialien, um Ihnen zu helfen, Barrierefreiheit zu verstehen und zu implementieren.
+    </p>
+
+    <p>Random number: <span id="target" aria-live="polite">1</span></p>
+
+    <noscript>
+        <p>Für die volle Funktionalität dieser Seite ist JavaScript erforderlich. Bitte aktivieren Sie JavaScript.</p>
+    </noscript>
+
+    <script type="text/javascript" src="/WAI/content-assets/wcag-act-rules/test-assets/efbfc7/script.js"></script>
+</body>
+</html>
+Änderungen:
+
+Das lang-Attribut wurde auf de geändert.
+Ein <noscript>-Tag wurde hinzugefügt, um Nutzern ohne JavaScript eine Nachricht zu zeigen.
+Das aria-live="polite"-Attribut wurde dem <span>-Tag hinzugefügt, um sicherzustellen, dass dynamische Inhaltsaktualisierungen zugänglich sind.

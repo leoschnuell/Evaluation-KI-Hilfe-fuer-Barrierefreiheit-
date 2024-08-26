@@ -1,0 +1,8 @@
+as vorgestellte HTML-Dokument hat ein kleines Problem mit dem lang Attribut im <html> Tag. Es verwendet den Code eng, der nicht standardkonform ist. Der korrekte Sprachcode für Englisch ist en. Hier ist die korrigierte Version:
+
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <p lang="en">I love ACT rules!</p>
+    </body>
+</html>

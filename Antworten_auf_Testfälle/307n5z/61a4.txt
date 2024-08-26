@@ -1,0 +1,17 @@
+Das Problem mit dem gegebenen Code liegt in der Verwendung von role="menuitemcheckbox" zusammen mit einem <input type="checkbox"> innerhalb eines <li>-Elements. Die ARIA-Rolle menuitemcheckbox ist für Fälle gedacht, in denen ein Element in einem Menü ein Kontrollkästchen darstellt, aber nicht notwendigerweise ein <input type="checkbox"> Element verwendet wird. Wenn ein tatsächliches <input>-Element verwendet wird, ist es nicht erforderlich, ARIA-Rollen hinzuzufügen, da das <input>-Element bereits semantisch korrekt ist und von Screenreadern korrekt interpretiert wird.
+
+Um das Problem zu lösen, entfernen wir die ARIA-Rollen und -Attribute, die nicht benötigt werden, und behalten das <input type="checkbox"> bei, da es bereits semantisch korrekt ist. Hier ist der korrigierte Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <input type="checkbox" checked />
+            Sort by Last Modified
+        </li>
+    </ul>
+</body>
+</html>

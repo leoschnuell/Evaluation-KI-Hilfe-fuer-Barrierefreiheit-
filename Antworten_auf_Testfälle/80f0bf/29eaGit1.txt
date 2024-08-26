@@ -1,0 +1,41 @@
+Das vorgelegte HTML-Dokument enthält einige grundlegende Strukturen für das Einbetten eines Videos und das Hinzufügen von Videosteuerungen wie Play und Mute. Das Problem oder die Anforderung ist jedoch nicht explizit angegeben. Basierend auf dem Kontext könnte ein mögliches Problem sein, dass die Videosteuerungen (Play/Pause und Mute) nicht funktionsfähig sind, da kein JavaScript-Code bereitgestellt wurde, um diese Funktionalitäten zu implementieren.
+
+Um dieses Problem zu lösen, werde ich JavaScript-Code hinzufügen, der die Funktionalität für die Play/Pause- und Mute-Schaltflächen implementiert. Hier ist der Schritt-für-Schritt-Plan in Pseudocode:
+
+Greife auf das Videoelement und die Steuerungselemente im Dokument zu.
+Füge Event-Listener für die Play/Pause- und Mute-Schaltflächen hinzu.
+Implementiere die Funktion zum Umschalten zwischen Play und Pause:
+Überprüfe den aktuellen Zustand des Videos (abgespielt oder pausiert).
+Spiele das Video ab oder pausiere es basierend auf dem aktuellen Zustand.
+Ändere den Text der Schaltfläche entsprechend.
+Implementiere die Funktion zum Umschalten des Stummmodus:
+Überprüfe, ob das Video momentan stummgeschaltet ist.
+Schalte den Ton ein oder aus basierend auf dem aktuellen Zustand.
+Optional: Ändere den Text der Schaltfläche oder das Aussehen, um den Zustand widerzuspiegeln.
+Nun, hier ist der entsprechende JavaScript-Code:
+document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('video');
+    var playPauseButton = document.getElementById('play-pause');
+    var muteButton = document.getElementById('mute');
+
+    playPauseButton.addEventListener('click', function() {
+        if (video.paused || video.ended) {
+            video.play();
+            playPauseButton.textContent = 'Pause';
+        } else {
+            video.pause();
+            playPauseButton.textContent = 'Play';
+        }
+    });
+
+    muteButton.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            muteButton.textContent = 'Mute';
+        } else {
+            video.muted = true;
+            muteButton.textContent = 'Unmute';
+        }
+    });
+});
+Dieser Code sollte direkt vor dem schließenden </body>-Tag eingefügt werden oder in einer externen JavaScript-Datei, die im HTML-Dokument eingebunden ist.

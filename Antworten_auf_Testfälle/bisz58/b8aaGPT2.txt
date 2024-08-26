@@ -1,0 +1,37 @@
+Um die Barrierefreiheitsprobleme im gegebenen HTML-Code zu lösen, gibt es einige wichtige Punkte zu beachten. Hier sind die notwendigen Änderungen:
+
+### Verbesserter HTML-Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting</title>
+    <meta http-equiv="refresh" content="72001; url=https://w3.org" />
+</head>
+<body>
+    <h1>Redirecting</h1>
+    <p>You are being redirected to <a href="https://w3.org">W3.org</a>. If you are not redirected, <a href="https://w3.org">click here</a>.</p>
+</body>
+</html>
+```
+
+### Erläuterungen zu den Änderungen:
+
+1. **Charset**: Füge `<meta charset="UTF-8">` hinzu, um die Zeichenkodierung festzulegen.
+
+2. **Viewport**: Das Hinzufügen eines `<meta name="viewport">` verbessert die mobile Zugänglichkeit.
+
+3. **Title**: Ein `<title>`-Tag sollte hinzugefügt werden, um den Inhalt der Seite zu beschreiben.
+
+4. **Korrekte Verwendung von `meta refresh`**: Das Attribut `url=` sollte verwendet werden, um die Ziel-URL klar anzugeben.
+
+5. **Visueller Hinweis**: Füge einen Header und einen Text hinzu, der den Benutzern mitteilt, dass sie umgeleitet werden. Dies hilft bei der Barrierefreiheit, besonders für Benutzer von Screenreadern.
+
+6. **Alternativer Link**: Ein direkter Link zur Zielseite gibt Nutzern die Möglichkeit, die Umleitung zu umgehen, falls sie nicht automatisch erfolgt.
+
+### Fazit
+
+Diese Änderungen verbessern die Zugänglichkeit der Seite für alle Benutzer, insbesondere für Menschen mit Behinderungen, und sorgen für eine bessere Benutzererfahrung.

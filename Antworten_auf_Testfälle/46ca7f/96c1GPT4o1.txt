@@ -1,0 +1,35 @@
+The issue with the provided HTML code lies in the use of the `hidden` attribute on the `<span>` element that contains the label for the image. When an element is hidden using the `hidden` attribute, it is not accessible to assistive technologies like screen readers, which means the `aria-labelledby` attribute on the `<img>` element will not work as intended. 
+
+To make the label accessible, you can use CSS to visually hide the label while keeping it accessible to screen readers. Here's how you can fix the problem:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+    <style>
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="" aria-labelledby="label" />
+    <span id="label" class="visually-hidden">W3C logo</span>
+</body>
+</html>
+```
+
+In this updated version:
+
+1. A `.visually-hidden` CSS class is defined to hide elements visually while keeping them accessible to screen readers.
+2. The `<span>` element with the label now uses this `.visually-hidden` class instead of the `hidden` attribute.
+
+This ensures that the label is available to assistive technologies, thus making the `aria-labelledby` attribute on the `<img>` element functional.

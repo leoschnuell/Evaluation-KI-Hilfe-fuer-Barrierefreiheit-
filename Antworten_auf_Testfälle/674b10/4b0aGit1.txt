@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <style>
+        .link {
+            color: #0000ee;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+    I love <a href="https://act-rules.github.io/" class="link">ACT rules</a>.
+</body>
+</html>

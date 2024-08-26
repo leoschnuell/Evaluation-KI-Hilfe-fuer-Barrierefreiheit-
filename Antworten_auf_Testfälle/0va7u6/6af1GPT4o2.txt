@@ -1,0 +1,35 @@
+Um die Barrierefreiheitsprobleme des gegebenen Codes zu lösen, sind mehrere Anpassungen notwendig. Die aktuellen Probleme betreffen vor allem den eingebetteten SVG-Code innerhalb des `src`-Attributs des `img`-Tags. Dies ist aus mehreren Gründen problematisch:
+
+1. **Inkorrektes Encoding des SVG**: Der SVG-Code ist nicht korrekt URL-kodiert.
+2. **Zugänglichkeit**: Der `alt`-Text sollte klar und beschreibend sein.
+
+Hier ist eine überarbeitete Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Failed Example 5</title>
+</head>
+<body>
+	<img
+		alt="WCAG Rocks text in SVG image"
+		src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20height%3D%2720px%27%20width%3D%2780px%27%3E%3Ctext%20x%3D%270%27%20y%3D%2715%27%3EWCAG%20Rocks%3C%2Ftext%3E%3C%2Fsvg%3E"
+	/>
+</body>
+</html>
+```
+
+### Änderungen im Detail:
+
+1. **URL-Encoding**:
+   - Der SVG-Code wurde korrekt URL-kodiert. Das bedeutet, dass Zeichen wie `<`, `>` und Leerzeichen durch ihre entsprechenden kodierten Werte (`%3C`, `%3E` und `%20`) ersetzt wurden.
+
+2. **Beschreibender `alt`-Text**:
+   - Der `alt`-Text wurde leicht angepasst, um zu beschreiben, dass es sich um Text in einem SVG-Bild handelt. Dies hilft Benutzern, die Bildschirmleser verwenden, besser zu verstehen, was das Bild darstellt.
+
+3. **Meta Charset**:
+   - Hinzufügen des `meta`-Tags mit `charset="UTF-8"` im `head`-Bereich, um sicherzustellen, dass das Dokument in UTF-8 kodiert ist, was wichtig für die korrekte Darstellung von Zeichen ist.
+
+Durch diese Änderungen wird der Code nicht nur barrierefreier, sondern auch allgemein korrekter und besser verständlich.

@@ -1,0 +1,23 @@
+Das Problem mit dem gegebenen Code ist, dass der `<circle>`-Tag im SVG nicht korrekt geschlossen ist. Im SVG-Format sollten Selbstschluss-Tags verwendet werden, die keine separate Schließung erfordern. Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 1</title>
+</head>
+<body>
+	<p>How many circles are there?</p>
+	<svg xmlns="http://www.w3.org/2000/svg" role="img">
+		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+	</svg>
+</body>
+</html>
+```
+
+Die Änderungen:
+
+1. Der `<circle>`-Tag wurde von `<circle ...></circle>` zu `<circle ... />` geändert, um sicherzustellen, dass er als Selbstschluss-Tag behandelt wird.
+2. Ein Einrückung wurde hinzugefügt, um den SVG-Code besser lesbar zu machen.
+
+Mit diesen Änderungen sollte der Kreis im SVG ordnungsgemäß angezeigt werden.

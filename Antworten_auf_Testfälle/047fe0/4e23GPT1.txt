@@ -1,0 +1,32 @@
+Das Problem in diesem HTML-Code liegt in der Verlinkung des zweiten Kapitels (`Chapter 2`). Der `<a>`-Tag für das zweite Kapitel hat keinen korrekten `href`-Wert. Der aktuelle Wert `/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html` ist unvollständig oder falsch.
+
+Um das Problem zu lösen und den zweiten Kapitel-Link korrekt zu machen, sollte der `href`-Wert auf die richtige Datei oder URL verweisen, die das zweite Kapitel enthält. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Three Kingdoms, Chapter 1</title>
+</head>
+<body>
+	<nav id="chapters-navigation">
+		<h1>Content</h1>
+		<ol>
+			<li><a href="#">Chapter 1</a></li>
+			<li><a href="chapter2.html">Chapter 2</a></li>
+		</ol>
+	</nav>
+
+	<div id="main">
+		<p>
+			Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span
+			of time.
+		</p>
+	</div>
+</body>
+</html>
+```
+
+In dieser korrigierten Version wurde der `href`-Wert für `Chapter 2` zu `"chapter2.html"` geändert. Dies setzt voraus, dass die Datei `chapter2.html` im selben Verzeichnis wie die aktuelle HTML-Datei liegt. Wenn sich `chapter2.html` in einem anderen Verzeichnis befindet, muss der Pfad entsprechend angepasst werden, z.B. `"pfad/zur/chapter2.html"`.
+
+Stellen Sie sicher, dass die Pfade korrekt sind, um sicherzustellen, dass die Verlinkung ordnungsgemäß funktioniert.

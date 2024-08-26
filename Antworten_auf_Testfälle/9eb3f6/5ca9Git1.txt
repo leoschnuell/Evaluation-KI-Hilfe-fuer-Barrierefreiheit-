@@ -1,0 +1,12 @@
+Das Problem mit dem gegebenen HTML-Code liegt in der Verwendung des Dateinamens des Bildes (nyhavn.jpeg) als Wert für das alt-Attribut. Das alt-Attribut sollte eine textuelle Beschreibung des Bildinhalts für Benutzer bieten, die das Bild nicht sehen können, wie z.B. Nutzer von Screenreadern. Die Verwendung des Dateinamens als alt-Text ist nicht beschreibend und daher nicht zugänglich.
+
+Schritte zur Lösung:
+
+Ändern Sie den Wert des alt-Attributs, um eine genaue und beschreibende Textalternative für das Bild zu bieten.
+Stellen Sie sicher, dass die Beschreibung den Inhalt oder Zweck des Bildes für Benutzer, die das Bild nicht sehen können, klar vermittelt.
+Verbesserter Code:
+<!DOCTYPE html>
+<html lang="en">
+    <img src="/WAI/content-assets/wcag-act-rules/test-assets/image-filename-as-accessible-name-9eb3f6/nyhavn.jpeg" alt="Bunte Häuser und Boote am Nyhavn Kanal in Kopenhagen, Dänemark" />
+</html>
+In diesem verbesserten Beispiel wird das alt-Attribut verwendet, um eine beschreibende Textalternative für das Bild anzugeben, die den Inhalt des Bildes (bunte Häuser und Boote am Nyhavn Kanal in Kopenhagen, Dänemark) für Benutzer, die das Bild nicht sehen können, klar vermittelt.

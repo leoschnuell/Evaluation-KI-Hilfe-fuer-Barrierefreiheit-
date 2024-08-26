@@ -1,0 +1,10 @@
+Das Problem in diesem Code liegt in der Verwendung des aria-sort Attributs auf einem <button> Element, das nicht unterstützt wird. Das aria-sort Attribut wird typischerweise mit Tabellen oder Grids verwendet, um die Sortierrichtung einer Spalte anzuzeigen. Um das Problem zu lösen, sollten wir das aria-sort Attribut entfernen oder durch ein geeignetes Attribut ersetzen, das den Zweck des Buttons besser beschreibt. Da es keine direkte Alternative für aria-sort auf einem Button gibt, könnten wir stattdessen aria-label verwenden, um die Funktion des Buttons für Screenreader-Nutzer klarzustellen.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <button aria-label="Sort by year">Sort by year</button>
+</body>
+</html>

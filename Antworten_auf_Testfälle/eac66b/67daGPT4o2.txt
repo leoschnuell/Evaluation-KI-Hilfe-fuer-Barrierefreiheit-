@@ -1,0 +1,37 @@
+Um Barrierefreiheitsprobleme im gegebenen HTML-Code zu lösen, sind folgende Anpassungen erforderlich:
+
+1. **Verwendung des `alt`-Attributs**: Füge eine textliche Beschreibung für das Video hinzu.
+2. **Unterstützung für Tastaturnavigation**: Stelle sicher, dass alle interaktiven Elemente mit der Tastatur bedient werden können.
+3. **Bereitstellung von Untertiteln oder Transkripten**: Füge Untertitel oder ein Transkript des Videos hinzu, um es für hörbehinderte Benutzer zugänglich zu machen.
+4. **Einbindung in ein valides HTML-Dokument**: Stelle sicher, dass der HTML-Code ein vollständiges Dokument mit Kopf- und Körper-Elementen ist.
+
+Hier ist der verbesserte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Video Example</title>
+</head>
+<body>
+    <video src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls>
+        <track kind="captions" src="captions.vtt" srclang="en" label="English">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>
+```
+
+### Erklärung der Anpassungen:
+
+1. **`<track>` Element**: Hinzufügen eines `<track>`-Elements für Untertitel. Stelle sicher, dass die Datei `captions.vtt` vorhanden ist und den Untertiteltext enthält.
+2. **Fallback-Nachricht**: Die Nachricht "Your browser does not support the video tag." hilft Nutzern, deren Browser das `<video>`-Element nicht unterstützt.
+3. **Kompletter HTML-Aufbau**: Der Code wurde in ein vollständiges HTML-Dokument eingebettet, inklusive Kopf- und Körper-Elementen, um sicherzustellen, dass alle grundlegenden HTML-Anforderungen erfüllt sind.
+
+Weitere Barrierefreiheitsmaßnahmen könnten umfassen:
+- Sicherstellen, dass das Video keine automatisch abspielenden Inhalte enthält, um Nutzer mit kognitiven Behinderungen oder solchen, die Bildschirmlesegeräte verwenden, nicht zu stören.
+- Alternativen wie ein detailliertes Texttranskript des Video-Inhalts zur Verfügung stellen.
+
+Diese Schritte helfen, die Zugänglichkeit des Videos für eine breitere Benutzerbasis zu gewährleisten.

@@ -1,0 +1,26 @@
+Das Problem in diesem HTML-Code liegt darin, dass die beiden `<a>`-Tags (Anker-Tags) nicht innerhalb eines gültigen Bereichs innerhalb des `<html>`-Tags platziert sind. Im HTML müssen alle sichtbaren Inhalte normalerweise innerhalb des `<body>`-Tags platziert werden.
+
+Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/about/contact.html">Contact us</a>
+    <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/admissions/contact.html">Contact us</a>
+</body>
+</html>
+```
+
+### Änderungen, die vorgenommen wurden:
+1. **`<head>`-Tag**: Hinzufügen eines minimalen `<head>`-Tags mit `<meta charset="UTF-8">` und einem `<title>`-Element. Dies ist zwar nicht unbedingt erforderlich, aber es ist eine gute Praxis, dies einzuschließen.
+   
+2. **`<body>`-Tag**: Verschieben der `<a>`-Tags innerhalb des `<body>`-Tags. Alle sichtbaren Inhalte sollten innerhalb des `<body>`-Tags platziert werden, einschließlich der Links.
+
+3. **Syntax-Korrektur**: Behebung eines Syntaxfehlers im zweiten `<a>`-Tag. Das schließende `>` war versehentlich zu früh platziert worden.
+
+Mit diesen Änderungen sollte der HTML-Code korrekt sein und die Links sollten nun richtig angezeigt werden können, wenn sie in einem Browser geöffnet werden.

@@ -1,0 +1,41 @@
+Um den Code barrierefrei zu machen, müssen wir verschiedene Aspekte verbessern, darunter die Nutzung von semantisch korrekten HTML-Elementen, die Bereitstellung von Tastaturunterstützung und die Anwendung von ARIA-Attributen, wenn nötig.
+
+Hier ist eine verbesserte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Example 13</title>
+    <style>
+        .button {
+            color: #555;
+            background: #EEE;
+            padding: 10px;
+            border: 1px solid #CCC;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button:focus {
+            outline: 2px solid #00F;
+        }
+    </style>
+</head>
+<body>
+    <button class="button">My button!</button>
+</body>
+</html>
+```
+
+Hier sind die Änderungen und warum sie wichtig sind:
+
+1. **Verwendung des `button`-Elements**: Das `button`-Element ist semantisch korrekt und von Haus aus barrierefrei. Es wird von Screenreadern richtig interpretiert und unterstützt automatisch Tastaturbedienung (z.B. durch Drücken der Enter- oder Leertaste).
+
+2. **Stil und Fokus**: Wir haben einige CSS-Regeln hinzugefügt, um das visuelle Erscheinungsbild des Buttons zu verbessern und einen sichtbaren Fokuszustand zu gewährleisten. Der Fokuszustand hilft Nutzern, die nur die Tastatur verwenden, zu sehen, welches Element aktuell ausgewählt ist.
+
+3. **Meta-Tags für Charset und Viewport**: Diese Tags sind Best Practices für Barrierefreiheit und Benutzerfreundlichkeit. Sie stellen sicher, dass der Inhalt korrekt kodiert und auf verschiedenen Geräten gut dargestellt wird.
+
+Mit diesen Änderungen ist der Button nicht nur visuell ansprechend, sondern auch für alle Benutzer zugänglich, einschließlich derjenigen, die Screenreader oder nur die Tastatur verwenden.

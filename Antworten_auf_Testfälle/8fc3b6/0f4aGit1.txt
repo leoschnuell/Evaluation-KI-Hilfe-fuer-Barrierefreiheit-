@@ -1,0 +1,9 @@
+Das Problem im ersten Code-Snippet liegt darin, dass das <object>-Element auf eine Ressource verweist, aber kein Alternativinhalt für Browser bereitgestellt wird, die das <object>-Element nicht unterstützen oder wenn die Ressource nicht geladen werden kann. Außerdem fehlt dem <span>-Element, das als Label dient, ein tatsächlicher Textinhalt, was es für Screenreader-Nutzer nutzlos macht.
+
+Die Lösung, wie im zweiten Snippet gezeigt, beinhaltet:
+
+Hinzufügen eines sinnvollen Textinhalts zum <span>-Element, das als Label für das <object>-Element dient. Dies verbessert die Zugänglichkeit, indem es Screenreader-Nutzern Kontext bietet.
+Hinzufügen eines type-Attributs zum <object>-Element, um den Medientyp der eingebetteten Ressource anzugeben. Dies hilft Browsern, die Ressource korrekt zu interpretieren.
+Bereitstellung eines Alternativinhalts innerhalb des <object>-Elements, einschließlich eines <img>-Tags mit einem alt-Attribut für den Fall, dass das <object>-Element nicht korrekt gerendert werden kann. Dies verbessert die Zugänglichkeit und Benutzererfahrung, indem es sicherstellt, dass der Inhalt in verschiedenen Szenarien zugänglich bleibt.
+Hinzufügen eines Links zur Ressource als letzte Rückfalloption, falls weder das <object> noch das <img>-Element korrekt funktionieren. Dies gewährleistet, dass Benutzer immer noch Zugang zum Inhalt haben, unabhängig von den Einschränkungen ihres Browsers oder ihrer Geräte.
+Zusammengefasst verbessert das zweite Snippet die Zugänglichkeit und Benutzerfreundlichkeit, indem es sicherstellt, dass der Inhalt für alle Benutzer unter allen Umständen zugänglich ist.

@@ -1,0 +1,6 @@
+Das Problem mit dem gegebenen HTML-Code liegt darin, dass zwei Links denselben sichtbaren Text ("Contact us") haben, aber zu unterschiedlichen URLs führen. Dies kann für Benutzer verwirrend sein, insbesondere für solche, die assistive Technologien verwenden. Eine Lösung besteht darin, den sichtbaren Text der Links zu ändern, um klarzustellen, wohin jeder Link führt. Hier ist ein Vorschlag, wie man das machen könnte:
+<!DOCTYPE html>
+<html lang="en">
+    <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/about/contact.html">Contact About Us</a>
+    <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/admissions/contact.html">Contact Admissions</a>
+</html>

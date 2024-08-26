@@ -1,0 +1,57 @@
+Der gegebene Code hat ein paar Probleme in Bezug auf Zugänglichkeit und Benutzerfreundlichkeit:
+
+1. **Fehlende Verbindung zwischen dem `combobox` und dem `listbox` Element**: Die `aria-controls`- und `role`-Attribute sind korrekt verwendet, aber es fehlt eine deutliche Verknüpfung zwischen dem ausgewählten Eintrag und dem Combobox-Feld.
+
+2. **Fehlendes `aria-activedescendant` Attribut**: Dieses Attribut hilft dabei, den aktuellen aktiven Eintrag in der `listbox` zu identifizieren, wenn die Combobox geöffnet ist.
+
+3. **Fehlende Anzeige für den ausgewählten Eintrag**: Der aktuelle Zustand der Auswahl wird nicht klar im Eingabefeld angezeigt.
+
+Hier ist eine überarbeitete Version des Codes, der diese Probleme behebt:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Improved Example 5</title>
+</head>
+<body>
+    <label for="tag_combo">Tag</label>
+    <input type="text" id="tag_combo" role="combobox" aria-controls="popup_listbox" aria-expanded="false" aria-haspopup="listbox" aria-autocomplete="list" aria-activedescendant="selected_option" />
+    <ul role="listbox" id="popup_listbox">
+        <li role="option" id="option1">Zebra</li>
+        <li role="option" id="selected_option">Zoom</li>
+    </ul>
+
+    <script>
+        // Script to handle combobox behavior
+        document.getElementById('tag_combo').addEventListener('focus', function() {
+            document.getElementById('popup_listbox').style.display = 'block';
+            this.setAttribute('aria-expanded', 'true');
+        });
+
+        document.getElementById('tag_combo').addEventListener('blur', function() {
+            document.getElementById('popup_listbox').style.display = 'none';
+            this.setAttribute('aria-expanded', 'false');
+        });
+
+        document.getElementById('popup_listbox').addEventListener('click', function(e) {
+            if (e.target && e.target.nodeName == "LI") {
+                document.getElementById('tag_combo').value = e.target.textContent;
+                document.getElementById('tag_combo').setAttribute('aria-activedescendant', e.target.id);
+                document.getElementById('popup_listbox').style.display = 'none';
+                document.getElementById('tag_combo').setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
+```
+
+### Änderungen und Ergänzungen:
+1. **`aria-activedescendant` Attribut**: Dieses Attribut wurde zum `input` hinzugefügt, um den aktuellen aktiven Eintrag zu kennzeichnen.
+2. **Script zur Handhabung der Combobox**:
+   - Beim Fokussieren des Eingabefelds wird die `listbox` angezeigt und `aria-expanded` auf `true` gesetzt.
+   - Beim Verlassen des Eingabefelds wird die `listbox` ausgeblendet und `aria-expanded` auf `false` gesetzt.
+   - Beim Klicken auf einen Eintrag in der `listbox` wird dieser Wert in das Eingabefeld übernommen, `aria-activedescendant` wird aktualisiert, und die `listbox` wird ausgeblendet.
+
+Durch diese Änderungen wird die Zugänglichkeit verbessert und die Benutzerinteraktion klarer und intuitiver gestaltet.

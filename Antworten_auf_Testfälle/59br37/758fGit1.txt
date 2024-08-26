@@ -1,0 +1,19 @@
+Das Problem mit dem gegebenen HTML-Code scheint zu sein, dass der Text innerhalb des <div>-Elements möglicherweise nicht vollständig sichtbar ist, da die Höhe des Divs auf 16vh (16% der Viewport-Höhe) festgelegt ist und overflow: hidden; angewendet wird. Dies verhindert, dass der überlaufende Inhalt sichtbar ist und gescrollt werden kann.
+
+Um das Problem zu lösen, können wir den overflow-Stil des <div>-Elements auf auto ändern. Dadurch wird sichergestellt, dass, wenn der Inhalt die Höhe des Divs überschreitet, Scrollbars automatisch hinzugefügt werden, um den gesamten Inhalt zugänglich zu machen.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <div style="overflow: auto; height: 16vh; font-size: 16px;">
+        Once upon a midnight dreary, while I pondered, weak and weary,<br />
+        Over many a quaint and curious volume of forgotten lore.<br />
+        While I nodded, nearly napping, suddenly there came a tapping,<br />
+        As of some one gently rapping, rapping at my chamber door.<br />
+        “’Tis some visitor,” I muttered, “tapping at my chamber door.<br />
+        Only this and nothing more.”
+    </div>
+</body>
+</html>

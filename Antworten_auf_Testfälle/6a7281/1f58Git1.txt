@@ -1,0 +1,12 @@
+Das Problem in diesem Code liegt im Wert des aria-expanded Attributs. Der korrekte Wert sollte false für einen eingeklappten Zustand (collapsed) und true für einen ausgeklappten Zustand (expanded) sein. Der Wert "collapsed" ist ungültig.
+
+Korrigierter Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <div role="button" aria-expanded="false">A button</div>
+</body>
+</html>

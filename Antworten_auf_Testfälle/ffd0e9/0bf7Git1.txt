@@ -1,0 +1,15 @@
+Das Problem in diesem Code liegt in der Verwendung von aria-label und role Attributen, die nicht effektiv eingesetzt werden, um die Zugänglichkeit zu verbessern. Der h1 Tag hat ein leeres aria-label, was bedeutet, dass Screenreader diesen ignorieren und stattdessen den Inhalt des span Tags vorlesen würden. Da der span Tag jedoch mit aria-hidden="true" markiert ist, wird dieser Inhalt von Screenreadern ignoriert, was dazu führt, dass der Titel der Seite für Screenreader-Nutzer nicht zugänglich ist. Außerdem ist der role="none" Wert im h1 Tag nicht sinnvoll, da er die semantische Bedeutung dieses Tags nicht ändert oder verbessert.
+
+Um das Problem zu lösen, sollten wir das aria-label Attribut des h1 Tags entfernen oder mit einem sinnvollen Wert füllen, der den Inhalt des h1 Tags für Screenreader-Nutzer beschreibt. Das aria-hidden="true" Attribut im span Tag sollte nur verwendet werden, wenn der Inhalt visuell dargestellt wird, aber für Screenreader-Nutzer verborgen bleiben soll. Der role="none" Wert sollte entfernt werden, da er in diesem Kontext keinen Mehrwert bietet.
+
+Hier ist eine verbesserte Version des Codes:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accessible Example</title>
+</head>
+<body>
+    <h1>ACT rules</h1>
+</body>
+</html>
+In dieser Version wird der Inhalt des h1 Tags direkt zugänglich gemacht, ohne unnötige ARIA-Attribute zu verwenden, was die Zugänglichkeit und die Semantik des Dokuments verbessert.

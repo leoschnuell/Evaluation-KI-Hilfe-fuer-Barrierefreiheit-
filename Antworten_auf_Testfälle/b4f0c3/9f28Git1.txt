@@ -1,0 +1,15 @@
+Das Problem in diesem Code liegt im Meta-Tag innerhalb des <head>-Elements. Der Wert des Attributs content für das Meta-Tag viewport ist falsch gesetzt. Der Wert maximum-scale=invalid ist ungültig. Um die Skalierbarkeit der Webseite auf mobilen Geräten zu kontrollieren, sollte ein gültiger Wert für maximum-scale verwendet werden, z.B. 1.0, um zu verhindern, dass Benutzer in die Seite hineinzoomen können.
+
+Korrigierter Code:
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple page showing random text</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    </head>
+    <body>
+        <p>
+            Lorem ipsum
+        </p>
+    </body>
+</html>

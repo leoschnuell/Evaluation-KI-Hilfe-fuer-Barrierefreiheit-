@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Three Kingdoms, Chapter 1</title>
+    </head>
+    <body>
+        <nav id="chapters-navigation" aria-label="Chapters Navigation">
+            <h1>Content</h1>
+            <ol>
+                <li><a href="#" aria-current="page">Chapter 1</a></li>
+                <li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+            </ol>
+        </nav>
+
+        <main id="main">
+            <p>
+                Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span
+                of time.
+            </p>
+        </main>
+    </body>
+</html>

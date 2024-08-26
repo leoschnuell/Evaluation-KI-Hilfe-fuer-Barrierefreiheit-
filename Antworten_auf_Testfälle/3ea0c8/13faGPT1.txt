@@ -1,0 +1,26 @@
+Das Problem in diesem HTML-Code liegt darin, dass es zwei Elemente mit der gleichen ID gibt, nämlich `label`. Gemäß den HTML-Spezifikationen muss die ID eindeutig sein und darf nur einmal pro Dokument vorkommen. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example 2</title>
+</head>
+<body>
+	<div id="label1">Name</div>
+	<svg id="label2">
+		<text x="0" y="15">City</text>
+	</svg>
+	
+	<input aria-labelledby="label1 label2" type="text" name="city" />
+</body>
+</html>
+```
+
+Die Änderungen, die vorgenommen wurden:
+
+1. Das `<div>`-Element hat nun die ID `label1`.
+2. Das `<svg>`-Element hat die ID `label2`.
+3. Das `aria-labelledby`-Attribut des `<input>`-Elements wurde aktualisiert, um beide IDs (`label1` und `label2`) zu referenzieren, damit das `<input>`-Element sowohl vom Text "Name" als auch vom Text "City" benannt wird.
+
+Diese Korrekturen stellen sicher, dass das HTML-Dokument gemäß den Spezifikationen ist und richtig funktioniert.

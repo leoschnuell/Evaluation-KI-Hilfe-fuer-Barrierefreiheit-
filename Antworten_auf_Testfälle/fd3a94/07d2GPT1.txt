@@ -1,0 +1,40 @@
+Das Problem mit diesem Code liegt darin, dass es zwei identische Links gibt, die beide denselben sichtbaren Text "Contact Us" haben. Dies kann zu Problemen für Benutzer führen, insbesondere für Benutzer von assistiven Technologien wie Screenreadern, da diese Technologien den Link basierend auf dem sichtbaren Text identifizieren.
+
+Um dieses Problem zu lösen und die Zugänglichkeit zu verbessern, sollten die Links sich voneinander unterscheiden, entweder durch unterschiedlichen sichtbaren Text oder durch andere visuelle oder textuelle Unterscheidungsmerkmale.
+
+Hier ist eine mögliche Lösung, indem man den sichtbaren Text der Links anpasst:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+</head>
+<body>
+    <div>
+        <span style="text-align:center;">Contact us</span>
+        <span style="display:flex; justify-content:space-around;">
+            <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/chat.png" alt="Chat" style="width:50%;" />
+            <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/phone.png" alt="Phone" style="width:50%;" />
+        </span>
+        <span style="display:flex; justify-content:space-around;">
+            <span
+                role="link"
+                tabindex="0"
+                onclick="location='/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/contact-us.html?page=1'"
+                >Contact Us (Page 1)</span
+            >
+            <span
+                role="link"
+                tabindex="0"
+                onclick="location='/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/contact-us.html?page=2'"
+                >Contact Us (Page 2)</span
+            >
+        </span>
+    </div>
+</body>
+</html>
+```
+
+In dieser Lösung habe ich den sichtbaren Text der Links geändert, um sie voneinander zu unterscheiden. Jetzt sind sie "Contact Us (Page 1)" und "Contact Us (Page 2)", was es assistiven Technologien ermöglicht, die Links korrekt zu interpretieren und Benutzern eine klarere Navigation zu bieten.

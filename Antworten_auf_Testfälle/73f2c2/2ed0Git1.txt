@@ -1,0 +1,11 @@
+Das Problem in diesem Code liegt im Attribut autocomplete des <input>-Elements. Der Wert badname ist kein gültiger Wert für das autocomplete-Attribut. Um das Problem zu beheben, sollte ein gültiger Wert verwendet werden, der angibt, welche Art von Informationen automatisch vervollständigt werden sollen. Für Benutzernamen ist der korrekte Wert username.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example 1</title>
+</head>
+<body>
+    <label>Username<input autocomplete="username"/></label>
+</body>
+</html>

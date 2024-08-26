@@ -1,0 +1,32 @@
+Um die Barrierefreiheitsprobleme des gegebenen HTML-Codes zu lösen, solltest du folgende Punkte beachten:
+
+1. **Verwendung von `aria`-Attributen**: Wenn ein Element deaktiviert ist, sollte klargestellt werden, warum es deaktiviert ist.
+
+2. **Zugänglichkeit des Inhalts**: Das Eingabefeld sollte einen beschreibenden `label`-Tag haben.
+
+Hier ist eine überarbeitete Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Example</title>
+</head>
+<body>
+    <label for="inputId">Input Field (currently disabled)</label>
+    <input id="inputId" disabled aria-disabled="true" aria-label="This input is currently disabled" />
+</body>
+</html>
+```
+
+### Änderungen im Detail:
+
+1. **`label`-Tag**: Der `<label>`-Tag sorgt dafür, dass Benutzer von Screenreadern den Zweck des Eingabefelds verstehen.
+
+2. **`id`-Attribut**: Das Eingabefeld hat ein `id`, das mit dem `for`-Attribut des Labels verknüpft ist.
+
+3. **`aria-disabled` und `aria-label`**: Diese Attribute informieren Benutzer über den Status des Eingabefelds und geben zusätzliche Kontextinformationen.
+
+Diese Änderungen verbessern die Zugänglichkeit und machen die Webseite benutzerfreundlicher für Menschen mit Behinderungen.

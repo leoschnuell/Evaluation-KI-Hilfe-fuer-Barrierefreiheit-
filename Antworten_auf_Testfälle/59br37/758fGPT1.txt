@@ -1,0 +1,30 @@
+Das Problem in diesem HTML-Code liegt darin, dass der Text im `<div>`-Element nicht umgebrochen wird und somit den Rahmen des `<div>` überschreiten kann, wenn er zu lang ist. Der Stil `overflow: hidden;` versteckt den überschüssigen Text außerhalb des sichtbaren Bereichs des `<div>`. 
+
+Um das Problem zu lösen und sicherzustellen, dass der Text innerhalb des `<div>` vollständig angezeigt wird, könntest du den `overflow`-Stil entfernen oder auf `overflow: auto;` ändern, damit bei Bedarf eine Scrollleiste angezeigt wird, wenn der Text den verfügbaren Platz überschreitet. Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Failed Example 2</title>
+</head>
+<body>
+    <div style="overflow: auto; height: 16vh; font-size: 16px;">
+        Once upon a midnight dreary, while I pondered, weak and weary,<br />
+        Over many a quaint and curious volume of forgotten lore.<br />
+        While I nodded, nearly napping, suddenly there came a tapping,<br />
+        As of some one gently rapping, rapping at my chamber door.<br />
+        “’Tis some visitor,” I muttered, “tapping at my chamber door.<br />
+        Only this and nothing more.”
+    </div>
+</body>
+</html>
+```
+
+### Änderungen im Code:
+
+1. **Overflow-Stil:** Der Stil `overflow: auto;` ermöglicht es dem `<div>`, bei Bedarf eine Scrollleiste anzuzeigen, wenn der Text den verfügbaren Platz überschreitet. Dadurch bleibt der Text immer zugänglich, auch wenn er nicht auf einmal vollständig sichtbar ist.
+
+2. **Höhe (`height`):** Die Höhe des `<div>` wird auf `16vh` gesetzt, was bedeutet, dass es 16% der Höhe des Viewports einnimmt. Diese Höhe kannst du nach Bedarf anpassen, abhängig davon, wie viel Text du anzeigen möchtest, bevor eine Scrollleiste erscheint.
+
+Durch diese Änderung sollte der Text innerhalb des `<div>` ordnungsgemäß angezeigt werden, ohne dass Teile davon verborgen sind oder den umgebenden Bereich überschreiten.

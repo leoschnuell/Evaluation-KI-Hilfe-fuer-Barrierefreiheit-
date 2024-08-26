@@ -1,0 +1,34 @@
+Das Problem in diesem HTML-Code liegt in der Meta-Tag-Zeile:
+
+```html
+<meta name="viewport" content="maximum-scale=invalid" />
+```
+
+Der Wert "invalid" für `maximum-scale` ist nicht gültig. Der `maximum-scale` Wert im `viewport` Meta-Tag sollte entweder eine Zahl sein oder den Wert `1.0` oder `yes` haben, um korrekt zu sein. Dieser Wert definiert, wie stark der Benutzer in der Lage sein sollte, auf der Webseite zu zoomen.
+
+Um das Problem zu beheben, ändere den `content` Wert des `viewport` Meta-Tags auf eine gültige Option, z.B.:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+Hier wird `initial-scale=1.0` verwendet, was bedeutet, dass die Webseite standardmäßig bei ihrer nativen Zoomstufe (kein Zoom) angezeigt wird, und der Benutzer kann die Skalierung entsprechend anpassen.
+
+Der korrigierte HTML-Code sieht dann so aus:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple page showing random text</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<p>
+			Lorem ipsum
+		</p>
+	</body>
+</html>
+```
+
+Damit sollte das Problem behoben sein und die Webseite korrekt dargestellt werden können.

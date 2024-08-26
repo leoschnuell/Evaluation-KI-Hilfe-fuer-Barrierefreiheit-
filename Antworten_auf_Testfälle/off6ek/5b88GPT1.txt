@@ -1,0 +1,22 @@
+Das Problem mit dem Code besteht darin, dass das `lang`-Attribut im `<span>`-Element nicht korrekt verwendet wird. Das `lang`-Attribut wird verwendet, um die Sprache des Inhalts anzugeben, aber hier wird es fälschlicherweise für die Sprache des Textes innerhalb des `<span>`-Elements verwendet.
+
+Um das Problem zu lösen und den Code korrekt zu machen, sollte das `lang`-Attribut entfernt werden, da der Text innerhalb des `<span>`-Elements nicht Französisch ist, sondern Niederländisch, das in einem Englisch `<html>`-Dokument dargestellt wird.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dutch idioms</title>
+</head>
+<body>
+    <p>
+        The Dutch phrase "Hij ging met de kippen op stok" literally translates into "He went to
+        roost with the chickens", but it means that he went to bed early.
+    </p>
+</body>
+</html>
+```
+
+In diesem korrigierten Code wurde das `<span lang="fr">...</span>` entfernt, da es nicht notwendig ist und falsch verwendet wurde. Der Rest des Codes bleibt unverändert und sollte nun korrekt funktionieren, um die niederländische Redewendung richtig anzuzeigen.

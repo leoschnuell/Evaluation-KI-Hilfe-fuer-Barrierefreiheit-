@@ -1,0 +1,50 @@
+Das Problem in diesem HTML-Code liegt darin, dass das `<nav>`-Element nicht korrekt verwendet wird. Gemäß der Spezifikation von HTML5 ist `<nav>` dazu gedacht, Navigationslinks innerhalb einer Website zu gruppieren. Es soll verwendet werden, um eine Hauptnavigation oder andere wichtige Navigationslinks zu kennzeichnen.
+
+Im gegebenen Code wird das `<nav>`-Element zweimal verwendet:
+
+1. Das erste `<nav>`-Element umschließt eine `<ul>`-Liste mit zwei `<li>`-Elementen, die Links zur W3C-Startseite und zu den Standards enthalten. Dies entspricht der Verwendung von `<nav>` für die Hauptnavigation, was korrekt ist.
+
+2. Das zweite `<nav>`-Element wird jedoch innerhalb einer `<div>`-Containerklasse verwendet, die als Spalte formatiert ist (`<div class="col">`). Es enthält ebenfalls eine `<ul>`-Liste mit zwei `<li>`-Elementen, die Links zu Kontaktinformationen und Hilfe enthalten.
+
+Das Problem hier ist, dass das zweite `<nav>`-Element nicht als Hauptnavigation betrachtet werden sollte, sondern eher als eine strukturelle Spalte oder Abschnitt innerhalb des Layouts. Eine bessere Wahl wäre, das `<nav>`-Element durch ein `<div>`-Element zu ersetzen, da es sich nicht um eine Hauptnavigation handelt, sondern um eine spezielle Gruppierung von Links in einer Spalte.
+
+Hier ist der korrigierte HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Failed example 2 9bd38c</title>
+    <link rel="stylesheet" type="text/css" href="/WAI/content-assets/wcag-act-rules/test-assets/non-visual-reference-alternative-9bd38c/columns.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="https://www.w3.org/">W3C homepage</a>
+            </li>
+            <li>
+                <a href="https://www.w3.org/standards/">Standards</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="col-container">
+        <div class="col">
+            <p>Find the navigation on the right, for the non-essential links</p>
+        </div>
+        <div class="col">
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/Consortium/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/Help/">Help and FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+In diesem korrigierten Code wurde das zweite `<nav>`-Element durch `<div class="col">` ersetzt, um die Struktur der Spalten im Layout zu repräsentieren. Dies verbessert die semantische Klarheit des Codes, indem das `<nav>`-Element nur für Hauptnavigation verwendet wird, während `<div>` für andere strukturelle Layoutelemente verwendet wird.

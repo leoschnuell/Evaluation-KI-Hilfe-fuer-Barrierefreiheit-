@@ -1,0 +1,46 @@
+Das Problem mit dem gegebenen Code liegt darin, dass die Funktionen `registerShortcut` und `activateShortcuts` aufgerufen werden, bevor die entsprechende JavaScript-Datei `shortcut.js` geladen und ausgeführt wurde. Dadurch führt der Browser die Aufrufe aus, bevor er weiß, was `registerShortcut` und `activateShortcuts` sind, da sie in `shortcut.js` definiert sind.
+
+Um das Problem zu lösen, müssen wir sicherstellen, dass die JavaScript-Datei `shortcut.js` vollständig geladen ist, bevor wir versuchen, die Funktionen daraus aufzurufen.
+
+Hier ist eine korrigierte Version des Codes, die dieses Problem behebt:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Failed Example 1</title>
+    <script src="/WAI/content-assets/wcag-act-rules/test-assets/ffbc54/shortcut.js"></script>
+    <script>
+        // Funktionen erst aufrufen, wenn shortcut.js geladen ist
+        window.onload = function() {
+            // Die Funktionen nur aufrufen, wenn sie existieren
+            if (typeof registerShortcut === 'function' && typeof activateShortcuts === 'function') {
+                registerShortcut({shortcutKey: '+', disabled: false});
+                activateShortcuts();
+            } else {
+                console.error('Funktionen registerShortcut oder activateShortcuts nicht gefunden.');
+            }
+        };
+    </script>
+</head>
+<body>
+    <label for="target">Zur Liste hinzufügen (Drücken Sie "+" zum Hinzufügen):</label>
+    <input type="text" id="target" />
+    <br />
+    <div>
+        To-Do-Liste
+    </div>
+    <ul id="list"></ul>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+1. **JavaScript-Platzierung**: Die ursprüngliche JavaScript-Zeile, die die Funktionen aufruft, wurde entfernt und stattdessen in ein neues `<script>`-Element im `<head>`-Bereich verschoben.
+
+2. **Verzögerter Aufruf mit `window.onload`**: Der Code, der die Funktionen aufruft (`registerShortcut` und `activateShortcuts`), wird nun innerhalb des `window.onload`-Ereignisses platziert. Dadurch wird sichergestellt, dass dieser Code erst ausgeführt wird, wenn die gesamte Seite geladen ist, einschließlich der externen JavaScript-Datei `shortcut.js`.
+
+3. **Überprüfung der Funktionen**: Bevor die Funktionen aufgerufen werden, überprüfen wir, ob sie tatsächlich existieren, um Fehler zu vermeiden, falls `shortcut.js` nicht geladen wurde oder die Funktionen aus irgendeinem Grund nicht definiert sind.
+
+Durch diese Änderungen sollte der Code jetzt funktionieren, ohne dass JavaScript-Fehler auftreten, die durch den vorzeitigen Aufruf der Funktionen in `shortcut.js` verursacht werden könnten.

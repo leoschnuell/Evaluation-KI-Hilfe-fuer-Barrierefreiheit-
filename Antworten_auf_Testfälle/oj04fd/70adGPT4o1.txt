@@ -1,0 +1,39 @@
+The code provided has an accessibility issue: the `no-focus-default:focus` rule removes the outline without providing an alternative focus indication. This can make it difficult for keyboard users to see which element is currently focused, impacting the usability of the page.
+
+To solve this problem, you need to ensure that when you remove the default focus outline, you provide a clear, visible alternative. Here is the corrected version of your code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Improved Example 1</title>
+	<link rel="stylesheet" href="/WAI/content-assets/wcag-act-rules/test-assets/focus-visible-oj04fd/styles.css" />
+	<style>
+		.indicator {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+		}
+
+		.solid.active {
+			background-color: navy;
+		}
+
+		.border.active {
+			border: medium solid navy;
+		}
+
+		.no-focus-default:focus {
+			outline: none; /* Remove default focus outline */
+			box-shadow: 0 0 3px 2px lightblue; /* Add a custom focus indication */
+		}
+	</style>
+</head>
+<body>
+	<a class="no-focus-default" href="https://act-rules.github.io/">ACT rules</a>
+	<button class="no-focus-default">Dummy button</button>
+</body>
+</html>
+```
+
+In this improved version, the `no-focus-default:focus` rule includes a `box-shadow` to provide a clear visual indicator of focus. This ensures that users who navigate with the keyboard can still see which element is currently focused. The `box-shadow` can be adjusted to match your design requirements while maintaining accessibility.

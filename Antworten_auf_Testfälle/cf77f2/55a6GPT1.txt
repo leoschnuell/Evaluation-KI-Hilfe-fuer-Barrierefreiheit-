@@ -1,0 +1,27 @@
+Das Problem im gegebenen HTML-Code liegt darin, dass der Link auf Kapitel 2 (`chapter2.html`) nicht korrekt verlinkt ist. Der angegebene Pfad `/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html` ist relativ und beginnt mit einem Schrägstrich (`/`), was darauf hinweist, dass es sich um einen absoluten Pfad relativ zur Wurzel des Servers handelt. Dies kann zu Problemen führen, insbesondere wenn die Datei `chapter2.html` nicht tatsächlich an diesem absoluten Pfad auf dem Server vorhanden ist.
+
+Um dieses Problem zu lösen, sollten wir den Link entweder absolut von der Root-Domain aus angeben oder relativ zum aktuellen Verzeichnis, je nachdem, wo sich die Datei `chapter2.html` befindet.
+
+### Lösung 1: Absoluter Pfad von der Root-Domain
+
+Angenommen, `chapter2.html` befindet sich direkt auf derselben Ebene wie die aktuelle HTML-Datei:
+
+```html
+<a href="/chapter2.html">Read Chapter 2</a>
+```
+
+In diesem Fall wird der Link relativ zur Root-Domain angegeben und geht direkt auf `http://example.com/chapter2.html` (wobei `example.com` die Domain des Servers ist).
+
+### Lösung 2: Relativer Pfad
+
+Wenn sich `chapter2.html` im selben Verzeichnis wie die aktuelle HTML-Datei befindet, verwenden wir einfach:
+
+```html
+<a href="chapter2.html">Read Chapter 2</a>
+```
+
+Diese Variante verwendet einen relativen Pfad, der vom aktuellen Verzeichnis ausgeht.
+
+### Fazit
+
+Die Wahl zwischen absolutem und relativem Pfad hängt davon ab, wie die Dateistruktur auf dem Server organisiert ist. Ein absoluter Pfad von der Root-Domain aus ist robuster, wenn die Dateien möglicherweise in unterschiedlichen Verzeichnissen liegen könnten, während ein relativer Pfad einfacher zu pflegen ist, wenn die Struktur stabil bleibt und alle Dateien im gleichen Verzeichnis liegen.

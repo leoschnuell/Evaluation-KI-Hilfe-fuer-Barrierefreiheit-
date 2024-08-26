@@ -1,0 +1,21 @@
+Das Problem dieses Codes besteht darin, dass der Button aufgrund seiner CSS-Eigenschaft `left: -9999px; top: -9999px;` außerhalb des sichtbaren Bereichs der Seite platziert wird. Um den Button sichtbar zu machen, müssen die CSS-Eigenschaften entsprechend angepasst werden.
+
+Hier ist ein Beispiel, wie der Button innerhalb des sichtbaren Bereichs der Seite platziert werden kann:
+
+```html
+<!DOCTYPE html>
+<html>
+	<style>
+		.buttonVisible {
+			position: relative;
+			left: 0;
+			top: 0;
+		}
+	</style>
+	<body>
+		<button class="buttonVisible" value="delete">Delete</button>
+	</body>
+</html>
+```
+
+In diesem Beispiel habe ich die Klasse `buttonVisible` erstellt, die den Button relativ zur Position seines übergeordneten Elements positioniert. Der Button wird auf Position `(0, 0)` gesetzt, was bedeutet, dass er sichtbar ist und nicht außerhalb des sichtbaren Bereichs platziert wird. Außerdem habe ich dem Button einen sichtbaren Text "Delete" hinzugefügt, damit er als Button erkennbar ist.

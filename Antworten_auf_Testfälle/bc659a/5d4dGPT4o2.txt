@@ -1,0 +1,53 @@
+Um den Code barrierefrei zu gestalten, sollten mehrere Aspekte beachtet werden. Hier sind die überarbeiteten Codebeispiele mit Erklärungen zu den Änderungen:
+
+1. **Fehlende `title`- und `meta`-Tags**: Der Titel und Metainformationen für die Barrierefreiheit und Suchmaschinenoptimierung.
+2. **Warnung vor der automatischen Weiterleitung**: Nutzer, insbesondere solche mit Behinderungen, sollten auf die automatische Weiterleitung hingewiesen werden.
+3. **Verbesserung der Zugänglichkeit durch ARIA-Labels und Rollenzuweisungen**.
+
+Hier ist der angepasste Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page Redirect</title>
+	<meta http-equiv="refresh" content="72000; url=https://w3.org">
+</head>
+<body>
+	<main role="main">
+		<p>This page redirects after exactly 20 hours. You will be automatically taken to <a href="https://w3.org">W3C</a>. If not, please click the link.</p>
+	</main>
+</body>
+</html>
+```
+
+### Änderungen und deren Begründung:
+
+1. **Dokumententitel**:
+   ```html
+   <title>Page Redirect</title>
+   ```
+   - **Begründung**: Ein Dokumenttitel hilft Nutzern, den Inhalt der Seite zu verstehen und erleichtert die Navigation, insbesondere für Nutzer von Bildschirmlesegeräten.
+
+2. **Charset und Viewport Meta-Tags**:
+   ```html
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   ```
+   - **Begründung**: Das Charset legt die Zeichenkodierung fest und der Viewport-Tag sorgt dafür, dass die Seite auf mobilen Geräten korrekt dargestellt wird.
+
+3. **Warnung vor automatischer Weiterleitung**:
+   ```html
+   <p>This page redirects after exactly 20 hours. You will be automatically taken to <a href="https://w3.org">W3C</a>. If not, please click the link.</p>
+   ```
+   - **Begründung**: Klare Informationen über die Weiterleitung helfen Nutzern zu verstehen, was passiert und was sie erwarten können.
+
+4. **`main`-Tag mit `role="main"`**:
+   ```html
+   <main role="main">
+   ```
+   - **Begründung**: Der `main`-Tag kennzeichnet den Hauptinhalt der Seite und das `role="main"` stellt sicher, dass dies auch von Hilfstechnologien korrekt interpretiert wird.
+
+Diese Änderungen verbessern die Barrierefreiheit und Benutzerfreundlichkeit der Webseite erheblich.

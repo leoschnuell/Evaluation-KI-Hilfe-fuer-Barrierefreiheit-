@@ -1,0 +1,40 @@
+The code has an issue with the layout and accessibility, specifically regarding the scroll functionality within the <section>. Let's break it down and address the problems:
+
+Overflow Issue: The <section> is set to scroll vertically (overflow-y: scroll), but the content inside it is not enough to create a scroll bar. This might not be a problem if more content is added, but as it stands, the scroll bar is unnecessary and creates an empty scrollable area.
+
+Accessibility Improvements: To make the content more accessible, consider adding more semantic HTML elements and ARIA roles if necessary.
+
+Here's an improved version of the code with the scroll bar removed and some added semantic elements for better accessibility:
+
+html
+Code kopieren
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCAG 2.1 Abstract</title>
+</head>
+<body>
+    <section style="width: 500px;">
+        <h1>WCAG 2.1 Abstract</h1>
+        <p>
+            Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for making Web content more
+            accessible. Following these guidelines will make content more accessible to a wider range of people with
+            disabilities, including accommodations for blindness and low vision, deafness and hearing loss, limited movement,
+            speech disabilities, photosensitivity, and combinations of these, and some accommodation for learning disabilities
+            and cognitive limitations; but will not address every user need for people with these disabilities. These guidelines
+            address accessibility of web content on desktops, laptops, tablets, and mobile devices. Following these guidelines
+            will also often make Web content more usable to users in general.
+        </p>
+    </section>
+</body>
+</html>
+Explanation of Changes:
+Meta Tags: Added meta tags for character set and viewport settings, which are important for accessibility and responsiveness.
+Section Styling: Removed the height: 100px and overflow-y: scroll properties from the <section> element, as they were not necessary for the content provided.
+Title Update: Updated the title to better reflect the content of the page.
+Further Accessibility Considerations:
+ARIA Roles: Depending on the complexity and needs of the actual content, consider adding ARIA roles to enhance accessibility.
+Semantic HTML: Make sure to use semantic HTML elements (like <article>, <aside>, etc.) as necessary to enhance the document structure for screen readers and other assistive technologies.
+This solution makes the code more functional and accessible, aligning it better with the principles of the WCAG guidelines it describes.

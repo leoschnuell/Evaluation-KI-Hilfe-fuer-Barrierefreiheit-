@@ -1,0 +1,41 @@
+Das Problem mit dem gegebenen Code liegt darin, dass die <link>-Tag für das Stylesheet innerhalb des <body>-Tags platziert ist, was gegen die Best Practices verstößt. Stylesheets sollten im <head>-Bereich des HTML-Dokuments eingebunden werden, um das Laden und die Darstellung der Seite zu optimieren. Außerdem fehlt im CSS-Code die Angabe, wie der Fokus für Elemente mit der Klasse .no-focus-default visuell dargestellt werden soll, nachdem outline: none; angewendet wurde. Dies kann die Zugänglichkeit beeinträchtigen, da es für Nutzer schwierig wird zu erkennen, welches Element gerade fokussiert ist.
+
+Schritte zur Lösung:
+
+Verschiebe das <link>-Tag in den <head>-Bereich des Dokuments.
+Füge eine visuelle Darstellung für den Fokus-Zustand hinzu, um die Zugänglichkeit zu verbessern. Dies kann durch Hinzufügen eines sichtbaren Rahmens oder einer Hintergrundfarbe für Elemente im Fokus-Zustand erfolgen.
+Korrigierter Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Failed Example 1</title>
+    <link rel="stylesheet" href="/WAI/content-assets/wcag-act-rules/test-assets/focus-visible-oj04fd/styles.css" />
+</head>
+<body>
+    
+    <a class="no-focus-default" href="https://act-rules.github.io/">ACT rules</a>
+    <button class="no-focus-default">Dummy button</button>
+
+    <style>
+        .indicator {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+        }
+
+        .solid.active {
+            background-color: navy;
+        }
+
+        .border.active {
+            border: medium solid navy;
+        }
+
+        .no-focus-default:focus {
+            outline: none;
+            background-color: lightgrey; /* Hinzugefügt für bessere Sichtbarkeit */
+        }
+    </style>
+</body>
+</html>
+Durch diese Änderungen wird das Stylesheet korrekt im <head>-Bereich geladen, und Elemente mit der Klasse .no-focus-default erhalten eine visuelle Darstellung im Fokus-Zustand, was die Zugänglichkeit verbessert.

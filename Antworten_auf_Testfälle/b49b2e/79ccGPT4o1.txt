@@ -1,0 +1,47 @@
+Der gegebene HTML-Code hat einige Probleme, die behoben werden müssen, um gültiges HTML zu sein. Hier sind die Hauptprobleme und deren Lösungen:
+
+1. **Fehlendes `head`-Element**: Ein HTML-Dokument sollte ein `head`-Element enthalten, das Metadaten und den Titel der Seite enthält.
+2. **Fehlendes `body`-Element**: Der Inhalt der Seite sollte innerhalb eines `body`-Elements sein.
+3. **Fehlende Sprachangabe**: Der HTML-Tag hat das Attribut `lang="en"`, was korrekt ist, aber es sollte auch der `html`-Tag geschlossen werden.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather</title>
+</head>
+<body>
+	<h1>Weather</h1>
+	<p>We are open Monday through Friday from 10 to 16</p>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+1. **Hinzufügen des `head`-Elements**:
+   ```html
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Weather</title>
+   </head>
+   ```
+   - Das `meta charset="UTF-8"`-Tag stellt sicher, dass die Zeichenkodierung UTF-8 verwendet wird.
+   - Das `meta name="viewport"`-Tag stellt sicher, dass die Seite auf mobilen Geräten richtig dargestellt wird.
+   - Das `title`-Tag setzt den Titel der Webseite.
+
+2. **Hinzufügen des `body`-Elements**:
+   ```html
+   <body>
+       <h1>Weather</h1>
+       <p>We are open Monday through Friday from 10 to 16</p>
+   </body>
+   ```
+   - Der gesamte Inhalt der Webseite sollte innerhalb des `body`-Elements sein.
+
+Durch diese Änderungen wird der HTML-Code standardkonform und korrekt angezeigt.

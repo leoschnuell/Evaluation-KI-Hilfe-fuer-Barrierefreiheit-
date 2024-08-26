@@ -1,0 +1,34 @@
+Das HTML in deinem Code hat einige Probleme im Hinblick auf die Verwendung von ARIA-Rollen und die semantische Struktur. Hier ist eine überarbeitete Version, die die Standards einhält:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example with ARIA Roles</title>
+</head>
+<body>
+    <h1>Sort Options</h1>
+    <ul role="menu">
+        <li role="menuitemcheckbox" aria-checked="true">
+            <label>
+                <input type="checkbox" checked /> Sort by Last Modified
+            </label>
+        </li>
+    </ul>
+</body>
+</html>
+```
+
+### Problemanalyse und Lösungen:
+
+1. **Fehlende `<meta>`-Tags**: Die `<meta>`-Tags für Zeichencodierung und Ansichtseinstellungen (viewport) sollten hinzugefügt werden, um sicherzustellen, dass die Seite korrekt gerendert wird.
+
+2. **Semantische Struktur**: Hinzufügen einer Überschrift (`<h1>`) für die Klarheit und Zugänglichkeit der Seite.
+
+3. **Checkbox und Label**: Um die Checkbox korrekt zu verwenden, sollte sie in ein `<label>`-Element eingebettet werden. Dies verbessert die Benutzerfreundlichkeit und erleichtert die Bedienung für Benutzer mit eingeschränkter Mobilität oder Sehbehinderungen.
+
+4. **ARIA-Rollen**: Die Verwendung von `role="menu"` und `role="menuitemcheckbox"` ist korrekt, um die semantische Bedeutung für Bildschirmleser und andere assistive Technologien zu vermitteln.
+
+Durch diese Änderungen wird die Seite besser zugänglich und erfüllt die Webstandards für barrierefreies Design (accessibility).

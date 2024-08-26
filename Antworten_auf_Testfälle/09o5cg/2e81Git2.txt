@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändern Sie den lang-Attributwert von "en" zu "de", da der Inhalt auf Deutsch zu sein scheint -->
+<head>
+    <title>Beispiel 13 Korrigiert</title>
+    <style>
+        .custom-button {
+            color: #555;
+            background: #EEE;
+            padding: 10px 20px; /* Hinzufügen von Padding für bessere Klickbarkeit */
+            cursor: pointer; /* Cursor ändern, um Klickbarkeit anzudeuten */
+        }
+    </style>
+</head>
+<body>
+    <!-- Verwenden Sie einen <button>-Tag anstelle eines <div>-Tags für bessere Barrierefreiheit und Semantik -->
+    <button class="custom-button" style="border: none;">Mein Button!</button>
+    <!-- Stellen Sie sicher, dass interaktive Elemente wie Buttons korrekt mit der Tastatur bedienbar sind (was bei <button> der Fall ist) -->
+</body>
+</html>

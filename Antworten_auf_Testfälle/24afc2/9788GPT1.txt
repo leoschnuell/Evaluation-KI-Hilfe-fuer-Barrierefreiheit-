@@ -1,0 +1,40 @@
+Das Problem in diesem HTML-Code liegt in der CSS-Anweisung für den Abstand zwischen Buchstaben (`letter-spacing`). Hier wird `initial` verwendet, um den Standardwert für `letter-spacing` zurückzusetzen. Jedoch ist `initial` in Bezug auf `letter-spacing` nicht spezifiziert und daher möglicherweise nicht von allen Browsern unterstützt.
+
+Um das Problem zu lösen und den Code zu verbessern, kannst du entweder einen konkreten Wert für `letter-spacing` festlegen oder die `letter-spacing`-Eigenschaft ganz entfernen, falls der Standardwert ausreichend ist. Hier sind zwei mögliche Lösungen:
+
+1. **Konkreten Wert festlegen:**
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+   	<title>Failed Example 4</title>
+   	<style>
+   		p {
+   			letter-spacing: normal; /* Oder einen spezifischen Wert einfügen */
+   		}
+   	</style>
+   </head>
+   <body>
+   	<p>
+   		The toy brought back fond memories of being lost in the rain forest.
+   	</p>
+   </body>
+   </html>
+   ```
+
+2. **Entfernen der `letter-spacing`-Eigenschaft:**
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+   	<title>Failed Example 4</title>
+   </head>
+   <body>
+   	<p>
+   		The toy brought back fond memories of being lost in the rain forest.
+   	</p>
+   </body>
+   </html>
+   ```
+
+In beiden Fällen wird die Seite korrekt gerendert, ohne potenzielle Probleme mit nicht unterstützten Werten für `letter-spacing: initial !important`.

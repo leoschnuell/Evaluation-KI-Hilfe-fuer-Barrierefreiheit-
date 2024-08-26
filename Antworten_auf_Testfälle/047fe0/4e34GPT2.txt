@@ -1,0 +1,56 @@
+Um die Barrierefreiheitsprobleme in deinem HTML-Code zu lösen, sollten wir sicherstellen, dass die Navigation für alle Benutzer zugänglich ist, insbesondere für Menschen mit Behinderungen. Hier sind einige Verbesserungsvorschläge:
+
+1. **Verlinkung verbessern**: Der Link für "Chapter 1" ist derzeit nicht funktionsfähig, da er kein `href`-Attribut hat. Er sollte auf die entsprechende Seite verweisen.
+
+2. **Semantische Strukturierung**: Verwende semantische HTML-Elemente, um den Inhalt klar zu strukturieren.
+
+3. **Navigation verbessern**: Füge eine logische Reihenfolge und klare Navigationselemente hinzu.
+
+Hier ist eine überarbeitete Version deines Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Three Kingdoms, Chapter 1</title>
+</head>
+<body>
+    <header>
+        <h1>The Three Kingdoms, Chapter 1</h1>
+    </header>
+
+    <nav id="chapters-navigation" aria-labelledby="navigation-heading">
+        <h2 id="navigation-heading">Chapters Navigation</h2>
+        <ol>
+            <li><a href="#">Chapter 1</a></li>
+            <li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+        </ol>
+    </nav>
+
+    <main id="main-content">
+        <p>
+            Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span of time.
+        </p>
+    </main>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+- **Sprache**: Die `lang`-Eigenschaft im `html`-Tag wurde hinzugefügt, um die Sprache anzugeben (hier Englisch).
+  
+- **Meta-Tags**: Meta-Tags für Zeichensatz und Ansichtsgröße wurden hinzugefügt, um die Darstellung auf verschiedenen Geräten zu optimieren.
+
+- **Header**: Ein `header`-Element wurde hinzugefügt, um den Titel der Seite prominent darzustellen.
+
+- **Navigation**: 
+  - Das `nav`-Element wurde um eine `aria-labelledby`-Eigenschaft erweitert, um klar zu machen, dass es sich um die Navigation handelt.
+  - Die Überschrift innerhalb des `nav`-Elements wurde hinzugefügt und mit einer ID versehen, die dann als `aria-labelledby` referenziert wird.
+  - Die "Chapter 1"-Verlinkung wurde mit einem Platzhalter `href` versehen (`#`), um die korrekte Navigation zu ermöglichen. In einer vollständigen Anwendung sollte dies auf die entsprechende Seite verweisen.
+
+- **Main Content**: Ein `main`-Element wurde hinzugefügt, um den Hauptinhalt der Seite zu kennzeichnen.
+
+Durch diese Änderungen wird die Zugänglichkeit und die semantische Strukturierung deiner HTML-Seite verbessert, was wichtig ist, um sicherzustellen, dass sie für alle Nutzer effektiv nutzbar ist, einschließlich solcher mit Behinderungen.

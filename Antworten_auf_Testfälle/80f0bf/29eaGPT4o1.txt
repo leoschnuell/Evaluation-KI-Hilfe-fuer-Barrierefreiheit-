@@ -1,0 +1,70 @@
+Der HTML-Code hat einige Probleme, die behoben werden müssen:
+
+1. **Doppelte `cursor: pointer;` CSS-Eigenschaft:** Diese Eigenschaft wird zweimal in der `button:hover`-Anweisung festgelegt. Eine davon sollte entfernt werden.
+2. **Fehlender JavaScript-Code für die Play/Pause- und Mute-Funktion:** Es gibt ein Script-Tag, das auf eine externe Datei verweist, aber um sicherzustellen, dass die Videosteuerungen funktionieren, müssen wir den entsprechenden JavaScript-Code bereitstellen.
+
+Hier ist der überarbeitete Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		button {
+			color: #000;
+		}
+		button:hover {
+			cursor: pointer;
+			background-color: grey;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div id="video-container">
+		<!-- Video -->
+		<video id="video" autoplay>
+			<source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/video.mp4" type="video/mp4" />
+			<source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/video.webm" type="video/webm" />
+		</video>
+		<!-- Video Controls -->
+		<div id="video-controls">
+			<button type="button" id="play-pause" class="play">Play</button>
+			<button type="button" id="mute">Mute</button>
+		</div>
+	</div>
+	<script>
+		// JavaScript für Play/Pause und Mute-Funktion
+		document.addEventListener('DOMContentLoaded', function () {
+			var video = document.getElementById('video');
+			var playPauseButton = document.getElementById('play-pause');
+			var muteButton = document.getElementById('mute');
+
+			playPauseButton.addEventListener('click', function () {
+				if (video.paused) {
+					video.play();
+					playPauseButton.textContent = 'Pause';
+				} else {
+					video.pause();
+					playPauseButton.textContent = 'Play';
+				}
+			});
+
+			muteButton.addEventListener('click', function () {
+				if (video.muted) {
+					video.muted = false;
+					muteButton.textContent = 'Mute';
+				} else {
+					video.muted = true;
+					muteButton.textContent = 'Unmute';
+				}
+			});
+		});
+	</script>
+</body>
+</html>
+```
+
+Änderungen im Code:
+1. Entfernt die doppelte `cursor: pointer;`-CSS-Eigenschaft.
+2. Hinzugefügt JavaScript direkt im `script`-Tag, um die Play/Pause- und Mute-Funktionen zu implementieren.

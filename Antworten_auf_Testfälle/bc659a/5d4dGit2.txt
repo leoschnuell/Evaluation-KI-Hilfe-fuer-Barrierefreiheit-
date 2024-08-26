@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändern Sie den lang-Attributwert zu "de", da der Inhalt auf Deutsch ist -->
+<head>
+    <meta charset="UTF-8"> <!-- Fügen Sie ein charset meta-Tag hinzu, um die Zeichenkodierung anzugeben -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Verbessern Sie die mobile Ansicht -->
+    <title>Seitenumleitung</title> <!-- Fügen Sie ein title-Element hinzu, um die Zugänglichkeit und SEO zu verbessern -->
+    <meta http-equiv="refresh" content="72000; url=https://w3.org" /> <!-- Korrigieren Sie das URL-Attribut für Standardskonformität -->
+</head>
+<body>
+    <p>Diese Seite leitet nach genau 20 Stunden um.</p>
+    <noscript> <!-- Fügen Sie eine Warnung für Benutzer ohne JavaScript hinzu -->
+        <p><strong>Hinweis:</strong> Diese Seite benötigt JavaScript, um korrekt umzuleiten. Bitte aktivieren Sie JavaScript in Ihrem Browser.</p>
+    </noscript>
+</body>
+</html>

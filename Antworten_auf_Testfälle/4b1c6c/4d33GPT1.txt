@@ -1,0 +1,30 @@
+Das Problem mit diesem HTML-Code ist, dass die `<iframe>`-Elemente nicht korrekt eingebettet sind. Gemäß HTML-Spezifikation müssen `<iframe>`-Elemente innerhalb des `<body>`-Tags platziert werden, nicht direkt im `<html>`-Tag. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+    <iframe title="List of Contributors" src="/WAI/content-assets/wcag-act-rules/test-assets/iframe-unique-name-4b1c6c/page-one.html"></iframe>
+
+    <iframe aria-label="List of Contributors" src="/WAI/content-assets/wcag-act-rules/test-assets/iframe-unique-name-4b1c6c/page-two.html"></iframe>
+</body>
+</html>
+```
+
+### Korrekturen:
+
+1. **`<head>`-Bereich**: Hinzufügen eines `<head>`-Bereichs mit `<meta>`-Tag und `<title>`-Tag.
+   
+2. **`<body>`-Bereich**: Verschieben der `<iframe>`-Elemente in den `<body>`-Bereich. Das `<iframe>`-Tag selbst benötigt keinen schließenden Tag (`</iframe>`), es sei denn, es wird XHTML verwendet.
+
+### Weitere Hinweise:
+
+- **`<meta charset="UTF-8">`**: Dieses Meta-Tag gibt die Zeichenkodierung der Webseite an (hier UTF-8 für Unicode-Unterstützung).
+  
+- **`<title>`-Tag**: Definiert den Titel der Webseite im Browser-Tab.
+
+Indem `<iframe>`-Elemente korrekt innerhalb des `<body>`-Tags platziert werden, entspricht der HTML-Code den Standards und wird ordnungsgemäß gerendert.

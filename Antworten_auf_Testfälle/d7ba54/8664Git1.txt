@@ -1,0 +1,22 @@
+Das bereitgestellte HTML-Snippet zeigt ein Videoelement mit zwei Quellen: eine MP4-Datei und eine WEBM-Datei. Das Problem mit diesem Code ist nicht direkt ersichtlich, da es auf den ersten Blick korrekt aussieht. Allerdings könnten potenzielle Probleme in folgenden Bereichen liegen:
+
+Fehlender alt-Text für Barrierefreiheit: Video-Tags unterstützen keinen alt-Text direkt. Stattdessen sollte eine Textalternative oder Untertitel für Videos bereitgestellt werden, um die Barrierefreiheit zu verbessern.
+Fehlende title- oder aria-label-Attribute: Diese könnten hinzugefügt werden, um zusätzliche Kontextinformationen bereitzustellen.
+Fehlendes lang-Attribut im html-Tag: Obwohl das lang-Attribut auf "en" gesetzt ist, könnte das Problem sein, dass es nicht der tatsächlichen Sprache des Inhalts entspricht.
+Pfadprobleme: Die Pfade zu den Videodateien könnten falsch sein oder die Dateien sind nicht am angegebenen Ort verfügbar.
+Browser-Kompatibilität: Nicht alle Browser unterstützen alle Videoformate gleich gut. Es ist jedoch eine gute Praxis, mehrere Quellen in verschiedenen Formaten anzugeben.
+Um die Barrierefreiheit zu verbessern, könnten Sie Untertitel hinzufügen und sicherstellen, dass alle Bedienelemente des Videos über Tastaturbefehle zugänglich sind. Hier ist ein verbessertes Beispiel, das zeigt, wie man Untertitel hinzufügt:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accessible Video Example</title>
+</head>
+<body>
+    <video controls>
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4" />
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm" />
+        <track src="/path/to/captions.vtt" kind="captions" srclang="en" label="English" default />
+    </video>
+</body>
+</html>
+In diesem Beispiel wurde ein <track>-Element hinzugefügt, das auf eine VTT-Datei (Web Video Text Tracks) verweist, welche die Untertitel enthält. Stellen Sie sicher, dass der Pfad zur VTT-Datei korrekt ist und dass die Datei die Untertitel im richtigen Format enthält.

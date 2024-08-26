@@ -1,0 +1,56 @@
+The HTML code you provided appears mostly correct, but there are a few potential improvements and considerations for ensuring better compatibility and functionality:
+
+1. **Adding Metadata**: It is always good practice to include meta tags within the head section to specify the character set and viewport settings. This ensures proper rendering and touch zooming on different devices.
+
+2. **Providing Alternative Text for Accessibility**: While the video tag itself doesn't have an attribute for alternative text, it's important to provide descriptive text for accessibility. A good way to do this is by using the `<track>` element for subtitles or captions.
+
+3. **Ensuring Correct File Path**: Make sure the video file path is correct and accessible.
+
+4. **Improving Semantic Structure**: Consider using more semantic HTML tags for better structure and accessibility.
+
+Here's the updated version of your HTML code with these improvements:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Failed Example 3</title>
+</head>
+<body>
+    <p>
+        The video below shows a man working on a keyboard. A voiceover is heard saying the following text: Web accessibility
+        perspectives. Keyboard compatibility. Not being able to use your computer because your mouse doesn't work, is
+        frustrating. Many people use only the keyboard to navigate websites. Either through preference or circumstance.
+    </p>
+    <video src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls>
+        <track kind="captions" src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.vtt" srclang="en" label="English">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>
+```
+
+### Key Changes and Additions:
+1. **Meta Tags**:
+    ```html
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ```
+
+2. **Track Element**:
+    ```html
+    <track kind="captions" src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.vtt" srclang="en" label="English">
+    ```
+   This assumes you have a corresponding `.vtt` file for captions. If not, you can create one or remove this line.
+
+3. **Fallback Text**:
+    ```html
+    Your browser does not support the video tag.
+    ```
+   This provides fallback text for browsers that do not support the video tag.
+
+### Additional Considerations:
+- **File Paths**: Ensure the paths to your video and caption files are correct relative to the HTML file.
+- **Testing**: Test the HTML file in different browsers to ensure compatibility and proper functionality.

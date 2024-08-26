@@ -1,0 +1,31 @@
+Der vorliegende HTML-Code enthält ein paar Probleme, die behoben werden müssen, um eine valide und funktionale Webseite zu erstellen. Hier sind die Korrekturen:
+
+1. **Fehlender `<head>`-Abschnitt:** Ein HTML-Dokument sollte immer einen `<head>`-Abschnitt enthalten, auch wenn dieser leer ist. Dieser Abschnitt kann Meta-Informationen, Titel und Links zu Stylesheets enthalten.
+2. **Fehlendes `<body>`-Tag:** Der Hauptinhalt der Seite sollte innerhalb eines `<body>`-Tags platziert werden.
+3. **Language Attribute:** Es sollte ein korrekter Sprachcode verwendet werden, z.B. "en" für Englisch oder "de" für Deutsch.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Example</title>
+</head>
+<body>
+    <video src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls></video>
+</body>
+</html>
+```
+
+**Erklärung der Änderungen:**
+
+- **`<head>`-Tag hinzugefügt:** Enthält Meta-Informationen und den Titel der Seite.
+- **`<meta charset="UTF-8">` hinzugefügt:** Stellt sicher, dass die Zeichenkodierung auf UTF-8 gesetzt ist.
+- **`<meta name="viewport" content="width=device-width, initial-scale=1.0">` hinzugefügt:** Stellt sicher, dass die Seite auf verschiedenen Geräten richtig dargestellt wird.
+- **`<title>`-Tag hinzugefügt:** Gibt der Seite einen Titel, der im Browser-Tab angezeigt wird.
+- **`<body>`-Tag hinzugefügt:** Beinhaltet den Hauptinhalt der Seite, in diesem Fall das Video.
+
+Mit diesen Änderungen sollte die Seite korrekt strukturiert und funktionsfähig sein.

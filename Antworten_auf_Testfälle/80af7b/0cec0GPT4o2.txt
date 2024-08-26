@@ -1,0 +1,37 @@
+Um die Barrierefreiheitsprobleme im gegebenen Code zu lösen, sollten wir auf Folgendes achten:
+
+1. **Vermeidung von automatischem Fokus**: Das automatische Zurücksetzen des Fokus kann für Benutzer, die Screenreader oder Tastaturen verwenden, verwirrend und problematisch sein. Es ist besser, den Fokus nur zu setzen, wenn es wirklich notwendig ist und dem Benutzer die Kontrolle zu überlassen.
+
+2. **Semantische HTML-Elemente**: Sicherstellen, dass HTML-Elemente sinnvoll und zugänglich sind. In diesem Fall sind Buttons bereits semantisch korrekt, aber wir sollten darauf achten, dass sie korrekt funktionieren.
+
+3. **Beschriftung und Anweisungen**: Wenn spezielle Funktionen verwendet werden, sollten diese für den Benutzer klar erklärt werden.
+
+Hier ist eine angepasste Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Example</title>
+</head>
+<body>
+    <button id="button1">Button 1</button>
+    <button id="button2">Button 2</button>
+    <button id="button3">Button 3</button>
+
+    <script>
+        // Entfernen des automatischen Fokus
+        // Falls eine spezielle Logik notwendig ist, kann sie hier hinzugefügt werden
+    </script>
+</body>
+</html>
+```
+
+Hier sind die Hauptänderungen:
+1. Entfernen des `onblur`-Attributs, um zu vermeiden, dass der Fokus automatisch zurückgesetzt wird.
+2. Hinzufügen von `id`-Attributen für die Buttons, um sie leichter im Skript anzusprechen, falls notwendig.
+3. Ein allgemeines Skript-Tag wurde hinzugefügt, um Platz für zukünftige, benutzerfreundliche Logik zu bieten.
+
+Wenn der automatische Fokus dennoch aus wichtigen Gründen beibehalten werden muss, könnte eine alternative Methode implementiert werden, die die Benutzerfreundlichkeit berücksichtigt und klar kommuniziert wird.

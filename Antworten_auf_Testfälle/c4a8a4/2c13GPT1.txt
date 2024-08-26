@@ -1,0 +1,17 @@
+Der Code, den du gepostet hast, ist ein einfaches HTML-Dokument, das den Titel "Apple harvesting season" trägt und einen Absatztext enthält, der über Clementinen spricht, nicht über Äpfel. Wenn das Ziel darin besteht, den Text im Absatz zu korrigieren, um über Äpfel zu sprechen, könnte der aktualisierte Code so aussehen:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Apple harvesting season</title>
+</head>
+<body>
+    <p>
+        Apples will be ready to harvest from late August through October.
+    </p>
+</body>
+</html>
+```
+
+Hier wurde der Text im `<p>`-Tag von "Clementines will be ready to harvest from late October through February." zu "Apples will be ready to harvest from late August through October." geändert, um über die Apfelerntezeit zu sprechen.

@@ -1,0 +1,29 @@
+Das Problem in diesem Code liegt darin, dass die headers-Attribute in den <td>-Elementen der zweiten Zeile (<tr>) auf Werte gesetzt sind, die mit den id-Attributen der <span>-Elemente in der ersten Zeile übereinstimmen sollen. Allerdings erwartet das headers-Attribut, dass es mit dem id eines <th>-Elements (nicht <span>) verknüpft wird, um die Zugehörigkeit in komplexen Tabellen für Screenreader und andere assistive Technologien zu definieren.
+
+Um das Problem zu beheben, sollten die <span>-Elemente in der Kopfzeile durch <th>-Elemente ersetzt werden, und die id-Attribute sollten diesen <th>-Elementen zugewiesen werden. Hier ist der korrigierte Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th id="headerProject">
+                Projects
+            </th>
+            <th id="headerObjective">
+                Objective
+            </th>
+        </tr>
+        <tr>
+            <td headers="headerProject">
+                15%
+            </td>
+            <td headers="headerObjective">
+                10%
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

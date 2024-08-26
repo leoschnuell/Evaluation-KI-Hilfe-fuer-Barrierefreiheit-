@@ -1,0 +1,60 @@
+The provided HTML code contains a script that attempts to activate a slider using device orientation. The script is supposed to listen to device orientation events and adjust the slider accordingly. However, there are a few issues that need to be addressed to ensure the functionality works correctly.
+
+1. **Missing `handleOrientation` Function**: The `handleOrientation` function referenced in the `activateSlider` function is missing. This function should handle the device orientation event and update the slider value.
+
+2. **Disabled Slider**: The slider input element is disabled (`disabled` attribute), which means it cannot be interacted with programmatically. This attribute needs to be removed or managed within the script.
+
+3. **Output Update**: The output displaying the slider value needs to be updated when the slider value changes.
+
+Here is a revised version of the code with these issues fixed:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slider Motion Sensor Example</title>
+    <script src="/WAI/content-assets/wcag-act-rules/test-assets/7677a9/slider.js"></script>
+    <script>
+        function handleOrientation(event) {
+            var slider = document.getElementById('motionSlider');
+            var output = document.getElementById('output');
+
+            // Assuming event.gamma represents the left-right tilt
+            var tilt = event.gamma;
+            // Normalize tilt value (gamma is between -90 and 90)
+            var normalizedTilt = Math.max(Math.min((tilt + 90) / 180 * 100, 100), 0);
+
+            // Update slider value
+            slider.value = normalizedTilt;
+            output.textContent = Math.round(normalizedTilt);
+        }
+
+        function activateSlider() {
+            window.addEventListener('deviceorientation', handleOrientation);
+        }
+    </script>
+</head>
+<body onload="activateSlider();">
+    <pre class="output"></pre>
+
+    <h1>Slider Motion Sensor Example</h1>
+
+    <p>
+        Open this slider on a device with a motion sensor, such as a smartphone or tablet. Tilt the device to the right
+        and left to adjust the slider value.
+    </p>
+    <p>Note: This example may not work across all browsers.</p>
+
+    <div>
+        <input type="range" min="1" max="100" value="50" id="motionSlider" />
+        <button id="increaseSlider" type="button">Increase Value</button>
+        <p aria-live="polite">Slider Value: <span id="output">50</span></p>
+    </div>
+</body>
+</html>
+```
+
+### Explanation of Changes:
+1. **Added `handleOrientation` Function**: This function captures the device's orientation, normalizes the tilt value, and updates the slider value and output accordingly.
+2. **Removed `disabled` Attribute**: The `disabled` attribute from the slider input was removed to allow the script to interact with it.
+3. **Updated Output**: The output text content is updated whenever the slider value changes, ensuring that the displayed value is in sync with the slider's position.

@@ -1,0 +1,50 @@
+Der HTML-Code enthält ein Attribut `aria-expanded` mit einem Wert, der nicht standardmäßig definiert ist. Das Attribut `aria-expanded` soll den Zustand eines Elementes angeben, ob es ausgeklappt (`true`) oder eingeklappt (`false`) ist. Der Wert "collapsed" ist kein gültiger Wert für dieses Attribut.
+
+Um das Problem zu beheben, sollten Sie das Attribut `aria-expanded` auf `false` setzen, wenn das Element eingeklappt ist, oder auf `true`, wenn es ausgeklappt ist.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example 2</title>
+</head>
+<body>
+	<div role="button" aria-expanded="false">A button</div>
+</body>
+</html>
+```
+
+In diesem Fall ist das Element standardmäßig eingeklappt, daher wird `aria-expanded` auf `false` gesetzt. Wenn das Element ausgeklappt sein soll, setzen Sie `aria-expanded` auf `true`.
+
+Wenn das Element interaktiv sein soll (z.B. wenn es durch Klicken seinen Zustand ändern soll), müssen Sie auch JavaScript hinzufügen, um diesen Zustand zu verwalten. Hier ist ein einfaches Beispiel, wie das gemacht werden kann:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Interactive Example</title>
+	<style>
+		[aria-expanded="true"] {
+			background-color: lightgreen;
+		}
+		[aria-expanded="false"] {
+			background-color: lightcoral;
+		}
+	</style>
+</head>
+<body>
+	<div role="button" aria-expanded="false" id="toggleButton">A button</div>
+
+	<script>
+		document.getElementById('toggleButton').addEventListener('click', function() {
+			var expanded = this.getAttribute('aria-expanded') === 'true';
+			this.setAttribute('aria-expanded', !expanded);
+		});
+	</script>
+</body>
+</html>
+```
+
+In diesem Beispiel ändert der Button seine Farbe und den `aria-expanded` Wert, wenn darauf geklickt wird.

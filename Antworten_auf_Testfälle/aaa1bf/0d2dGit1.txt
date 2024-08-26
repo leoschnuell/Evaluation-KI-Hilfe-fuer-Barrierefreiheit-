@@ -1,0 +1,13 @@
+Das Problem mit dem bereitgestellten Code liegt darin, dass das <audio>-Element automatisch abgespielt wird (autoplay), was nicht den Best Practices für Benutzerfreundlichkeit und Zugänglichkeit entspricht. Benutzer sollten die Kontrolle darüber haben, ob und wann Medien abgespielt werden. Um dieses Problem zu beheben, sollten Sie das autoplay-Attribut entfernen oder sicherstellen, dass die Autoplay-Funktion den Richtlinien für Barrierefreiheit entspricht, indem Sie beispielsweise eine Benutzereingabe zum Starten des Audios erfordern.
+
+Hier ist der verbesserte Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Improved Example</title>
+</head>
+<body>
+    <audio src="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech.mp3" controls></audio>
+</body>
+</html>
+Durch Entfernen des autoplay-Attributs wird das Audio nicht automatisch abgespielt, wenn die Seite geladen wird. Stattdessen kann der Benutzer entscheiden, ob und wann er das Audio abspielen möchte, indem er die bereitgestellten Steuerelemente (controls) verwendet.

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändere das lang-Attribut zu "de" für Deutsch -->
+<head>
+    <meta charset="UTF-8"> <!-- Füge ein Meta-Tag für die Zeichencodierung hinzu -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Verbessere die mobile Ansicht -->
+    <title>Korrigiertes Beispiel 2</title>
+</head>
+<body>
+    <label for="disabledInput">Deaktiviertes Eingabefeld</label> <!-- Füge ein Label hinzu für bessere Zugänglichkeit -->
+    <input id="disabledInput" disabled aria-disabled="true" /> <!-- Füge eine ID und aria-disabled hinzu für bessere Screenreader-Unterstützung -->
+</body>
+</html>

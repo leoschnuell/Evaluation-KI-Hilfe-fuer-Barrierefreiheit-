@@ -1,0 +1,29 @@
+Das Problem in diesem Code liegt in der Verwendung von aria-disabled="true" innerhalb eines Elements (<input>), das sich in einem übergeordneten Element befindet, welches bereits mit aria-hidden="true" ausgezeichnet ist. Das Attribut aria-hidden="true" verbirgt Elemente für Screenreader und andere assistive Technologien, was bedeutet, dass alle untergeordneten Elemente ebenfalls verborgen sind, unabhängig von ihren eigenen ARIA-Attributen.
+
+Um das Problem zu lösen, sollten Sie entscheiden, ob das <input>-Element für Benutzer von assistiven Technologien zugänglich sein soll oder nicht. Wenn es zugänglich sein soll, entfernen Sie aria-hidden="true" vom übergeordneten <div>. Wenn es nicht zugänglich sein soll, ist das Attribut aria-disabled="true" auf dem <input>-Element überflüssig, da das Element bereits durch aria-hidden="true" im übergeordneten Element versteckt ist.
+
+Lösung, wenn das <input>-Element zugänglich sein soll:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <div>
+        <input aria-disabled="true" />
+    </div>
+</body>
+</html>
+
+Lösung, wenn das <input>-Element nicht zugänglich sein soll (einfachere Lösung, da das <input> bereits durch aria-hidden im <div> versteckt ist):
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <div aria-hidden="true">
+        <input />
+    </div>
+</body>
+</html>

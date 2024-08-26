@@ -1,0 +1,15 @@
+Das Problem mit dem bereitgestellten Code liegt darin, dass der SVG-Inhalt direkt in das src-Attribut des <img>-Tags eingebettet ist, was zu Problemen mit der Darstellung oder der Validierung führen kann. Eine bessere Lösung wäre, den SVG-Inhalt in eine separate Datei auszulagern und auf diese Datei im src-Attribut zu verweisen. Wenn das Auslagern des SVG-Inhalts in eine Datei nicht möglich oder gewünscht ist, kann eine Alternative darin bestehen, den SVG-Inhalt korrekt zu kodieren und sicherzustellen, dass er als URL-kompatibel gilt. Hier ist eine verbesserte Version des Codes, die den SVG-Inhalt korrekt kodiert:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <img
+        alt="WCAG Rocks"
+        src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20px' width='80px'%3E%3Ctext x='0' y='15'%3EWCAG Rocks%3C/text%3E%3C/svg%3E"
+    />
+</body>
+</html>
+
+In dieser Lösung wird der SVG-Inhalt durch URL-Encoding angepasst, sodass er direkt im src-Attribut verwendet werden kann, ohne die HTML-Struktur zu stören.

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändere das lang-Attribut zu "de" für Deutsch -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokument</title>
+</head>
+<body>
+    <label for="fname">Menü</label> <!-- Korrigiere die Schreibweise zu "Menü" -->
+    <input id="fname" type="text" name="fname" aria-label="Menü" /> <!-- Füge aria-label hinzu für bessere Screenreader-Unterstützung -->
+</body>
+</html>

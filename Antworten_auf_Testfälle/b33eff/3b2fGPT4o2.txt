@@ -1,0 +1,53 @@
+Um die Barrierefreiheitsprobleme in deinem HTML-Code zu beheben, sollten wir mehrere Aspekte berücksichtigen, einschließlich der Verbesserung der Orientierung und der allgemeinen Zugänglichkeit der Seite.
+
+Hier ist eine überarbeitete Version deines Codes, die barrierefreiheitsfreundlicher ist:
+
+1. **Vermeide das Rotieren des Inhalts für die Barrierefreiheit.** Rotierte Inhalte können für viele Benutzer, einschließlich Menschen mit motorischen oder visuellen Einschränkungen, schwierig zu verwenden sein. Stattdessen könntest du das Design so gestalten, dass es in beiden Ausrichtungen funktioniert.
+2. **Verwende passende Meta-Tags.** Um sicherzustellen, dass die Seite in verschiedenen Geräten und Viewports gut funktioniert.
+3. **Verbesserung der Struktur und der semantischen HTML-Tags.** 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page with some content</title>
+    <style>
+        @media (orientation: portrait) {
+            html {
+                /* Entferne die Drehung */
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+        /* Style für eine bessere Lesbarkeit */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Page with some content</h1>
+    </header>
+    <main>
+        <p>This is the page content. Make sure to add meaningful content here that provides value to your users.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>
+```
+
+**Erklärungen zu den Änderungen:**
+
+1. **Meta-Tags**: Die Meta-Tags wurden hinzugefügt, um sicherzustellen, dass die Seite richtig codiert ist und die richtige Ansicht auf verschiedenen Geräten verwendet.
+2. **Entfernung der Rotation**: Das Drehen des Inhalts wurde entfernt, da dies die Benutzerfreundlichkeit und die Zugänglichkeit beeinträchtigen kann.
+3. **Semantische HTML-Tags**: Strukturierte den Inhalt mit `header`, `main` und `footer`, um die Zugänglichkeit zu verbessern.
+4. **Stilverbesserungen**: Grundlegende Stile hinzugefügt, um die Lesbarkeit zu verbessern.
+
+Diese Änderungen verbessern die Zugänglichkeit der Webseite, indem sie sicherstellen, dass die Seite auf allen Geräten gut aussieht und für alle Benutzer zugänglich ist.

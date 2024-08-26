@@ -1,0 +1,34 @@
+Der gegebene HTML-Code hat einen kleinen Fehler, der behoben werden muss. Das `<a>`-Tag für "Chapter 1" fehlt das `href`-Attribut. Dies führt dazu, dass der Link nicht klickbar ist. Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Three Kingdoms, Chapter 1</title>
+	</head>
+	<body>
+		<nav id="chapters-navigation">
+			<h1>Content</h1>
+			<ol>
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter1.html">Chapter 1</a></li>
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+			</ol>
+		</nav>
+
+		<div id="main">
+			<p>
+				Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span
+				of time.
+			</p>
+		</div>
+	</body>
+</html>
+```
+
+Die Änderung besteht darin, dass das `href`-Attribut zum `<a>`-Tag von "Chapter 1" hinzugefügt wurde:
+
+```html
+<a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter1.html">Chapter 1</a>
+```
+
+Nun sind beide Links korrekt und klickbar.

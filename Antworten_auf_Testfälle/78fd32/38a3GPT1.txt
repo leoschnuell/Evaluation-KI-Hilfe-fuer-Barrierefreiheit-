@@ -1,0 +1,28 @@
+Das Problem in diesem HTML-Code ist wahrscheinlich das Styling der `<p>` (Paragraph)-Tags. Hier wird `max-width: 200px;` verwendet, um die maximale Breite des Absatzes auf 200 Pixel zu begrenzen. Dies kann jedoch zu einem Problem führen, wenn der Text innerhalb des Absatzes breiter ist als diese Begrenzung, insbesondere wenn der Textinhalt nicht umbrochen wird.
+
+Um das Problem zu lösen und sicherzustellen, dass der Text innerhalb der begrenzten Breite umgebrochen wird, können wir `word-wrap: break-word;` oder `overflow-wrap: break-word;` hinzufügen. Diese CSS-Eigenschaften ermöglichen es dem Browser, lange Wörter innerhalb des begrenzten Containers umzubrechen, anstatt sie zu überlaufen.
+
+Hier ist der korrigierte HTML-Code mit dieser Änderung:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 4</title>
+	<style>
+		p {
+			line-height: 1.2 !important;
+			max-width: 200px;
+			word-wrap: break-word; /* oder overflow-wrap: break-word; */
+		}
+	</style>
+</head>
+<body>
+	<p>
+		The toy brought back fond memories of being lost in the rain forest.
+	</p>
+</body>
+</html>
+```
+
+In diesem Beispiel wird der Text innerhalb des `<p>`-Tags jetzt korrekt umgebrochen, wenn er die maximale Breite von 200 Pixeln überschreitet. Dies stellt sicher, dass der Text ordnungsgemäß im festgelegten Container angezeigt wird, ohne das Layout zu stören.

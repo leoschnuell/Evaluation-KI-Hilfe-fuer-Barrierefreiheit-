@@ -1,0 +1,17 @@
+Das Problem in diesem Code liegt darin, dass das input-Element vom Typ image mit dem Attribut aria-labelledby auf ein Element verweist ("non-existing"), das im Dokument nicht existiert. Dies kann die Zugänglichkeit beeinträchtigen, da Screenreader oder andere assistive Technologien nicht in der Lage sind, eine angemessene Beschriftung für das Eingabeelement zu finden.
+
+Um das Problem zu lösen, sollten Sie entweder:
+
+Ein Element mit der ID hinzufügen, auf die aria-labelledby verweist, oder
+Das aria-labelledby-Attribut entfernen und stattdessen ein alt-Attribut für das input-Element verwenden, um eine textuelle Beschreibung für das Bild bereitzustellen.
+Lösung mit alt-Attribut:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <input type="image" src="/WAI/content-assets/wcag-act-rules/test-assets/shared/search-icon.svg" alt="Search" />
+</body>
+</html>
+Diese Lösung verwendet das alt-Attribut, um eine Beschreibung für das Bild bereitzustellen, was für die Zugänglichkeit wichtig ist, insbesondere wenn das Bild als Schaltfläche oder Eingabeelement dient.

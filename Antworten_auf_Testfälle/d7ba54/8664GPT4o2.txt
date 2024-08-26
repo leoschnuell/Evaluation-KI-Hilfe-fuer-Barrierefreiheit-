@@ -1,0 +1,50 @@
+Um den HTML-Code barrierefrei zu gestalten, sollten mehrere Anpassungen vorgenommen werden. Diese umfassen die Bereitstellung von Textalternativen für das Video sowie die Sicherstellung, dass alle Elemente korrekt beschriftet und zugänglich sind. Hier sind die Schritte zur Verbesserung der Barrierefreiheit des gegebenen Codes:
+
+1. **Hinzufügen von `title` und `lang` Attributen**: Um die Sprache des Dokuments anzugeben und einen Titel für die Seite zu setzen.
+2. **Bereitstellung von Untertiteln oder einer Transkription**: Damit das Video für Menschen mit Hörbehinderungen zugänglich ist.
+3. **Beschreibung des Inhalts**: Wenn das Video keinen Ton hat, sollte eine textliche Beschreibung des visuellen Inhalts bereitgestellt werden.
+4. **Aria-Label oder Alternativtext für das Video**: Um den Inhalt für Bildschirmleser nutzbar zu machen.
+
+Hier ist eine verbesserte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sample Video</title>
+</head>
+<body>
+	<video controls aria-describedby="videoDescription">
+		<source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4">
+		<source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm">
+		<!-- Textalternative, wenn das Video nicht abgespielt werden kann -->
+		Ihr Browser unterstützt das Video-Tag nicht. Sie können das Video herunterladen: 
+		<a href="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4">MP4</a>, 
+		<a href="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm">WebM</a>
+	</video>
+	<div id="videoDescription">
+		<p>Das Video zeigt ein Kaninchen, das still sitzt. Es gibt keine Audiospur.</p>
+	</div>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+1. **Meta-Tags im `head`-Abschnitt**:
+   - Ein `meta charset`-Tag, um die Zeichenkodierung anzugeben.
+   - Ein `meta viewport`-Tag, um sicherzustellen, dass die Seite auf verschiedenen Geräten korrekt angezeigt wird.
+   - Ein `title`-Tag, um einen Titel für die Webseite festzulegen.
+
+2. **Aria-Attribute**:
+   - `aria-describedby="videoDescription"`: Verweist auf die Beschreibung des Videos, um zusätzliche Informationen für Bildschirmleser bereitzustellen.
+
+3. **Textalternative**:
+   - Text innerhalb des `video`-Tags, der angezeigt wird, wenn der Browser das Video-Tag nicht unterstützt. Dieser Text enthält Links zum Herunterladen des Videos in verschiedenen Formaten.
+
+4. **Videobeschreibung**:
+   - Eine textliche Beschreibung des Videoinhalts in einem `div`-Tag, auf den über `aria-describedby` verwiesen wird.
+
+Diese Anpassungen verbessern die Barrierefreiheit und machen den Inhalt für Benutzer mit unterschiedlichen Behinderungen zugänglicher.

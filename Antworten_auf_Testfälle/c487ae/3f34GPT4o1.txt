@@ -1,0 +1,18 @@
+The given HTML code has an issue with accessibility. The `aria-labelledby` attribute on the `<img>` element points to an element with `id="id1"`, but this element is empty. The `aria-labelledby` attribute is used to provide an accessible name for an element by referencing the `id` of another element that contains the descriptive text.
+
+To fix this, you need to add some descriptive text to the element with `id="id1"`. Here is the corrected code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 6</title>
+</head>
+<body>
+	<a href="https://www.w3.org/WAI"><img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" aria-labelledby="id1"/></a>
+	<div id="id1">W3C Logo</div>
+</body>
+</html>
+```
+
+In this corrected version, the `<div>` with `id="id1"` now contains the text "W3C Logo". This text will be used as the accessible name for the image, improving its accessibility.

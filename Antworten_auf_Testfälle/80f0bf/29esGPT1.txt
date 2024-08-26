@@ -1,0 +1,63 @@
+Das Problem mit diesem Code liegt darin, dass das Video nicht abgespielt wird, obwohl `autoplay` im `<video>`-Tag verwendet wird. Dies liegt höchstwahrscheinlich daran, dass viele Browser Autoplay-Funktionen deaktiviert haben, um Benutzererfahrungen zu verbessern und unerwünschtes automatisches Abspielen zu verhindern.
+
+Um das Problem zu lösen, kannst du eine Interaktion des Benutzers erfordern, um das Video abzuspielen. Hier sind einige Schritte, die du unternehmen kannst:
+
+1. **Füge einen Play-Button hinzu:** Ersetze den statischen "Play"-Button durch ein JavaScript-gesteuertes Event, das das Video abspielt, wenn der Benutzer darauf klickt.
+
+2. **JavaScript-Eventlistener hinzufügen:** Verwende JavaScript, um auf das Klicken des Play-Buttons zu reagieren und das Video abzuspielen.
+
+Hier ist ein Beispiel, wie du das umsetzen könntest:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		button {
+			color: #000;
+		}
+		button:hover {
+			cursor: pointer;
+			background-color: grey;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div id="video-container">
+		<!-- Video -->
+		<video id="video">
+			<source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/video.mp4" type="video/mp4" />
+			<source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/video.webm" type="video/webm" />
+		</video>
+		<!-- Video Controls -->
+		<div id="video-controls">
+			<button type="button" id="play-pause" class="play">Play</button>
+			<button type="button" id="mute">Mute</button>
+		</div>
+	</div>
+	<script>
+		// JavaScript to handle video play
+		var video = document.getElementById('video');
+		var playButton = document.getElementById('play-pause');
+
+		playButton.addEventListener('click', function() {
+			if (video.paused) {
+				video.play();
+				playButton.textContent = 'Pause';
+			} else {
+				video.pause();
+				playButton.textContent = 'Play';
+			}
+		});
+	</script>
+</body>
+</html>
+```
+
+### Erklärung:
+
+- **JavaScript-Eventlistener:** Das Skript fängt das Klicken auf den "Play"-Button ab (`playButton.addEventListener('click', ...)`).
+- **Video-Steuerung:** Wenn das Video pausiert ist (`video.paused`), wird es abgespielt (`video.play()`) und der Button-Text ändert sich zu "Pause". Wenn das Video bereits läuft, wird es pausiert (`video.pause()`) und der Button-Text ändert sich zu "Play".
+
+Diese Lösung erfordert, dass der Benutzer auf den "Play"-Button klickt, um das Video zu starten, was den Autoplay-Einschränkungen in den meisten Browsern entspricht.

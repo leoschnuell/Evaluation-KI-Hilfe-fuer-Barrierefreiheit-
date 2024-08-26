@@ -1,0 +1,68 @@
+Das Problem in diesem Code liegt darin, dass die Funktion `handleOrientation`, die als Event-Handler für das `deviceorientation`-Event verwendet wird, nicht definiert ist. Dadurch führt der Code zu einem Fehler, wenn das Event ausgelöst wird, da JavaScript nicht weiß, wie es damit umgehen soll.
+
+Um das Problem zu lösen, müssen wir sicherstellen, dass die Funktion `handleOrientation` definiert ist und das `deviceorientation`-Event korrekt verarbeitet wird. Hier ist eine mögliche Lösung:
+
+1. **Füge die Funktion `handleOrientation` hinzu:**
+   Diese Funktion wird aufgerufen, wenn das `deviceorientation`-Event ausgelöst wird. Sie sollte den Wert des Neigungswinkels des Geräts abrufen und den Slider entsprechend aktualisieren.
+
+   ```javascript
+   function handleOrientation(event) {
+       var x = event.gamma;  // Wert des Neigungswinkels in Grad um die x-Achse
+       var motionSlider = document.getElementById('motionSlider');
+       motionSlider.value = Math.round((x + 90) / 180 * 100);  // Wertebereich von 0 bis 100
+       document.getElementById('output').textContent = motionSlider.value;
+   }
+   ```
+
+2. **Ändere den `activateSlider`-Code:**
+   Dieser Teil des Codes sollte sicherstellen, dass der Event-Listener korrekt hinzugefügt wird, sobald die Seite geladen ist.
+
+   ```javascript
+   function activateSlider() {
+       window.addEventListener('deviceorientation', handleOrientation);
+   }
+   ```
+
+Hier ist der vollständige HTML-Code mit den oben genannten Änderungen:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Failed Example 1</title>
+		<script src="/WAI/content-assets/wcag-act-rules/test-assets/7677a9/slider.js"></script>
+		<script>
+			function activateSlider() {
+				window.addEventListener('deviceorientation', handleOrientation);
+			}
+
+			function handleOrientation(event) {
+				var x = event.gamma;  // Wert des Neigungswinkels in Grad um die x-Achse
+				var motionSlider = document.getElementById('motionSlider');
+				motionSlider.value = Math.round((x + 90) / 180 * 100);  // Wertebereich von 0 bis 100
+				document.getElementById('output').textContent = motionSlider.value;
+			}
+		</script>
+	</head>
+
+	<body onload="activateSlider();">
+		<pre class="output"></pre>
+
+		<h1>Slider Motion Sensor Example</h1>
+
+		<p>
+			Open this slider on a device with a motion sensor, such as a smart phone or tablet. Tilt the device to the right
+			and left to adjust the slider value.
+		</p>
+		<p>Note: This example may not work across all browsers.</p>
+
+		<div>
+			<input type="range" min="1" max="100" value="50" id="motionSlider" disabled />
+			<button id="increaseSlider" type="button">Increase Value</button>
+			<p aria-live="polite">Slider Value: <span id="output">50</span></p>
+		</div>
+	</body>
+</html>
+```
+
+Mit diesen Änderungen sollte der Slider basierend auf der Neigung des Geräts funktionieren, wenn die Seite auf einem Gerät mit einem entsprechenden Bewegungssensor geöffnet wird.

@@ -1,0 +1,18 @@
+Das Problem mit diesem HTML-Code liegt darin, dass das Sprachattribut `<div lang="invalid">` nicht korrekt verwendet wird. Gemäß den HTML-Spezifikationen (insbesondere WAI-ARIA- und WCAG-Richtlinien) sollte das Sprachattribut (`lang`) nur für den gesamten HTML-Dokumentinhalt oder für Textabschnitte verwendet werden, die eine andere Sprache als die Standardsprache des Dokuments darstellen.
+
+In diesem Fall wird das `lang`-Attribut auf ein `<div>`-Element angewendet, das ein Bild enthält. Das `lang`-Attribut sollte jedoch für Textinhalte verwendet werden, um die Sprache des Textes anzugeben, nicht für nicht-textuelle Inhalte wie Bilder.
+
+Um das Problem zu beheben, könntest du das `lang`-Attribut entfernen, da es für das `<div>`-Element und das darin enthaltene Bild nicht notwendig ist. Hier ist der bereinigte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<div>
+			<img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/fireworks.jpg" alt="Fireworks over Paris" />
+		</div>
+	</body>
+</html>
+```
+
+In diesem bereinigten Code wurde das `lang`-Attribut aus dem `<div>`-Element entfernt, da es keine zusätzliche semantische Bedeutung für das Bild hat und nur den HTML-Validierungsprozess und die Barrierefreiheit komplizieren könnte, wenn es falsch verwendet wird.

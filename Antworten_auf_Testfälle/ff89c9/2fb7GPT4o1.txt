@@ -1,0 +1,44 @@
+Der Code enthält einige semantische HTML- und ARIA-Fehler, die korrigiert werden müssen, um den beabsichtigten Zweck der Elemente besser darzustellen und die Zugänglichkeit zu verbessern. Hier sind die Probleme und deren Lösungen:
+
+1. **Falsche Verwendung von `role` Attributen:**
+   - Ein `div` mit `role="list"` sollte `div` Elemente mit `role="listitem"` enthalten.
+   - Ein `div` mit `role="tabpanel"` sollte in einem `div` mit `role="tablist"` enthalten sein, und `role="tabpanel"` sollte Inhalte enthalten, die mit `role="tab"` verknüpft sind.
+
+2. **Korrigierte Struktur:**
+   - Verwenden Sie semantisch korrekte HTML-Elemente für Listen (`<ul>` und `<li>`) anstelle von `div` Elementen mit Rollen.
+
+Hier ist die korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Corrected Example</title>
+</head>
+<body>
+	<ul>
+		<li>List item 1</li>
+		<li>List item 2</li>
+	</ul>
+</body>
+</html>
+```
+
+Wenn Sie tatsächlich ARIA-Rollen verwenden möchten, könnte ein Beispiel wie folgt aussehen:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Corrected Example with ARIA</title>
+</head>
+<body>
+	<div role="list">
+		<div role="listitem">List item 1</div>
+		<div role="listitem">List item 2</div>
+	</div>
+</body>
+</html>
+```
+
+In diesem Beispiel wurde die Struktur korrigiert, um den ARIA-Richtlinien zu entsprechen. Beachten Sie jedoch, dass es normalerweise besser ist, semantisch korrekte HTML-Elemente zu verwenden, wann immer dies möglich ist.

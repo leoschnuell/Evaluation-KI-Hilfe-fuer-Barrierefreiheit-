@@ -1,0 +1,40 @@
+Um die Barrierefreiheitsprobleme des Codes zu lösen, sollten wir sicherstellen, dass alle Nutzer, einschließlich Personen mit Behinderungen, Zugang zu den gleichen Informationen und Funktionen haben. Hier sind die spezifischen Probleme und ihre Lösungen:
+
+1. **Beschriftung des Videos**: Ein alternatives Textformat (z. B. Untertitel oder Audiobeschreibungen) ist erforderlich, um sicherzustellen, dass das Video für Personen mit Hör- oder Sehbehinderungen zugänglich ist.
+2. **Beschreibungen sichtbar machen**: Der Text, der den Inhalt des Videos beschreibt, sollte zugänglich und sichtbar sein, anstatt versteckt zu sein.
+
+Hier ist der überarbeitete HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Video Example</title>
+</head>
+<body>
+  <video controls aria-describedby="videoDescription">
+    <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4">
+    <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  <div id="videoDescription" style="display: none;">
+    The above video shows a giant fat rabbit climbing out of a hole in the ground.
+    He stretches, yawns, and then starts walking.
+    Then he stops to scratch his bottom.
+  </div>
+  <p>The above video shows a giant fat rabbit climbing out of a hole in the ground.
+  He stretches, yawns, and then starts walking.
+  Then he stops to scratch his bottom.</p>
+</body>
+</html>
+```
+
+**Erläuterungen der Änderungen:**
+
+1. **`aria-describedby`-Attribut hinzugefügt**: Das `aria-describedby`-Attribut wird verwendet, um die Beschreibung des Videos mit dem Videoelement zu verknüpfen. Der `id`-Wert des beschreibenden `div` wird als Wert des `aria-describedby`-Attributs verwendet.
+2. **Sichtbare Beschreibung**: Der beschreibende Text, der ursprünglich im `p`-Tag versteckt war, ist nun sichtbar und für alle Nutzer zugänglich.
+3. **`<head>`-Abschnitt hinzugefügt**: Es wurde ein `<head>`-Abschnitt mit grundlegenden Meta-Tags und einem Titel hinzugefügt, um die Struktur des HTML-Dokuments zu vervollständigen.
+
+Diese Änderungen sorgen dafür, dass der Inhalt für alle Nutzer zugänglicher ist und den WCAG-Richtlinien entspricht.

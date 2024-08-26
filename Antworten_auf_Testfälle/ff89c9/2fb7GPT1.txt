@@ -1,0 +1,34 @@
+Das Problem in diesem HTML-Code liegt in der Verwendung der ARIA-Rollen (Accessible Rich Internet Applications) für die semantische Strukturierung von Elementen. ARIA-Rollen sind nützlich, um die Zugänglichkeit für Benutzer mit Behinderungen zu verbessern, aber sie müssen korrekt und sinnvoll verwendet werden.
+
+Hier sind die spezifischen Probleme:
+
+1. **Fehlende semantische Elemente**: Es fehlen die semantischen HTML-Elemente wie `<ul>`, `<ol>` oder `<li>`, die normalerweise für Listen verwendet werden. Stattdessen werden `<div>`-Elemente verwendet, denen über ARIA spezielle Rollen zugewiesen wurden.
+
+2. **Inkorrekte Verwendung der ARIA-Rollen**: Die ARIA-Rolle `role="list"` wird auf ein `<div>` angewendet, das eigentlich eine Liste von Elementen darstellen soll. Gleiches gilt für `role="listitem"`, das auf `<div>`-Elemente angewendet wird.
+
+Um das Problem zu lösen und den Code zu verbessern, sollten wir die semantischen HTML-Elemente verwenden, die für Listen vorgesehen sind. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Improved Example</title>
+</head>
+<body>
+	<ul>
+		<li>List item 1</li>
+		<li>List item 2</li>
+	</ul>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+- **Verwendung von `<ul>` und `<li>`**: `<ul>` steht für ungeordnete Listen und `<li>` für Listenelemente. Diese Elemente haben bereits die richtige semantische Bedeutung für Listen.
+
+- **Entfernung der ARIA-Rollen**: Da wir nun die korrekten semantischen Elemente verwenden, sind die ARIA-Rollen nicht mehr erforderlich und wurden daher entfernt.
+
+### Warum ist das wichtig?
+
+Korrekte semantische Markup-Elemente (wie `<ul>`, `<ol>`, `<li>`) sind wichtig für die Zugänglichkeit und die Interpretation des Inhalts durch verschiedene Geräte und Software. Durch die Verwendung von ARIA-Rollen anstelle der entsprechenden semantischen Elemente kann die Struktur und der Sinn des Inhalts für Benutzer mit Behinderungen oder für maschinelle Interpretationen verloren gehen.

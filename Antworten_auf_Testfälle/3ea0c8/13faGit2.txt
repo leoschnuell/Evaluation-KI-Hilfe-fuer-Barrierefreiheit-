@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändere das lang-Attribut zu "de" für Deutsch -->
+<head>
+    <title>Beispiel 2 korrigiert</title>
+</head>
+<body>
+    <label for="name">Name</label> <!-- Verwende <label> für bessere Barrierefreiheit -->
+    <input id="name" type="text" name="name" /> <!-- Füge id-Attribut hinzu, das mit dem <label> übereinstimmt -->
+
+    <svg aria-labelledby="cityLabel" role="img"> <!-- Füge aria-labelledby und role hinzu für bessere Barrierefreiheit -->
+        <title id="cityLabel">Stadt</title> <!-- Verwende <title> innerhalb von SVG mit id für die Beschriftung -->
+        <text x="0" y="15">Stadt</text>
+    </svg>
+    
+    <label for="city">Stadt</label> <!-- Verwende <label> für bessere Barrierefreiheit -->
+    <input id="city" type="text" name="city" /> <!-- Füge id-Attribut hinzu, das mit dem <label> übereinstimmt -->
+</body>
+</html>

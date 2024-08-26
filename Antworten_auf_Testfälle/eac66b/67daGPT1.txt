@@ -1,0 +1,38 @@
+Das Problem in diesem HTML-Code liegt darin, dass der Pfad zur Videoquelle (`src`-Attribut des `<video>`-Elements) vermutlich nicht korrekt ist. Der angegebene Pfad `/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4` scheint auf einen lokalen Pfad oder einen falschen Serverpfad zu verweisen, der nicht zugänglich ist oder nicht existiert.
+
+Hier sind einige Schritte, die du durchführen kannst, um das Problem zu lösen:
+
+1. **Überprüfe den Pfad zur Videodatei:**
+   - Stelle sicher, dass die Videodatei `perspective-video.mp4` tatsächlich unter dem angegebenen Pfad auf dem Server existiert.
+   - Wenn du lokal arbeitest, stelle sicher, dass der Pfad relativ zum aktuellen Arbeitsverzeichnis ist.
+
+2. **Überprüfe die Berechtigungen:**
+   - Stelle sicher, dass die Dateiberechtigungen so eingestellt sind, dass die Videodatei zugänglich ist.
+
+3. **Verwende einen absoluten Pfad (falls möglich):**
+   - Versuche, den absoluten Pfad zur Videodatei anzugeben, der direkt auf den Server verweist, z.B. `http://example.com/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4`.
+
+4. **Konsolenausgabe überprüfen:**
+   - Überprüfe die Entwicklerkonsole im Browser, um nach etwaigen Fehlermeldungen oder Warnungen zu suchen, die auf das Problem hinweisen könnten.
+
+Hier ist ein Beispiel mit einem absoluten Pfad:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Example</title>
+</head>
+<body>
+    <video src="http://example.com/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls></video>
+</body>
+</html>
+```
+
+Ersetze `http://example.com` durch die tatsächliche Domain deines Servers.
+
+5. **Serverkonfiguration überprüfen:**
+   - Überprüfe die Serverkonfiguration, um sicherzustellen, dass der Pfad zu den Dateien korrekt konfiguriert ist und der Webserver Zugriff auf die Dateien hat.
+
+Durch diese Schritte solltest du in der Lage sein, das Problem mit dem Video in deinem HTML-Code zu lösen.

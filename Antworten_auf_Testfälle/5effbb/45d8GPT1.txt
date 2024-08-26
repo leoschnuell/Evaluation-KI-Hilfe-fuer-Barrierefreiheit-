@@ -1,0 +1,34 @@
+Das Problem in diesem HTML-Code ist, dass die Tabelle nicht korrekt strukturiert ist, insbesondere die Verwendung von `colspan="3"` im `<th>`-Element. Der Code versucht, eine Kopfzeile mit drei Spalten zu definieren, aber in der einzigen Zeile mit Daten (`<tr>`-Element) werden nur drei Spalten verwendet, was zu einer Inkompatibilität führt.
+
+Um das Problem zu lösen, können wir die Struktur der Tabelle anpassen, um sicherzustellen, dass alle Zeilen die gleiche Anzahl von Spalten haben. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Books Example</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Download Link</th>
+			<th>File Size</th>
+		</tr>
+		<tr>
+			<td>Ulysses</td>
+			<td><a href="https://www.gutenberg.org/files/4300/4300-h/4300-h.htm">Download</a></td>
+			<td>1.61MB</td>
+		</tr>
+	</table>
+</body>
+</html>
+```
+
+### Änderungen:
+
+1. **Kopfzeile der Tabelle (`<thead>`)**: Statt `colspan="3"` im `<th>`-Element wird jede Spalte separat mit `<th>` definiert, um die Titel der Spalten korrekt darzustellen.
+
+2. **Datenzeile (`<tr>`)**: Die Anzahl der `<td>`-Elemente entspricht der Anzahl der Spalten, die in der Kopfzeile definiert sind. Hier gibt es ebenfalls drei `<td>`-Elemente, um die Spalten für Titel, Download-Link und Dateigröße darzustellen.
+
+Mit dieser Korrektur wird die Tabelle korrekt angezeigt und ist semantisch besser strukturiert.

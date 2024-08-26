@@ -1,0 +1,25 @@
+The problem with the provided HTML code is that it uses the same `id` attribute value ("label") for both the `<div>` and the `<svg>` elements. The `id` attribute should be unique within a document. This causes the `aria-labelledby` attribute on the `<input>` element to reference multiple elements with the same `id`, which is not valid and can lead to unpredictable behavior.
+
+To fix the issue, you need to ensure that each `id` attribute is unique. Here is the corrected version of the HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example 2</title>
+</head>
+<body>
+	<div id="label-name">Name</div>
+	<svg id="label-city">
+		<text x="0" y="15">City</text>
+	</svg>
+	
+	<input aria-labelledby="label-city" type="text" name="city" />
+</body>
+</html>
+```
+
+In this corrected version:
+- The `div` element has the `id` "label-name".
+- The `svg` element has the `id` "label-city".
+- The `input` element’s `aria-labelledby` attribute now correctly references the `id` "label-city".

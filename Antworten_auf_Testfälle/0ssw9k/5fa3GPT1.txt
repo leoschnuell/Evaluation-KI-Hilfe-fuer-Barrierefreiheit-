@@ -1,0 +1,30 @@
+Das Problem in diesem HTML-Code ist, dass der Abschnitt (`<section>`) eine feste Breite (`width: 500px;`) und eine Höhe (`height: 100px;`) hat und gleichzeitig einen vertikalen Scrollbalken (`overflow-y: scroll;`) aktiviert hat. Dies kann dazu führen, dass der Inhalt innerhalb des Abschnitts abgeschnitten wird, wenn er die festgelegte Höhe überschreitet, und ein Scrollbalken angezeigt wird, um den restlichen Inhalt anzuzeigen.
+
+Da der Inhalt statisch und textbasiert ist, könnte der Scrollbalken nicht benötigt werden, es sei denn, es gibt eine spezifische Designanforderung dafür. Wenn der Text innerhalb des Abschnitts vollständig sichtbar sein soll, könnten Sie den CSS-Stil `overflow-y: scroll;` entfernen, sodass der Browser automatisch die Höhe des Abschnitts anpasst, um den gesamten Textinhalt anzuzeigen, ohne dass ein Scrollbalken erforderlich ist.
+
+Hier ist eine aktualisierte Version des HTML-Codes ohne den Scrollbalken:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 1</title>
+</head>
+<body>
+	<section style="width: 500px;">
+		<h1>WCAG 2.1 Abstract</h1>
+		<p>
+			Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for making Web content more
+			accessible. Following these guidelines will make content more accessible to a wider range of people with
+			disabilities, including accommodations for blindness and low vision, deafness and hearing loss, limited movement,
+			speech disabilities, photosensitivity, and combinations of these, and some accommodation for learning disabilities
+			and cognitive limitations; but will not address every user need for people with these disabilities. These guidelines
+			address accessibility of web content on desktops, laptops, tablets, and mobile devices. Following these guidelines
+			will also often make Web content more usable to users in general.
+		</p>
+	</section>
+</body>
+</html>
+```
+
+In diesem aktualisierten Code wurde die Höhenangabe `height: 100px;` aus dem `style`-Attribut entfernt, um den Textinhalt automatisch anzuzeigen, ohne dass ein Scrollbalken benötigt wird. Dies gewährleistet eine bessere Lesbarkeit und Zugänglichkeit des Inhalts für Benutzer.

@@ -1,0 +1,19 @@
+Das Problem mit dem gegebenen HTML-Code liegt darin, dass das <track>-Element innerhalb des <video>-Elements platziert werden muss, aber außerhalb der <source>-Elemente, um korrekt zu funktionieren. Das <track>-Element wird verwendet, um Textspuren (wie Untertitel oder Beschreibungen) zu einem Video hinzuzufügen. Hier ist die korrigierte Version des Codes:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Video Example</title>
+</head>
+<body>
+    <video controls>
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4" />
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm" />
+        <track kind="descriptions" src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/descriptions.vtt" srclang="en" label="English" default />
+    </video>
+</body>
+</html>
+Änderungen und Ergänzungen:
+
+Ich habe <head> und <body> Tags hinzugefügt, um die Struktur des HTML-Dokuments zu vervollständigen.
+Das <track>-Element wurde korrekt innerhalb des <video>-Elements positioniert, nach den <source>-Elementen.
+Zusätzliche Attribute srclang und label wurden zum <track>-Element hinzugefügt, um die Sprache der Beschreibungen anzugeben und eine Bezeichnung für die Spur zu bieten. Das default-Attribut wurde ebenfalls hinzugefügt, um diese Spur als standardmäßig ausgewählte Beschreibungsspur zu markieren.

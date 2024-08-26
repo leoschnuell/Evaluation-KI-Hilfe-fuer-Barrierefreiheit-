@@ -1,0 +1,13 @@
+Das Problem in diesem Code liegt darin, dass das img-Element durch aria-labelledby auf eine div mit der ID id1 verweist, aber diese div keinen Textinhalt hat. Das bedeutet, dass Bildschirmleser keinen alternativen Text für das Bild vorlesen können, was die Zugänglichkeit beeinträchtigt. Um das Problem zu beheben, sollten wir einen sinnvollen Textinhalt in die div einfügen, der als alternativer Text für das Bild dient, oder alternativ das aria-labelledby durch ein alt-Attribut im img-Element ersetzen, das den alternativen Text direkt bereitstellt.
+
+Lösung mit alt-Attribut:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <a href="https://www.w3.org/WAI"><img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C Logo"/></a>
+</body>
+</html>
+Diese Lösung entfernt die div und das aria-labelledby-Attribut und fügt stattdessen ein alt-Attribut zum img-Element hinzu, das den alternativen Text direkt bereitstellt.

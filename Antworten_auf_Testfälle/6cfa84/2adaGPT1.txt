@@ -1,0 +1,21 @@
+Das Problem mit diesem Code ist, dass das `aria-disabled` Attribut auf einem `<input>` Element verwendet wird. Laut den WAI-ARIA Spezifikationen ist das `aria-disabled` Attribut für bestimmte Rollen wie Buttons, Menüs oder Links gedacht, um anzuzeigen, dass diese deaktiviert sind und daher nicht interaktiv sind.
+
+Ein `<input>` Element ist jedoch normalerweise eine interaktive Komponente, die Benutzereingaben akzeptiert (zum Beispiel für Texteingaben oder Schaltflächen). Es ist nicht üblich oder sinnvoll, das `aria-disabled` Attribut auf ein `<input>` Element anzuwenden, da es nicht klar definiert ist, wie sich Assistenztechnologien darauf verhalten sollten.
+
+Wenn du die Interaktivität eines `<input>` Elementes einschränken möchtest, solltest du stattdessen das `disabled` Attribut verwenden, das von HTML selbst definiert ist. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 2</title>
+</head>
+<body>
+	<div aria-hidden="true">
+		<input type="text" disabled />
+	</div>
+</body>
+</html>
+```
+
+In diesem Beispiel habe ich das `aria-disabled="true"` durch das HTML-Attribut `disabled` ersetzt. Dadurch wird das `<input>` Element deaktiviert und Benutzer können keine Eingaben mehr machen. Dies ist die empfohlene Vorgehensweise, um die Benutzerinteraktion entsprechend zu steuern.

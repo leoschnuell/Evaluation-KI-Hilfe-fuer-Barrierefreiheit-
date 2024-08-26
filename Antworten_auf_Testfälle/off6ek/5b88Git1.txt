@@ -1,0 +1,13 @@
+Das Problem in diesem Code ist, dass das lang-Attribut des span-Elements falsch gesetzt ist. Es sollte nl für Niederländisch sein, da der Text ein niederländisches Sprichwort ist, nicht fr, was für Französisch steht.
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dutch idioms</title>
+    </head>
+    <body>
+        <p>
+            The Dutch phrase <span lang="nl">"Hij ging met de kippen op stok"</span> literally translates into "He went to
+            roost with the chickens", but it means that he went to bed early.
+        </p>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+Um die Barrierefreiheitsprobleme im gegebenen HTML-Code zu beheben, sind folgende Anpassungen notwendig:
+
+1. Verwendung von ARIA-Rollen und -Attributen: Stellen Sie sicher, dass die ARIA-Rollen und -Attribute korrekt und konsistent mit den entsprechenden HTML-Elementen verwendet werden.
+
+2. Richtige Beschriftung und Verbindung von Formularsteuerelementen: Verknüpfen Sie das Eingabeformular (Checkbox) mit einem zugehörigen Label, um die Zugänglichkeit zu verbessern.
+
+Hier ist der überarbeitete HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example 3</title>
+</head>
+<body>
+    <ul role="menu">
+        <li role="none">
+            <label role="menuitemcheckbox" aria-checked="true">
+                <input type="checkbox" checked aria-hidden="true" />
+                Sort by Last Modified
+            </label>
+        </li>
+    </ul>
+</body>
+</html>
+```
+
+### Änderungen im Detail:
+
+1. **`role="none"`**: Entfernt die unnötige `role="menuitemcheckbox"` vom `<li>`-Element und setzt es auf `role="none"`, damit die Checkbox und das Label korrekt funktionieren.
+
+2. **Verwendung eines `<label>`-Elements**: Die Checkbox wurde innerhalb eines `<label>`-Elements platziert, das die Rolle `menuitemcheckbox` übernimmt. Dies stellt sicher, dass die Checkbox mit dem Label verbunden ist.
+
+3. **`aria-hidden="true"`**: Das Attribut `aria-hidden="true"` wurde dem `<input>`-Element hinzugefügt, um sicherzustellen, dass es nicht doppelt von Screenreadern angesagt wird.
+
+Diese Änderungen verbessern die Barrierefreiheit des Codes erheblich, indem sie sicherstellen, dass Screenreader und andere Hilfsmittel den Inhalt korrekt interpretieren können.

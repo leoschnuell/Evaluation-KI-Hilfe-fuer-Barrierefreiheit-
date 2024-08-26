@@ -1,0 +1,32 @@
+Das Problem mit dem gegebenen HTML-Code liegt darin, dass beide Links den gleichen Linktext ("Contact us") verwenden, aber auf unterschiedliche Ziele verweisen. Dies kann für Benutzer, insbesondere für diejenigen, die Screenreader verwenden, verwirrend sein, da sie nicht unterscheiden können, welches "Contact us" welchen Zweck erfüllt. Zudem entspricht dies nicht den WCAG-Richtlinien (Web Content Accessibility Guidelines) zur Barrierefreiheit.
+
+Um dieses Problem zu lösen, sollten die Links entweder unterschiedliche, beschreibende Texte verwenden oder zusätzliche Informationen wie `aria-label` oder `title` Attribute hinzufügen, um den Zweck der jeweiligen Links zu verdeutlichen. Hier sind beide Ansätze:
+
+### Ansatz 1: Unterschiedliche, beschreibende Linktexte
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/about/contact.html">Contact us about our services</a>
+	<a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/admissions/contact.html">Contact us for admissions</a>
+</html>
+```
+
+### Ansatz 2: Hinzufügen von `aria-label` oder `title` Attributen
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/about/contact.html" aria-label="Contact us about our services">Contact us</a>
+	<a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/admissions/contact.html" aria-label="Contact us for admissions">Contact us</a>
+</html>
+```
+
+Oder mit `title` Attributen:
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/about/contact.html" title="Contact us about our services">Contact us</a>
+	<a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/admissions/contact.html" title="Contact us for admissions">Contact us</a>
+</html>
+```
+
+Beide Ansätze verbessern die Barrierefreiheit der Links und helfen den Benutzern, die Unterschiede zwischen den beiden Links zu verstehen.

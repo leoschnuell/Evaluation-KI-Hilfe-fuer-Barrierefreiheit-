@@ -1,0 +1,46 @@
+Um die Barrierefreiheitsprobleme im vorliegenden HTML-Code zu lösen, sollten wir sicherstellen, dass die Navigation und die Verlinkung zugänglich sind. Hier sind die wichtigsten Punkte, die angepasst werden sollten:
+
+1. **Semantische Auszeichnungen für Links**: Aktuell fehlen einige wichtige Attribute in den `<a>`-Tags, insbesondere das `href`-Attribut, das den Ziel-URL definiert. Dies ist wichtig, damit Screenreader und andere Hilfstechnologien den Link korrekt interpretieren können.
+
+2. **Beschreibende Texte für Links**: Statt nur "Chapter 1" und "Chapter 2" sollten die Links aussagekräftige Beschreibungen enthalten, die den Inhalt des verlinkten Kapitels wiedergeben.
+
+3. **Tastaturbedienbarkeit**: Stellen Sie sicher, dass alle navigierbaren Elemente (wie Links) mit der Tastatur zugänglich sind, d.h., sie können per Tab-Taste angewählt und aktiviert werden.
+
+Hier ist der angepasste Code, der diese Probleme behebt:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Three Kingdoms, Chapter 1</title>
+</head>
+<body>
+    <nav id="chapters-navigation">
+        <ol>
+            <li><a href="#chapter1">Chapter 1: Unity and Division</a></li>
+            <li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2: [Beschreibung von Kapitel 2]</a></li>
+        </ol>
+    </nav>
+
+    <section id="chapter1">
+        <h1>Chapter 1: Unity and Division</h1>
+        <p>
+            Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span of time.
+        </p>
+    </section>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+- **`<html lang="en">`**: Hinzugefügt, um die Sprache der Seite anzugeben (in diesem Fall Englisch). Das unterstützt Screenreader bei der korrekten Spracherkennung.
+  
+- **Beschreibende Texte für Links**: Die Links wurden nun beschreibend gestaltet, z.B. "Chapter 1: Unity and Division", um den Inhalt des verlinkten Kapitels klar zu machen.
+
+- **`<section id="chapter1">`**: Ein `<section>`-Element wurde um den Inhalt von Kapitel 1 herum hinzugefügt. Dies hilft Screenreadern, den Inhalt und die Struktur der Seite besser zu verstehen.
+
+- **`href="#chapter1"`**: Für den ersten Link wurde ein ankerbasiertes URL-Fragment verwendet, das auf die entsprechende `<section>` im Dokument verweist, anstatt auf eine externe URL. Dies erleichtert es Nutzern von Hilfstechnologien, innerhalb der Seite zu navigieren.
+
+Diese Änderungen verbessern die Barrierefreiheit der Seite erheblich, indem sie sicherstellen, dass Inhalte klar strukturiert und navigierbar sind und dass Hilfstechnologien effektiv verwendet werden können.

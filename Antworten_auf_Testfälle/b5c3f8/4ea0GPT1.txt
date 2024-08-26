@@ -1,0 +1,27 @@
+Der Code, den du gepostet hast, sieht im Grunde in Ordnung aus, aber es gibt ein Problem, das behoben werden sollte: die Angabe der Sprache in der `html`-Tag.
+
+Hier ist der Code, den du gepostet hast:
+
+```html
+<!DOCTYPE html>
+<html lang=" ">
+	<body>
+		The quick brown fox jumps over the lazy dog.
+	</body>
+</html>
+```
+
+Das Problem liegt im `lang`-Attribut des `html`-Tags. In HTML wird das `lang`-Attribut verwendet, um die Sprache des Dokuments anzugeben. Der Wert sollte eine gültige Sprachkennung gemäß ISO 639-1 oder ISO 639-2 sein. Ein leerer Wert wie `" "` ist nicht korrekt und kann zu Fehlern führen, insbesondere in Browsern, die die Spracheinstellung verwenden, um die Darstellung des Inhalts anzupassen.
+
+Um das Problem zu lösen, solltest du einen gültigen Sprachcode angeben, der der Sprache deines Dokuments entspricht. Zum Beispiel für Englisch (American English) wäre der korrekte Wert `"en"`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		The quick brown fox jumps over the lazy dog.
+	</body>
+</html>
+```
+
+Durch das Hinzufügen des korrekten Sprachcodes (`en` für Englisch) wird sichergestellt, dass Browser den Inhalt korrekt interpretieren und gegebenenfalls Sprachspezifika wie die Rechtschreibung oder typografische Konventionen anpassen können.

@@ -1,0 +1,33 @@
+Das Problem mit diesem HTML-Code liegt in der Verwendung der Attribute `role` und `aria-not-checked`. Hier ist eine korrigierte Version:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fixed Example 1</title>
+</head>
+<body>
+	<ul>
+		<li role="menuitemcheckbox" aria-checked="false">List Item</li>
+	</ul>
+</body>
+</html>
+```
+
+### Problemerklärung:
+
+1. **`role="menuitemcheckbox"`**: Dieses `role`-Attribut gibt an, dass das `<li>`-Element als ein Kontrollkästchen in einem Menü behandelt werden soll. Das ist korrekt.
+
+2. **`aria-not-checked="true"`**: Das Problem liegt hier. Es gibt kein `aria-not-checked`-Attribut. Stattdessen sollte das `aria-checked`-Attribut verwendet werden, um den Zustand des Kontrollkästchens anzugeben.
+
+### Korrekturen:
+
+- **`aria-checked="false"`**: Dieses Attribut gibt an, dass das Kontrollkästchen nicht ausgewählt ist (also nicht angeklickt oder aktiviert).
+
+### Weitere Verbesserungen:
+
+- **Meta-Tags**: Ich habe auch Meta-Tags für Zeichensatz und Ansicht hinzugefügt, die in modernen HTML-Dokumenten empfohlen werden, um sicherzustellen, dass die Seite korrekt gerendert wird.
+
+Mit diesen Änderungen sollte das HTML-Dokument korrekt und barrierefrei sein, wobei die Absicht, ein Kontrollkästchen zu definieren, respektiert wird.

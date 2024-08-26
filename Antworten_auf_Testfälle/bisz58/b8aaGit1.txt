@@ -1,0 +1,17 @@
+Das Problem mit dem gegebenen HTML-Code liegt in der Verwendung von zwei <meta http-equiv="refresh"> Tags mit unterschiedlichen Inhalten. Der erste Tag soll die Seite sofort (nach 0 Sekunden) zu https://w3.org umleiten, während der zweite Tag eine Umleitung nach 72001 Sekunden (20 Stunden, 0 Minuten und 1 Sekunde) zur gleichen URL anfordert. Browser werden in der Regel den ersten gültigen <meta http-equiv="refresh"> Tag berücksichtigen und die nachfolgenden ignorieren, was zu einer sofortigen Umleitung führt.
+
+Um das Problem zu lösen, sollte man entscheiden, welche Umleitungszeit gewünscht ist, und nur einen entsprechenden <meta http-equiv="refresh"> Tag behalten. Wenn die sofortige Umleitung das Ziel ist, sollte der Code wie folgt aussehen:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="0; URL='https://w3.org'" />
+</head>
+</html>
+Falls eine Umleitung nach 72001 Sekunden gewünscht ist, sollte der Code stattdessen so aussehen:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="72001; URL='https://w3.org'" />
+</head>
+</html>

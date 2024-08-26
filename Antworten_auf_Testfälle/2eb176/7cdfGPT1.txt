@@ -1,0 +1,24 @@
+Das Problem mit diesem HTML-Code ist, dass ein `<audio>`-Element direkt innerhalb des `<html>`-Elements platziert wurde, ohne dass es in einem `<head>`- oder `<body>`-Element enthalten ist. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Player</title>
+</head>
+<body>
+    <audio src="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech.mp3" controls></audio>
+</body>
+</html>
+```
+
+### Erklärung der Korrekturen:
+
+1. **Head-Element hinzugefügt:** Das `<head>`-Element enthält Metadaten wie die Zeichencodierung (`<meta charset="UTF-8">`) und den Seitentitel (`<title>`). Es ist wichtig, diese Elemente zu haben, um die Seite richtig zu definieren und zu kennzeichnen.
+
+2. **Body-Element hinzugefügt:** Das `<body>`-Element umschließt den tatsächlichen Inhalt der Webseite. Hier wird das `<audio>`-Element innerhalb des `<body>`-Elements platziert, um es korrekt darzustellen.
+
+3. **Audio-Element korrigiert:** Das `<audio>`-Element selbst hat das Attribut `controls`, das die standardmäßigen Steuerungselemente für die Audiowiedergabe (wie Play, Pause, Lautstärkeregler) bereitstellt. Der `src`-Attribut gibt den Pfad zur Audioquelle an. Stelle sicher, dass der Pfad zur `moon-speech.mp3`-Datei korrekt ist und sich an dem angegebenen Speicherort befindet.
+
+Mit diesen Korrekturen sollte das Audio-Element ordnungsgemäß in deiner HTML-Seite funktionieren und die Audio-Datei abspielen können.

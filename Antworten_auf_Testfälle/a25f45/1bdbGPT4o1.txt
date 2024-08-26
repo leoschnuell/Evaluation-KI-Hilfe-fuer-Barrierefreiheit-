@@ -1,0 +1,28 @@
+Der bereitgestellte HTML-Code weist ein Problem in der Verwendung des `headers`-Attributs auf. Das `headers`-Attribut in der `td`-Tag verweist auf IDs von Header-Zellen (wie `th`-Tags), aber in diesem Fall verweisen sie auf `span`-Tags, was semantisch und technisch nicht korrekt ist. 
+
+Um das Problem zu beheben, sollten die Header-Zellen als `th`-Tags deklariert werden und die entsprechenden IDs für das `headers`-Attribut der Datenzellen verwendet werden.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th id="headerProject">Projects</th>
+			<th id="headerObjective">Objective</th>
+		</tr>
+		<tr>
+			<td headers="headerProject">15%</td>
+			<td headers="headerObjective">10%</td>
+		</tr>
+	</table>
+</body>
+</html>
+```
+
+In diesem korrigierten Code werden die Header-Zellen (`Projects` und `Objective`) korrekt als `th`-Tags deklariert und mit den entsprechenden IDs versehen, auf die das `headers`-Attribut der Datenzellen verweist. Dies stellt die semantische Korrektheit und Zugänglichkeit der Tabelle sicher.

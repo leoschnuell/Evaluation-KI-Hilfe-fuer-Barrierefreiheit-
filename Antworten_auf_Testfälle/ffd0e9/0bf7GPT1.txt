@@ -1,0 +1,22 @@
+Das Problem mit diesem Code liegt darin, dass das `aria-label`-Attribut im `<h1>`-Element leer ist. Gemäß den Accessibility-Richtlinien (Barrierefreiheitsrichtlinien) sollte das `aria-label`-Attribut einen beschreibenden Text enthalten, der die Bedeutung des Elements für Screenreader und andere Hilfstechnologien klar vermittelt.
+
+Hier ist eine korrigierte Version des Codes, in der das `aria-label`-Attribut einen sinnvollen Wert enthält:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accessibility Example</title>
+</head>
+<body>
+    <h1 aria-label="Main Heading" role="none"><span aria-hidden="true">ACT rules</span></h1>
+</body>
+</html>
+```
+
+In diesem korrigierten Code:
+
+- Das `aria-label`-Attribut im `<h1>`-Element enthält den Wert `"Main Heading"`. Dieser Text beschreibt die Funktion oder Bedeutung des `<h1>`-Elements für Benutzer von Hilfstechnologien.
+- Das `role="none"`-Attribut wurde beibehalten, um explizit anzugeben, dass das `<h1>`-Element keine besondere Rolle spielt.
+
+Durch diese Änderung wird die Zugänglichkeit verbessert, da nun die semantische Bedeutung des `<h1>`-Elements für alle Benutzer klar ist.

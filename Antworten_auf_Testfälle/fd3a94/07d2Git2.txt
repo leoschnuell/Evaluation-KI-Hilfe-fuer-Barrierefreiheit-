@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Changed language to German (de) -->
+<head>
+    <meta charset="UTF-8"> <!-- Added for character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added for responsive design -->
+    <title>Contact Us</title> <!-- Added a title for accessibility and SEO -->
+    <style>
+        .center-text {
+            text-align: center;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .link-style {
+            cursor: pointer;
+            color: blue; /* Visual indication that these are clickable */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="center-text">Kontaktieren Sie uns</h1> <!-- Changed to <h1> for semantic HTML and accessibility -->
+        <div class="flex-container">
+            <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/chat.png" alt="Chat" style="width:50%;" />
+            <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/phone.png" alt="Telefon" style="width:50%;" /> <!-- Changed alt text to German -->
+        </div>
+        <div class="flex-container">
+            <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/contact-us.html?page=1" class="link-style">Kontaktieren Sie uns</a> <!-- Changed to <a> tags for proper navigation -->
+            <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/contact-us.html?page=2" class="link-style">Kontaktieren Sie uns</a>
+        </div>
+    </div>
+</body>
+</html>

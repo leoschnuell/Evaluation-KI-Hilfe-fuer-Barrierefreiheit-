@@ -1,0 +1,21 @@
+Das Problem bei diesem Code ist wahrscheinlich, dass der Hintergrund der `<p>` (Paragraph)-Element nicht korrekt dargestellt wird. Der Hintergrund ist als Weiß (`#FFF`) angegeben, aber aufgrund des niedrigen Opazitätswerts (`rgba(0,0,0,.3)`) für die Schriftfarbe wird der Text sehr transparent dargestellt. Dadurch wird der Eindruck erweckt, dass der Hintergrund ebenfalls transparent ist.
+
+Wenn das Ziel ist, den Text in einer Farbe mit niedriger Deckkraft anzuzeigen, während der Hintergrund weiß bleibt, sollten beide Farbeigenschaften getrennt behandelt werden.
+
+Hier ist eine korrigierte Version des Codes, bei der der Hintergrund der `<p>`-Element weiß bleibt und der Text mit einer geringen Deckkraft schwarz ist:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Corrected Example 4</title>
+</head>
+<body>
+	<p style="color: rgba(0,0,0,.3); background: #FFF;">
+		Some text in English
+	</p>
+</body>
+</html>
+```
+
+In diesem korrigierten Code bleibt der Hintergrund des `<p>`-Elements weiß (`#FFF`), und der Text ist schwarz (`rgba(0,0,0,.3)`), jedoch mit einer geringen Deckkraft, was bewirkt, dass der Text halbtransparent über dem weißen Hintergrund erscheint.

@@ -1,0 +1,38 @@
+Um die Barrierefreiheitsprobleme im gegebenen HTML-Code zu lösen, sollten wir sicherstellen, dass alle interaktiven Elemente für Benutzer mit Einschränkungen zugänglich sind. Hier sind die Änderungen, die vorgenommen werden sollten:
+
+1. **Verlinkung korrigieren**: Aktuell ist der Link im zweiten Listenelement (`<li>`) nicht vollständig, was zu einer unzugänglichen oder fehlerhaften Navigation führen könnte. Der `href`-Attribut muss einen gültigen Link enthalten.
+
+2. **Aria-Label für Navigationselemente**: Für die Navigationselemente (`<nav id="chapters-navigation">`) können wir ARIA (Accessible Rich Internet Applications) Labels verwenden, um ihre Funktion zu beschreiben.
+
+Hier ist der korrigierte HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Three Kingdoms, Chapter 1</title>
+</head>
+<body>
+    <nav id="chapters-navigation" aria-label="Chapters">
+        <ol>
+            <li><a href="#">Chapter 1</a></li>
+            <li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+        </ol>
+    </nav>
+
+    <div id="main">
+        <p>
+            Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span
+            of time.
+        </p>
+    </div>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+- **Linkkorrektur**: Im zweiten Listenelement wurde der `href`-Attribut korrigiert, um auf die richtige Seite zu verweisen (`chapter2.html`).
+- **ARIA-Label**: Das `<nav>`-Element hat jetzt ein `aria-label`-Attribut, das die Navigation für Screenreader-Benutzer beschreibt. In diesem Fall ist es "Chapters".
+
+Diese Änderungen verbessern die Barrierefreiheit, indem sie sicherstellen, dass die Navigation korrekt funktioniert und für Benutzer mit Screenreadern angemessen beschrieben wird.

@@ -1,0 +1,37 @@
+Um die Barrierefreiheitsprobleme im gegebenen Code zu lösen, sollten wir sicherstellen, dass der Inhalt im `iframe` zugänglich und der `iframe` selbst korrekt verwendet wird. Hier sind die Schritte zur Behebung der Probleme:
+
+1. **Vermeiden Sie negative `tabindex`-Werte für interaktive Inhalte**: Der negative `tabindex`-Wert `-1` macht das `iframe` für die Tastaturnavigation nicht erreichbar. Entfernen Sie den `tabindex`, um sicherzustellen, dass Nutzer, die auf Tastaturnavigation angewiesen sind, auf das `iframe` zugreifen können.
+
+2. **Geben Sie einen beschreibenden Titel für das `iframe` an**: Ein `title`-Attribut im `iframe`-Tag hilft Nutzern, den Inhalt und Zweck des `iframe` zu verstehen.
+
+3. **Verwenden Sie `src` anstelle von `srcdoc` für bessere Kompatibilität**: Wenn möglich, vermeiden Sie `srcdoc` und verwenden Sie `src`, um eine externe HTML-Datei zu referenzieren. Dies macht den Inhalt leichter wartbar und zugänglich.
+
+Hier ist die verbesserte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Accessible Example</title>
+</head>
+<body>
+	<iframe title="Home page link" src="/iframe-content.html"></iframe>
+</body>
+</html>
+```
+
+Falls Sie den `srcdoc`-Attribut beibehalten möchten, sollten Sie sicherstellen, dass der Inhalt im `iframe` vollständig barrierefrei ist:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Accessible Example</title>
+</head>
+<body>
+	<iframe title="Home page link" srcdoc="<a href='/'>Home</a>"></iframe>
+</body>
+</html>
+```
+
+In beiden Fällen haben wir den `tabindex="-1"` entfernt und ein `title`-Attribut hinzugefügt. Wenn Sie `srcdoc` verwenden, sollten Sie den Inhalt innerhalb des `srcdoc` auch so barrierefrei wie möglich gestalten.

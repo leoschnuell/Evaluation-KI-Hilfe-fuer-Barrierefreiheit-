@@ -1,0 +1,31 @@
+Das Problem in diesem Code liegt darin, dass ein div-Element als Scrollbar mit ARIA (Accessible Rich Internet Applications) Attributen verwendet wird, aber es fehlt ein wesentliches Element, das tatsächlich scrollbare Inhalte enthält und durch die aria-controls-Attributwerte referenziert wird. Um das Problem zu lösen, müssen wir zwei Dinge tun:
+
+Fügen Sie die Elemente mit den IDs content-1 und content-2 hinzu, die durch das aria-controls-Attribut referenziert werden.
+Stellen Sie sicher, dass diese Elemente scrollbare Inhalte enthalten oder darstellen.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <main>Lorem ipsum...</main>
+    <div
+        role="scrollbar"
+        aria-controls="content-1 content-2"
+        aria-orientation="vertical"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="25"
+    ></div>
+    <!-- Hinzugefügte Inhaltsbereiche, die durch die Scrollbar kontrolliert werden -->
+    <div id="content-1" style="height: 200px; overflow-y: scroll;">
+        <!-- Stellen Sie sicher, dass genug Inhalt vorhanden ist, um zu scrollen -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </div>
+    <div id="content-2" style="height: 200px; overflow-y: scroll;">
+        <!-- Stellen Sie sicher, dass genug Inhalt vorhanden ist, um zu scrollen -->
+        <p>Continuation of content that can be scrolled...</p>
+    </div>
+</body>
+</html>
+Durch das Hinzufügen von div-Elementen mit den IDs content-1 und content-2, die scrollbare Inhalte enthalten, wird das aria-controls-Attribut sinnvoll genutzt. Die style-Attribute mit height: 200px; overflow-y: scroll; sorgen dafür, dass die Inhalte bei Bedarf scrollbar sind.

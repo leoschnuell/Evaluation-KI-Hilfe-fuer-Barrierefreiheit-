@@ -1,0 +1,20 @@
+The HTML meta tag `<meta http-equiv="refresh" content="72000; https://w3.org" />` is intended to redirect the page after a specified time. However, there is a syntax issue that prevents the redirection from working correctly. The correct syntax should use the `url` parameter for specifying the redirection URL.
+
+Here's the corrected version of the HTML code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="refresh" content="72000; url=https://w3.org" />
+</head>
+<body>
+	<p>This page redirects after exactly 20 hours.</p>
+</body>
+</html>
+```
+
+### Explanation
+- `content="72000; url=https://w3.org"`: The `content` attribute of the `<meta>` tag should include `url=` before the URL to redirect to after 72000 seconds (which is 20 hours).
+
+This corrected code will properly redirect the page to `https://w3.org` after 20 hours.

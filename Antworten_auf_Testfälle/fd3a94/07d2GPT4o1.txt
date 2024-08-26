@@ -1,0 +1,57 @@
+Der gegebene HTML-Code hat mehrere Probleme, die behoben werden müssen, um die Semantik, Struktur und Zugänglichkeit zu verbessern. Hier sind die wichtigsten Probleme und deren Lösungen:
+
+1. **Fehlende `html`, `head` und `body` Tags:** Ein vollständiges HTML-Dokument muss `html`, `head` und `body` Tags enthalten.
+
+2. **Fehlende Sprach- und Zeichensatzdeklaration:** Um die richtige Darstellung und Internationalisierung zu gewährleisten, sollte das Dokument den Zeichensatz und die Sprache deklarieren.
+
+3. **Inline-Stile vermeiden:** Inline-Stile sollten nach Möglichkeit vermieden und in externe CSS-Dateien ausgelagert werden.
+
+4. **Aria-Rollen und Zugänglichkeit:** Die `role="link"` Attribute in den `span` Elementen sollten durch echte `a` (Anker) Elemente ersetzt werden, um die Zugänglichkeit und die semantische Korrektheit zu verbessern.
+
+Hier ist der überarbeitete Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        .center-text {
+            text-align: center;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .half-width {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="center-text">Contact us</span>
+        <div class="flex-container">
+            <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/chat.png" alt="Chat" class="half-width" />
+            <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/phone.png" alt="Phone" class="half-width" />
+        </div>
+        <div class="flex-container">
+            <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/contact-us.html?page=1">Contact Us</a>
+            <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/contact-us.html?page=2">Contact Us</a>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+### Änderungen und Erklärungen:
+
+1. **Dokumentstruktur**: `html`, `head` und `body` Tags wurden hinzugefügt.
+2. **Zeichensatz und Ansicht**: Das Dokument enthält nun eine `meta` Deklaration für den Zeichensatz (`UTF-8`) und die Ansicht (`viewport`).
+3. **CSS-Stile**: Inline-Stile wurden in einen `style` Block im `head` Bereich verschoben, um die Wartbarkeit zu verbessern.
+4. **Flex-Container**: `span` Tags, die als Container für flexibles Layout verwendet wurden, wurden durch `div` Tags ersetzt.
+5. **Anker-Elemente**: `span` Elemente mit `role="link"` und `onclick` Attributen wurden durch echte `a` (Anker) Elemente ersetzt. Dies verbessert die Zugänglichkeit und die semantische Korrektheit des HTML-Dokuments.
+
+Diese Änderungen verbessern die Struktur und Lesbarkeit des HTML-Codes und stellen sicher, dass er den Best Practices für Webentwicklung und Zugänglichkeit entspricht.

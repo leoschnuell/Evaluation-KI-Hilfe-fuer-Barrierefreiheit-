@@ -1,0 +1,27 @@
+Das Problem mit dem gegebenen Code liegt darin, dass der Button mit der Klasse notInPage visuell von der Seite entfernt wird, indem er weit außerhalb des sichtbaren Bereichs positioniert wird. Dies könnte beabsichtigt sein, um den Button für visuelle Benutzer zu verbergen, während er für Screenreader zugänglich bleibt. Allerdings könnte dies auch ein versehentliches Design sein, das korrigiert werden muss, je nachdem, was das tatsächliche Ziel ist.
+
+Wenn das Ziel ist, den Button für visuelle Benutzer zu verbergen, aber ihn für Screenreader zugänglich zu machen, ist der Ansatz korrekt, aber es gibt modernere und zugänglichere Methoden, dies zu erreichen. Eine solche Methode ist die Verwendung von aria-hidden="true" für visuell versteckte Elemente, die nicht für Screenreader zugänglich sein sollen, oder die Verwendung spezifischer CSS-Klassen, die den Inhalt nur für Screenreader sichtbar machen.
+
+Wenn das Ziel jedoch ist, den Button vollständig aus dem Dokument zu entfernen, sowohl visuell als auch für Screenreader, wäre es besser, den Button mit JavaScript dynamisch zu entfernen oder ihn gar nicht erst ins HTML-Dokument einzufügen.
+
+Lösung für eine bessere Zugänglichkeit (wenn der Button für Screenreader sichtbar bleiben soll):
+<!DOCTYPE html>
+<html>
+    <style>
+        .visuallyHidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            white-space: nowrap; /* Hinzugefügt, um sicherzustellen, dass der Text nicht umbricht */
+        }
+    </style>
+    <body>
+        <button class="visuallyHidden" value="delete">Löschen</button>
+    </body>
+</html>
+Diese Methode stellt sicher, dass der Button für Screenreader-Nutzer zugänglich bleibt, während er visuell von der Seite entfernt wird. Es ist eine weit verbreitete Praxis, um die Zugänglichkeit zu verbessern, ohne die visuelle Präsentation zu beeinträchtigen.

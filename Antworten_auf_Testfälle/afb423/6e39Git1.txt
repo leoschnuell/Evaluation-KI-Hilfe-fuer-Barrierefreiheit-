@@ -1,0 +1,23 @@
+Der bereitgestellte HTML-Code hat mehrere Probleme, die behoben werden müssen:
+
+Fehlender head und body Tag: HTML-Dokumente sollten in head und body Abschnitte unterteilt sein. Der head Abschnitt enthält Metadaten und Links zu externen Ressourcen, während der body Abschnitt den sichtbaren Inhalt der Seite enthält.
+Paragraph außerhalb des body: Der <p> Tag sollte innerhalb des body Tags sein.
+Sprachattribut: Das lang Attribut im html Tag sollte der tatsächlichen Sprache des Inhalts entsprechen. Wenn der Inhalt auf Englisch ist, ist en korrekt. Wenn der Inhalt auf Deutsch ist, sollte es de sein.
+Korrigierter Code:
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>John F. Kennedy Rede</title>
+</head>
+<body>
+    <p>
+        Ein Teil einer Rede von John F. Kennedy: Wir entscheiden uns, in diesem Jahrzehnt zum Mond zu gehen und die anderen Dinge zu tun, nicht weil sie leicht sind, sondern weil sie schwer sind, weil dieses Ziel dazu dienen wird, das Beste unserer Energien und Fähigkeiten zu organisieren und zu messen, weil diese Herausforderung eine ist, die wir zu akzeptieren bereit sind, eine, die wir nicht aufschieben wollen, und eine, die wir zu gewinnen beabsichtigen, und auch die anderen.
+    </p>
+    <audio src="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech.mp3" controls></audio>
+</body>
+</html>
+Änderungen:
+
+Hinzugefügt head und body Tags.
+Verschoben den <p> Tag in den body.
+Überprüft und bestätigt das lang Attribut basierend auf der Annahme, dass der Inhalt auf Deutsch ist (basierend auf der Anfrage). Wenn der Inhalt tatsächlich auf Englisch sein soll, ändern Sie lang="de" zu lang="en".

@@ -1,0 +1,27 @@
+Um die Barrierefreiheitsprobleme in dem gegebenen HTML-Code zu lösen, sollten wir sicherstellen, dass das Bild richtig zugänglich ist. Hier sind die Schritte, die du unternehmen kannst:
+
+1. **Alt-Text hinzufügen**: Das `<img>`-Element sollte einen `alt`-Attribut enthalten, das eine beschreibende Alternative zum Bild bietet. Dies ist wichtig für Benutzer mit Sehbehinderungen, da sie den Inhalt des Bildes verstehen können, selbst wenn sie es nicht sehen können.
+
+2. **Relative Pfade verwenden**: Stelle sicher, dass der Pfad des Bildes korrekt ist und relativ zur aktuellen Seite angegeben wird.
+
+Hier ist der aktualisierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Accessibility Example</title>
+</head>
+<body>
+	<img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C Logo" />
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+- **`alt`-Attribut**: Das `alt`-Attribut wurde hinzugefügt und enthält den Text "W3C Logo", der das Bild beschreibt.
+  
+- **Titel geändert**: Der Titel der Seite wurde von "Failed Example 1" in "Accessibility Example" geändert, um klarer zu machen, dass es sich um ein Beispiel für barrierefreies HTML handelt.
+
+Diese Änderungen verbessern die Zugänglichkeit der Seite erheblich, indem sie sicherstellen, dass Bildinformationen für alle Benutzer verfügbar sind, einschließlich denen, die Bildschirmlesegeräte verwenden oder aus anderen Gründen keine Bilder sehen können.

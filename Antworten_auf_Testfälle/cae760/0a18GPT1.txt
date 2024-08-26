@@ -1,0 +1,45 @@
+Das Problem mit dem gegebenen HTML-Code liegt darin, dass der `src`-Attribut des `<iframe>`-Elements einen relativen Pfad verwendet, der nicht korrekt aufgelöst werden kann, wenn er auf diese Weise angegeben ist:
+
+```html
+<iframe title=" " src="/WAI/content-assets/wcag-act-rules/test-assets/SC4-1-2-frame-doc.html"> </iframe>
+```
+
+Wenn Sie diesen Code öffnen, wird der Browser versuchen, die Datei `SC4-1-2-frame-doc.html` relativ zum Stammverzeichnis des Servers zu finden. Dies kann zu Problemen führen, insbesondere wenn die Datei nicht korrekt platziert ist oder die Pfadstruktur nicht wie erwartet ist.
+
+Um das Problem zu lösen, können Sie den Pfad möglicherweise relativ zum aktuellen Verzeichnis oder zum HTML-Dokument selbst angeben, je nachdem, wo sich die Datei befindet. Hier sind einige mögliche Lösungsansätze:
+
+### 1. Verwenden Sie einen relativen Pfad
+Wenn sich `SC4-1-2-frame-doc.html` im gleichen Verzeichnis wie Ihre HTML-Datei befindet, können Sie den relativen Pfad verwenden:
+
+```html
+<iframe title=" " src="SC4-1-2-frame-doc.html"> </iframe>
+```
+
+### 2. Verwenden Sie einen absoluten Pfad
+Wenn sich die Datei an einem bestimmten Ort auf dem Server befindet, geben Sie den absoluten Pfad an:
+
+```html
+<iframe title=" " src="/absoluter/pfad/zur/SC4-1-2-frame-doc.html"> </iframe>
+```
+
+### 3. Überprüfen Sie den Dateipfad
+Stellen Sie sicher, dass der Pfad zur Datei korrekt ist und die Datei tatsächlich existiert.
+
+### 4. Testen Sie lokal
+Wenn Sie lokal arbeiten, stellen Sie sicher, dass die Dateien in der richtigen Verzeichnisstruktur vorliegen und die Pfade entsprechend angepasst sind.
+
+### Beispiel für eine mögliche Lösung:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <iframe title="Embedded Content" src="/WAI/content-assets/wcag-act-rules/test-assets/SC4-1-2-frame-doc.html"></iframe>
+</body>
+</html>
+```
+
+Hier wurde der `src`-Attributwert so korrigiert, dass er den absoluten Pfad zur Datei `SC4-1-2-frame-doc.html` verwendet, basierend auf Ihrer ursprünglichen Angabe. Stellen Sie sicher, dass der Pfad zur Datei korrekt ist und das Ziel-Dokument existiert, um sicherzustellen, dass das `<iframe>`-Element richtig funktioniert.

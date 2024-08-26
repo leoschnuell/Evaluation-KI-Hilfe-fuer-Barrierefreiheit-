@@ -1,0 +1,17 @@
+Der gegebene HTML-Code enthält einen Fehler, weil das `title`-Attribut des `<iframe>`-Elements leer ist. Laut den Web Content Accessibility Guidelines (WCAG) sollte jedes `iframe`-Element einen beschreibenden `title`-Attributwert haben, um die Barrierefreiheit zu verbessern. Dies hilft insbesondere Benutzern, die Screenreader verwenden, um zu verstehen, wofür das `iframe`-Element verwendet wird.
+
+Hier ist die korrigierte Version des Codes mit einem sinnvollen `title`-Attribut für das `<iframe>`-Element:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example 4</title>
+</head>
+<body>
+    <iframe title="Description of the iframe content" src="/WAI/content-assets/wcag-act-rules/test-assets/SC4-1-2-frame-doc.html"></iframe>
+</body>
+</html>
+```
+
+In diesem Fall habe ich "Description of the iframe content" als Beispieltext verwendet. Sie sollten diesen Text durch eine treffende Beschreibung des Inhalts des `iframe`-Elements ersetzen, damit Benutzer verstehen, worum es sich bei dem `iframe` handelt.

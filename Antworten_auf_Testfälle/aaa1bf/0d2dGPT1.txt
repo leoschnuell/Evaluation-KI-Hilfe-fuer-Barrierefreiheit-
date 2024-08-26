@@ -1,0 +1,19 @@
+Das Problem mit diesem HTML-Code liegt darin, dass das `autoplay`-Attribut im `<audio>`-Element verwendet wird. Dies kann zu einer schlechten Benutzererfahrung führen und wird von vielen Browsern blockiert oder erfordert die Zustimmung des Benutzers, insbesondere wenn sie Richtlinien zur automatischen Wiedergabe von Medien haben.
+
+Um dieses Problem zu lösen und sicherzustellen, dass die Audio-Wiedergabe gut funktioniert und den Benutzer nicht stört, kannst du das `autoplay`-Attribut entfernen. Stattdessen kannst du den Benutzer die Kontrolle über die Wiedergabe mit dem `controls`-Attribut behalten lassen, das bereits in deinem Code vorhanden ist. Dadurch wird ein Wiedergabesteuerelement angezeigt, über das der Benutzer die Wiedergabe manuell starten kann.
+
+Hier ist der korrigierte Code ohne das `autoplay`-Attribut:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Failed Example 1</title>
+</head>
+<body>
+    <audio src="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech.mp3" controls></audio>
+</body>
+</html>
+```
+
+Jetzt wird die Audiodatei mit einem Wiedergabesteuerelement angezeigt, aber die Wiedergabe beginnt nicht automatisch, sondern erst, wenn der Benutzer auf die Wiedergabetaste klickt. Dies stellt sicher, dass die Benutzerfreundlichkeit und die Einhaltung der Browser-Richtlinien zur automatischen Medienwiedergabe verbessert werden.

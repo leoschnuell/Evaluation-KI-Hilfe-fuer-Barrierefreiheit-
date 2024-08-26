@@ -1,0 +1,31 @@
+Um die Barrierefreiheitsprobleme im gegebenen HTML-Code zu lösen, müssen wir sicherstellen, dass die SVG-Grafik zugänglich ist. Hier sind die notwendigen Änderungen:
+
+1. **Füge eine beschreibende Textalternative hinzu:** SVG-Elemente sollten eine `<title>` oder `<desc>`-Tags enthalten, um eine Textalternative bereitzustellen, die von Screenreadern und anderen Hilfstechnologien verwendet werden kann.
+
+2. **Füge ein `aria-label` hinzu:** Für das SVG-Element selbst kann ein `aria-label` verwendet werden, um seine Bedeutung oder Funktion zu beschreiben.
+
+Hier ist der aktualisierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Accessible Example</title>
+</head>
+<body>
+	<p>How many circles are there?</p>
+	<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yellow circle with green border">
+		<title>Yellow circle with green border</title>
+		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow"></circle>
+	</svg>
+</body>
+</html>
+```
+
+### Erläuterung der Änderungen:
+
+- **`<title>`-Tag im SVG:** Der `<title>`-Tag innerhalb des SVG-Elements beschreibt die Grafik kurz und präzise für Benutzer von Screenreadern.
+
+- **`aria-label` im SVG-Element:** Das `aria-label`-Attribut auf dem SVG-Element selbst bietet eine alternative Methode zur Bereitstellung von Kontext und beschreibt die Bedeutung der Grafik.
+
+Diese Änderungen gewährleisten, dass die SVG-Grafik für alle Benutzer zugänglich ist, einschließlich solcher mit Sehbehinderungen, die auf Screenreader angewiesen sind.

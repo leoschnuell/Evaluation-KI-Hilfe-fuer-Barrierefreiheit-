@@ -1,0 +1,17 @@
+Das Problem in diesem HTML-Code liegt in der Verwendung der Attribute `aria-expanded` und `collapsed` im `<div>`-Element. Diese Attribute werden normalerweise verwendet, um den Zustand von interaktiven Elementen wie Akkordion- oder Dropdown-Menüs für Barrierefreiheitszwecke anzugeben. Allerdings sind die Werte `collapsed` oder `expanded` nicht direkt als Attributwerte erlaubt. Stattdessen sollten diese Attribute mit `true` oder `false` für die Zustände "geöffnet" oder "geschlossen" versehen werden.
+
+Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example 2</title>
+</head>
+<body>
+	<div role="button" aria-expanded="false">A button</div>
+</body>
+</html>
+```
+
+Die Änderung besteht darin, `aria-expanded="false"` zu setzen, um anzuzeigen, dass das Element standardmäßig geschlossen oder nicht erweitert ist. Dies ist die richtige Verwendung gemäß den WAI-ARIA-Spezifikationen für barrierefreie Webinhalte.

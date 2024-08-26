@@ -1,0 +1,36 @@
+Um die Barrierefreiheitsprobleme in dem gegebenen HTML-Code zu lösen, müssen wir sicherstellen, dass die Webseite für Benutzer mit unterschiedlichen Fähigkeiten zugänglich ist. Insbesondere müssen wir die Verwendung von Tastenkürzeln adressieren, da diese für Benutzer, die Bildschirmleser oder andere assistive Technologien verwenden, problematisch sein können. Hier ist ein Plan, um die Barrierefreiheit zu verbessern:
+
+Tastenkürzel zugänglich machen: Stellen Sie sicher, dass Tastenkürzel nicht mit den Funktionen von Bildschirmlesern oder anderen assistiven Technologien kollidieren. Eine Möglichkeit besteht darin, Tastenkürzel so zu gestalten, dass sie nur aktiv sind, wenn ein bestimmtes Element fokussiert ist, oder eine Kombination von Tasten zu verwenden, die weniger wahrscheinlich mit assistiven Technologien kollidiert.
+
+Aria-Labels hinzufügen: Verwenden Sie ARIA (Accessible Rich Internet Applications) Attribute, um zusätzliche Kontextinformationen für assistive Technologien bereitzustellen. Zum Beispiel kann aria-label oder aria-labelledby verwendet werden, um Elementen eine klare Beschreibung zu geben.
+
+Rollen hinzufügen: Verwenden Sie ARIA-Rollen, um die Semantik von benutzerdefinierten Widgets zu definieren, die nicht direkt durch HTML-Elemente dargestellt werden können.
+
+Verbesserung der Tastaturnavigation: Stellen Sie sicher, dass alle interaktiven Elemente mit der Tastatur erreichbar und bedienbar sind.
+
+Hier ist eine überarbeitete Version des Codes mit diesen Verbesserungen:
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Zugängliches Beispiel 1</title>
+    <script src="/WAI/content-assets/wcag-act-rules/test-assets/ffbc54/shortcut.js"></script>
+</head>
+<body onload="registerShortcut({shortcutKey: 'Alt+P', disabled: false}); activateShortcuts();">
+    <label for="target">Zur Liste hinzufügen (drücke "Alt+P" zum Hinzufügen):</label>
+    <input type="text" id="target" aria-label="Eingabefeld für To-do-Liste" />
+    <br />
+    <div role="region" aria-label="To-do-Liste">
+        To-do-Liste
+    </div>
+    <ul id="list" role="list" aria-label="Aufgabenliste"></ul>
+    <script>
+        // Stellen Sie sicher, dass das Skript die Tastenkombination "Alt+P" verwendet, um Konflikte mit assistiven Technologien zu vermeiden.
+    </script>
+</body>
+</html>
+Wichtigste Änderungen:
+
+Die Sprache der Seite wurde mit lang="de" spezifiziert, um assistiven Technologien den Kontext der Sprache zu geben.
+Das Tastenkürzel wurde zu "Alt+P" geändert, um Konflikte mit assistiven Technologien zu vermeiden.
+ARIA-Attribute und -Rollen wurden hinzugefügt, um den Elementen mehr Kontext zu geben und ihre Bedeutung klarzustellen.
+Es ist wichtig, das JavaScript entsprechend zu aktualisieren, um die neue Tastenkombination zu nutzen.

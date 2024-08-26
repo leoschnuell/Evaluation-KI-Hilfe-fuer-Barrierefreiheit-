@@ -1,0 +1,24 @@
+Das Problem mit deinem HTML-Code liegt darin, dass sich das `iframe`-Element außerhalb des `body`-Tags befindet. Laut der HTML-Spezifikation sollte jedes `iframe`-Element innerhalb des `body`-Tags liegen.
+
+Hier ist eine korrigierte Version deines Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List of Contributors</title>
+</head>
+<body>
+    <iframe title="List of Contributors" src="/WAI/content-assets/wcag-act-rules/test-assets/iframe-unique-name-4b1c6c/page-one.html"></iframe>
+
+    <iframe aria-label="List of Contributors" src="/WAI/content-assets/wcag-act-rules/test-assets/iframe-unique-name-4b1c6c/page-two.html"></iframe>
+</body>
+</html>
+```
+
+**Erklärung der Änderungen:**
+
+1. Der `head`-Tag wurde hinzugefügt, um ein korrektes HTML-Dokument zu erstellen und den Titel der Seite festzulegen.
+2. Die `iframe`-Elemente wurden innerhalb des `body`-Tags platziert, wie es die HTML-Spezifikation vorschreibt.
+
+Wenn du zusätzliche Anforderungen oder Fragen hast, lass es mich wissen!

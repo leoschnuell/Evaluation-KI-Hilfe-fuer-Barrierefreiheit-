@@ -1,0 +1,19 @@
+Das Problem in diesem HTML-Code ist, dass der `<link>`-Tag, der die CSS-Datei einbindet, innerhalb des `<body>`-Tags platziert ist. Dies ist syntaktisch nicht korrekt, da `<link>` normalerweise im `<head>`-Bereich der HTML-Datei platziert wird.
+
+Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 1</title>
+	<link rel="stylesheet" href="/WAI/content-assets/wcag-act-rules/test-assets/focus-visible-oj04fd/styles.css" />
+</head>
+<body>
+	<a class="no-focus-default" href="https://act-rules.github.io/">ACT rules</a>
+	<button class="no-focus-default">Dummy button</button>
+</body>
+</html>
+```
+
+In dieser korrigierten Version wurde der `<link>`-Tag verschoben und befindet sich nun im `<head>`-Bereich, wo er auch hingehört. Damit wird der HTML-Code syntaktisch korrekt und die CSS-Datei wird ordnungsgemäß eingebunden.

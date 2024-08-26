@@ -1,0 +1,40 @@
+Der Code enthält ein Problem bezüglich der Zugänglichkeit: Das `aria-labelledby`-Attribut des `<input>`-Elements verweist auf eine nicht existierende ID `non-existing`. Dieses Attribut wird verwendet, um das Element mit einem anderen Element zu verbinden, das als Label dient. Da das Ziel-Element nicht existiert, ist das `input`-Element für Benutzer von Screenreadern nicht korrekt beschrieben.
+
+Um das Problem zu beheben, muss ein Element mit der entsprechenden ID erstellt werden, oder das `aria-labelledby`-Attribut muss entfernt und stattdessen ein anderes zugängliches Attribut wie `aria-label` verwendet werden.
+
+Hier sind zwei mögliche Lösungen:
+
+### Lösung 1: Ein Element mit der entsprechenden ID hinzufügen
+
+Fügen Sie ein Element mit der ID `non-existing` hinzu, das den beschreibenden Text enthält.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 3</title>
+</head>
+<body>
+	<label id="non-existing">Search</label>
+	<input type="image" src="/WAI/content-assets/wcag-act-rules/test-assets/shared/search-icon.svg" aria-labelledby="non-existing" />
+</body>
+</html>
+```
+
+### Lösung 2: `aria-labelledby` durch `aria-label` ersetzen
+
+Verwenden Sie `aria-label` direkt im `<input>`-Element, um eine Beschriftung anzugeben.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 3</title>
+</head>
+<body>
+	<input type="image" src="/WAI/content-assets/wcag-act-rules/test-assets/shared/search-icon.svg" aria-label="Search" />
+</body>
+</html>
+```
+
+Beide Lösungen verbessern die Zugänglichkeit des Codes, indem sie sicherstellen, dass das `input`-Element korrekt beschrieben wird.

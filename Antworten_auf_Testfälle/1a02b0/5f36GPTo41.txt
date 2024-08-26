@@ -1,0 +1,31 @@
+Um das Problem dieses HTML-Codes zu lösen und sicherzustellen, dass das Video korrekt abgespielt wird, sollte der Code auf HTML5-Konformität geprüft werden. Hier sind einige Anpassungen und Korrekturen:
+
+Der unnötige Schrägstrich </source> sollte entfernt werden.
+Es fehlt der <!DOCTYPE html> und der <html> Tag ist fehlerhaft.
+Ein <head> und <body>-Tag wird benötigt.
+Hier ist die korrigierte Version:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Example</title>
+</head>
+<body>
+  <video controls>
+    <source src="/mnt/data/video.mp4" type="video/mp4">
+    <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/video.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  <p>The above video shows a giant fat dog climbing out of a hole in the ground.
+  He stretches, yawns, and then starts walking.
+  Then he stops to scratch his bottom.</p>
+</body>
+</html>
+In dieser Version des Codes:
+
+Der unnötige Schrägstrich bei den <source>-Tags wurde entfernt.
+Es wurden <head> und <body>-Tags hinzugefügt.
+Der Pfad zur hochgeladenen Videodatei wurde auf /mnt/data/video.mp4 gesetzt.
+Speichern Sie diese HTML-Datei und öffnen Sie sie in einem Webbrowser, um das Video anzusehen.

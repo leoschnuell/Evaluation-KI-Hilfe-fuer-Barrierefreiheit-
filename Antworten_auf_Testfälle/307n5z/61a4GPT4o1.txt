@@ -1,0 +1,30 @@
+Der gegebene HTML-Code hat ein Problem mit der Verwendung der ARIA-Rollen und Zustände. Insbesondere wird die ARIA-Rolle `menuitemcheckbox` verwendet, aber es fehlt eine entsprechende Verbindung zwischen dem `input`-Element (Checkbox) und der ARIA-Rolle.
+
+Um das Problem zu lösen, sollten wir sicherstellen, dass die ARIA-Rollen korrekt verwendet werden und dass es eine klare Verbindung zwischen dem `input`-Element und seiner ARIA-Rolle gibt. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Corrected Example</title>
+</head>
+<body>
+	<ul role="menu">
+		<li role="none">
+			<label role="menuitemcheckbox" aria-checked="true">
+				<input type="checkbox" checked aria-hidden="true" />
+				Sort by Last Modified
+			</label>
+		</li>
+	</ul>
+</body>
+</html>
+```
+
+Änderungen im Detail:
+
+1. **Verwendung von `role="none"` für das `li`-Element**: Dies stellt sicher, dass das `li`-Element keine eigene ARIA-Rolle hat, die mit dem Menü-Item kollidieren könnte.
+2. **Einfügen eines `label`-Elements**: Das `label`-Element wird verwendet, um die Verbindung zwischen der Checkbox und dem Text herzustellen. Es übernimmt die ARIA-Rolle `menuitemcheckbox`.
+3. **Verwendung von `aria-hidden="true"` im `input`-Element**: Dies versteckt das `input`-Element vor Screenreadern, damit sie nicht verwirrt werden. Die `aria-checked`-Eigenschaft im `label`-Element stellt sicher, dass der Zustand der Checkbox korrekt kommuniziert wird.
+
+Diese Änderungen sorgen dafür, dass die ARIA-Rollen und -Zustände korrekt sind und dass die Verbindung zwischen der Checkbox und ihrem Zustand klar ist.

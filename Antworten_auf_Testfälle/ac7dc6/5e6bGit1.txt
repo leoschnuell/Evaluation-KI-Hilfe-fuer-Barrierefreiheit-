@@ -1,0 +1,19 @@
+Das Problem in diesem Code liegt darin, dass das <track>-Element innerhalb des <video>-Elements platziert werden muss, aber außerhalb der <source>-Elemente, um korrekt zu funktionieren. Außerdem fehlt das lang-Attribut im <track>-Element, das für die Zugänglichkeit wichtig ist, um die Sprache der Track-Datei anzugeben. Hier ist die korrigierte Version:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Video Example</title>
+</head>
+<body>
+    <video controls>
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4" />
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm" />
+        <track kind="descriptions" src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/incorrect-descriptions.vtt" lang="en" />
+    </video>
+</body>
+</html>
+Änderungen:
+
+Hinzugefügt <head> und <title> Tags für eine vollständige HTML-Struktur.
+Das <track>-Element wurde korrekt innerhalb des <video>-Elements positioniert, nach den <source>-Elementen.
+Ein lang-Attribut wurde dem <track>-Element hinzugefügt, um die Sprache der Beschreibungen anzugeben.

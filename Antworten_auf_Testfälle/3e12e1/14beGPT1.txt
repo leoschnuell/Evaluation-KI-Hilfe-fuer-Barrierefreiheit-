@@ -1,0 +1,29 @@
+Das Problem in diesem HTML-Code liegt darin, dass der Link für "Chapter 1" im `<nav>`-Element kein `href`-Attribut besitzt. Dadurch ist der Link nicht funktional, wenn darauf geklickt wird.
+
+Um das Problem zu lösen, sollte der `<a>`-Tag für "Chapter 1" einen korrekten `href`-Wert erhalten, der entweder auf eine andere Seite oder auf denselben HTML-Dokumentanker verweist. Da es sich hier um dieselbe Seite handelt, könnte der `href` auf `#` gesetzt werden, um den aktuellen Anker anzuzeigen. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Three Kingdoms, Chapter 1</title>
+	</head>
+	<body>
+		<nav id="chapters-navigation">
+			<ol>
+				<li><a href="#">Chapter 1</a></li>
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+			</ol>
+		</nav>
+
+		<div id="main">
+			<p>
+				Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span
+				of time.
+			</p>
+		</div>
+	</body>
+</html>
+```
+
+In dieser Korrektur wurde der `<a>`-Tag für "Chapter 1" mit `href="#"` versehen, was bedeutet, dass er auf den aktuellen Anker auf der Seite verweist. Wenn auf "Chapter 1" geklickt wird, bleibt die Seite an derselben Stelle, was in diesem Fall sinnvoll ist, da sich der Inhalt auf derselben Seite befindet.

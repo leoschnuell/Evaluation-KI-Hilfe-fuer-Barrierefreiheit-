@@ -1,0 +1,33 @@
+Das Problem in diesem HTML-Code liegt darin, dass der `<a>`-Tag im ersten `<li>`-Element innerhalb des Navigationsmenüs (`<nav id="chapters-navigation">`) keinen `href`-Attribut hat. Ein `<a>`-Tag ohne `href`-Attribut wird nicht richtig als Link erkannt und funktioniert daher nicht wie erwartet.
+
+Hier ist der relevante Teil des Codes:
+
+```html
+<li><a>Chapter 1</a></li>
+```
+
+Um dies zu korrigieren, sollte der `<a>`-Tag einen gültigen `href`-Wert haben, der entweder auf die aktuelle Seite (falls `Chapter 1` die aktuelle Seite repräsentiert) oder auf eine andere Seite verweist. Zum Beispiel:
+
+- Wenn `Chapter 1` die aktuelle Seite ist:
+  ```html
+  <li><a href="#">Chapter 1</a></li>
+  ```
+  Hier wird `#` verwendet, um auf die aktuelle Seite zu verweisen.
+
+- Wenn `Chapter 1` auf eine andere Seite verweisen soll, könnte es so aussehen (angenommen, die URL wäre `/chapter1.html`):
+  ```html
+  <li><a href="/chapter1.html">Chapter 1</a></li>
+  ```
+
+Das korrigierte `<nav>`-Element mit einem Beispiel für `Chapter 1` könnte dann so aussehen:
+
+```html
+<nav id="chapters-navigation">
+    <ol>
+        <li><a href="#">Chapter 1</a></li>
+        <li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+    </ol>
+</nav>
+```
+
+Durch das Hinzufügen des `href`-Attributs wird sichergestellt, dass der Link klickbar ist und wie erwartet funktioniert.

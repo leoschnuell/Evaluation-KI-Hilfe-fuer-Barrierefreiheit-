@@ -1,0 +1,25 @@
+Das Problem bei diesem Code liegt darin, dass der Button mit der Klasse `notInPage` zwar existiert, aber aufgrund seiner CSS-Regeln außerhalb des sichtbaren Bereichs positioniert ist (links: -9999px; top: -9999px;). Dies führt dazu, dass der Button zwar im HTML vorhanden ist, aber für den Benutzer nicht sichtbar ist und auch nicht anklickbar ist, da er außerhalb des sichtbaren Bereichs platziert ist.
+
+Wenn das Ziel darin besteht, den Button zu verstecken und ihn dennoch funktional zu machen (z.B. zum Löschen von Elementen), könnte eine alternative Herangehensweise sein:
+
+1. **Verstecken, aber zugänglich machen:** Statt den Button außerhalb des sichtbaren Bereichs zu platzieren, könnte man ihn z.B. mittels `display: none;` ausblenden, was ihn unsichtbar macht, aber immer noch im DOM vorhanden und erreichbar lässt.
+
+2. **Verwendung von `aria-hidden`:** Wenn der Button wirklich nur für die Funktionalität vorhanden sein soll und nicht visuell dargestellt werden muss, könnte man zusätzlich `aria-hidden="true"` verwenden. Dies hilft dabei, dass Screenreader den Button nicht vorlesen, obwohl er nicht sichtbar ist.
+
+Hier ist eine angepasste Version des Codes, die den Button versteckt, aber weiterhin zugänglich macht:
+
+```html
+<!DOCTYPE html>
+<html>
+	<style>
+		.notInPage {
+			display: none; /* Versteckt den Button, aber er bleibt im DOM erhalten */
+		}
+	</style>
+	<body>
+		<button class="notInPage" value="delete"></button>
+	</body>
+</html>
+```
+
+Diese Lösung stellt sicher, dass der Button für die Funktionalität erhalten bleibt, aber für den Benutzer unsichtbar ist.

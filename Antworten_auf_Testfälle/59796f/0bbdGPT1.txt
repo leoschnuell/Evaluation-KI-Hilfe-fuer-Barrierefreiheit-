@@ -1,0 +1,31 @@
+Das Problem in diesem HTML-Code liegt im `<input>`-Element mit dem Typ `image` und dem `aria-labelledby`-Attribut.
+
+1. **Typ des `<input>`-Elements:** Das `<input>`-Element hat den Typ `image`, was bedeutet, dass es als Bild-Button fungiert. Dieser Typ wird verwendet, wenn das Formularelement als Schaltfläche mit einem Bild verwendet wird, das als Eingabe dient.
+
+2. **`aria-labelledby`-Attribut:** Dieses Attribut wird verwendet, um das Element mit einem oder mehreren Labels zu verknüpfen, die sich irgendwo in derselben HTML-Seite befinden. In deinem Beispiel ist der Wert von `aria-labelledby` auf `"non-existing"` gesetzt.
+
+Das Problem ist, dass `"non-existing"` kein gültiges ID-Attribut eines Labels ist, das auf der Seite existiert. Das `aria-labelledby`-Attribut sollte auf die ID eines Elements verweisen, das den Text für das Eingabeelement bereitstellt.
+
+Um das Problem zu lösen, kannst du Folgendes tun:
+
+- Stelle sicher, dass das `aria-labelledby`-Attribut auf die ID eines tatsächlich vorhandenen Labels verweist.
+- Wenn es kein passendes Label gibt, könnte alternativ das `alt`-Attribut verwendet werden, um eine alternative Textbeschreibung für das Bild bereitzustellen.
+
+Beispielhaft könntest du das `aria-labelledby`-Attribut anpassen, um auf ein existierendes Label zu verweisen:
+
+```html
+<input type="image" src="/WAI/content-assets/wcag-act-rules/test-assets/shared/search-icon.svg" aria-labelledby="label-search" />
+<span id="label-search">Search</span>
+```
+
+In diesem Beispiel wird das `aria-labelledby`-Attribut auf `"label-search"` gesetzt, das auf das `<span>`-Element mit der ID `"label-search"` verweist, das den Text "Search" enthält.
+
+Falls kein passendes Label vorhanden ist, könnte alternativ das `alt`-Attribut verwendet werden:
+
+```html
+<input type="image" src="/WAI/content-assets/wcag-act-rules/test-assets/shared/search-icon.svg" alt="Search" />
+```
+
+Das `alt`-Attribut stellt eine alternative Beschreibung des Bildes bereit und ist hilfreich für Barrierefreiheit und SEO.
+
+Zusammengefasst: Das Hauptproblem ist, dass das `aria-labelledby`-Attribut auf einen nicht existierenden Wert verweist. Dies sollte korrigiert werden, um auf ein gültiges Label oder eine alternative Beschreibung zurückzugreifen.

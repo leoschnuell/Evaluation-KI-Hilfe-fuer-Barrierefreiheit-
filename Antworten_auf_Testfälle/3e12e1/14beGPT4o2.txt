@@ -1,0 +1,43 @@
+Um den HTML-Code barrierefrei zu gestalten, sollten wir einige Verbesserungen vornehmen. Dazu gehören die Bereitstellung von beschreibenden Linktexten, die Verwendung von zugänglichen Navigations- und Inhaltsstrukturen sowie die Sicherstellung, dass der Text für Bildschirmleser verständlich ist. Hier sind die spezifischen Änderungen:
+
+1. **Beschreibende Linktexte**: Links sollten beschreibende Texte haben, die den Inhalt oder Zweck des Links erklären. Das Hinzufügen von `href` für den ersten Link und das Ergänzen der Linktexte macht sie verständlicher.
+
+2. **Skip-Link hinzufügen**: Ein Skip-Link ermöglicht es Benutzern von Bildschirmlesern und Tastaturen, die Navigation zu überspringen und direkt zum Hauptinhalt zu gelangen.
+
+3. **Aria-Labels und -Rollen**: Aria-Labels und Rollen können hinzugefügt werden, um die Struktur der Seite besser zu kommunizieren.
+
+Hier ist der verbesserte Code:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Three Kingdoms, Chapter 1</title>
+	</head>
+	<body>
+		<a href="#main" class="skip-link">Skip to main content</a>
+		
+		<nav id="chapters-navigation" aria-label="Chapters Navigation">
+			<ol>
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter1.html">Chapter 1: Unity and Division</a></li>
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2: The Conflict Begins</a></li>
+			</ol>
+		</nav>
+
+		<main id="main">
+			<p>
+				Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span
+				of time.
+			</p>
+		</main>
+	</body>
+</html>
+```
+
+**Erklärungen zu den Änderungen**:
+1. **Skip-Link**: Direkt nach dem `<body>`-Tag wird ein Skip-Link hinzugefügt, der es Benutzern ermöglicht, die Navigation zu überspringen und direkt zum Hauptinhalt zu gelangen.
+2. **Beschreibende Linktexte**: Die Linktexte der Kapitel wurden detaillierter gemacht, um den Inhalt des jeweiligen Links besser zu beschreiben.
+3. **Aria-Label für Navigation**: Ein `aria-label` wurde zum Navigations-Element hinzugefügt, um den Zweck der Navigation zu beschreiben.
+4. **Main-Tag**: Der Hauptinhalt wurde in ein `<main>`-Tag eingefügt, was die Struktur der Seite deutlicher macht.
+
+Diese Änderungen verbessern die Barrierefreiheit der Seite erheblich, indem sie den Inhalt für alle Benutzer verständlicher und leichter navigierbar machen.

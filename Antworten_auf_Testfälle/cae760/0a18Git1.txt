@@ -1,0 +1,10 @@
+Das Problem in diesem Code liegt darin, dass der <iframe> ein leeres title Attribut hat. Ein leeres title Attribut erfüllt nicht die Zugänglichkeitsrichtlinien, da es Screenreadern und anderen assistiven Technologien nicht ermöglicht, den Inhalt des Frames angemessen zu beschreiben. Um das Problem zu beheben, sollte ein aussagekräftiger Titel hinzugefügt werden, der den Inhalt oder Zweck des <iframe> beschreibt.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <iframe title="Beschreibender Titel des Inhalts" src="/WAI/content-assets/wcag-act-rules/test-assets/SC4-1-2-frame-doc.html"></iframe>
+</body>
+</html>

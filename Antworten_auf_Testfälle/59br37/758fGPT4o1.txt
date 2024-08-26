@@ -1,0 +1,47 @@
+Der HTML-Code hat ein Darstellungsproblem, das den gesamten Text nicht korrekt anzeigt, weil das `div`-Element eine feste Höhe und `overflow: hidden` verwendet. Dadurch wird der überflüssige Text abgeschnitten, was wahrscheinlich nicht das gewünschte Verhalten ist.
+
+Um das Problem zu beheben und den gesamten Text anzuzeigen, während die Höhe des `div`-Elements angepasst wird, könnte man `overflow: auto` verwenden. Dadurch wird ein Scrollbalken hinzugefügt, wenn der Text den verfügbaren Platz überschreitet. Alternativ könnte man auch `height` entfernen, um dem `div`-Element zu erlauben, seine Höhe basierend auf dem Inhalt automatisch anzupassen.
+
+Hier sind beide Lösungen:
+
+### Lösung 1: Scrollbalken hinzufügen
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example with Scroll</title>
+</head>
+<body>
+	<div style="overflow: auto; height: 16vh; font-size: 16px;">
+		Once upon a midnight dreary, while I pondered, weak and weary,<br />
+		Over many a quaint and curious volume of forgotten lore.<br />
+		While I nodded, nearly napping, suddenly there came a tapping,<br />
+		As of some one gently rapping, rapping at my chamber door.<br />
+		“’Tis some visitor,” I muttered, “tapping at my chamber door.<br />
+		Only this and nothing more.”
+	</div>
+</body>
+</html>
+```
+
+### Lösung 2: Automatische Höhenanpassung
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example with Auto Height</title>
+</head>
+<body>
+	<div style="font-size: 16px;">
+		Once upon a midnight dreary, while I pondered, weak and weary,<br />
+		Over many a quaint and curious volume of forgotten lore.<br />
+		While I nodded, nearly napping, suddenly there came a tapping,<br />
+		As of some one gently rapping, rapping at my chamber door.<br />
+		“’Tis some visitor,” I muttered, “tapping at my chamber door.<br />
+		Only this and nothing more.”
+	</div>
+</body>
+</html>
+```
+
+Wählen Sie die Lösung, die Ihren Anforderungen besser entspricht: entweder das Hinzufügen eines Scrollbalkens bei Bedarf oder die automatische Anpassung der Höhe basierend auf dem Inhalt.

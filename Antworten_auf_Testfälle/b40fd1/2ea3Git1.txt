@@ -1,0 +1,21 @@
+Das Problem in diesem Code liegt darin, dass der Link für "Chapter 1" fehlt. Um dieses Problem zu lösen, sollte ein href Attribut zum <a> Tag für "Chapter 1" hinzugefügt werden, das auf die entsprechende Seite oder Ressource verweist. Hier ist der korrigierte Code:
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Three Kingdoms, Chapter 1</title>
+    </head>
+    <body>
+        <nav id="chapters-navigation">
+            <ol>
+                <li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter1.html">Chapter 1</a></li>
+                <li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+            </ol>
+        </nav>
+
+        <p>
+            Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span of
+            time.
+        </p>
+    </body>
+</html>
+Ich habe angenommen, dass die URL für "Chapter 1" ähnlich der für "Chapter 2" ist, aber bitte ersetze /WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter1.html mit dem korrekten Pfad zu "Chapter 1".

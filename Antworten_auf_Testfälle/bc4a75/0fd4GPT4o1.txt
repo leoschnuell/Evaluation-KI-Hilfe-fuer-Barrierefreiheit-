@@ -1,0 +1,29 @@
+Der HTML-Code hat zwei wesentliche Probleme:
+
+1. **Verwendung des `<li>`-Elements außerhalb eines `<ul>`- oder `<ol>`-Elements**: Das `<li>`-Element (Listenpunkt) sollte nur innerhalb eines geordneten (`<ol>`) oder ungeordneten (`<ul>`) Listen-Containers verwendet werden.
+
+2. **Unzulässige Verwendung des `role`-Attributs**: Das `role="list"`-Attribut ist korrekt, sollte aber auf einem geeigneten Container wie `<ul>` oder `<ol>` verwendet werden. Ebenso sollte `role="link"` auf einem interaktiven Element wie einem `<a>`-Element verwendet werden.
+
+Hier ist die korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Corrected Example</title>
+</head>
+<body>
+	<ul role="list">
+		<li>Item 1</li>
+		<li><a href="#">Item 2</a></li>
+	</ul>
+</body>
+</html>
+```
+
+Änderungen:
+- Der Container für die Liste ist jetzt ein `<ul>`-Element, das dem `role="list"`-Attribut entspricht.
+- Das `role="link"`-Attribut wurde auf ein `<a>`-Element verschoben, um die korrekte semantische Bedeutung und Barrierefreiheit zu gewährleisten.
+- `<span>` wurde durch `<a href="#">` ersetzt, um ein korrektes interaktives Element zu haben.
+
+Diese Anpassungen stellen sicher, dass der HTML-Code semantisch korrekt und barrierefrei ist.

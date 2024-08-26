@@ -1,0 +1,18 @@
+Der HTML-Code hat einen Fehler in der Angabe der Sprache für den Ausdruck "Hij ging met de kippen op stok". Der Ausdruck ist auf Niederländisch (lang="nl") und nicht auf Französisch (lang="fr"). Hier ist der korrigierte HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Dutch idioms</title>
+	</head>
+	<body>
+		<p>
+			The Dutch phrase <span lang="nl">"Hij ging met de kippen op stok"</span> literally translates into "He went to
+			roost with the chickens", but it means that he went to bed early.
+		</p>
+	</body>
+</html>
+```
+
+Die Korrektur besteht darin, das Attribut `lang="fr"` in `lang="nl"` zu ändern, um die Sprache korrekt als Niederländisch anzugeben.

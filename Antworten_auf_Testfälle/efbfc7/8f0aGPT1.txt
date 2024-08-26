@@ -1,0 +1,39 @@
+Das Problem in diesem HTML-Code liegt darin, dass die `onload`-Funktion `startUpdates()` aufgerufen wird, bevor das externe JavaScript (`script.js`) geladen wird. Dadurch kann es zu einem Fehler kommen, wenn `startUpdates()` auf Funktionen oder Elemente zugreift, die von `script.js` definiert werden und zum Zeitpunkt des Aufrufs noch nicht verfügbar sind.
+
+Um dieses Problem zu lösen, kannst du sicherstellen, dass die Funktion `startUpdates()` erst aufgerufen wird, wenn das externe Skript vollständig geladen ist. Hier ist eine mögliche Lösung:
+
+1. Verschiebe den Aufruf der `startUpdates()`-Funktion in das externe Skript (`script.js`) und stelle sicher, dass dieser Code erst ausgeführt wird, wenn das Skript vollständig geladen ist.
+
+2. Verwende das `defer`-Attribut im `<script>`-Tag, um sicherzustellen, dass das Skript asynchron geladen wird und die Ausführung erst erfolgt, wenn der gesamte HTML-Inhalt geladen ist.
+
+Hier ist, wie du das umsetzen könntest:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 1</title>
+	<script type="text/javascript">
+		// Verschiebe die startUpdates()-Funktion hierher, falls notwendig
+		function startUpdates() {
+			// Hier kommen deine Update-Operationen
+			console.log('Updates gestartet.');
+		}
+	</script>
+</head>
+<body onload="startUpdates()">
+	<p>
+		The W3C Web Accessibility Initiative (WAI) develops standards and support materials to help you understand and
+		implement accessibility.
+	</p>
+
+	<p>Random number: <span id="target">1</span></p>
+
+	<script type="text/javascript" src="/WAI/content-assets/wcag-act-rules/test-assets/efbfc7/script.js" defer></script>
+</body>
+</html>
+```
+
+In diesem Beispiel wird das `defer`-Attribut verwendet, um sicherzustellen, dass `script.js` geladen wird, ohne die Darstellung der Webseite zu blockieren, und die Ausführung erst nach dem Laden des HTML-Inhalts beginnt. Dadurch wird vermieden, dass `startUpdates()` aufgerufen wird, bevor das externe Skript bereit ist.
+
+Stelle sicher, dass `startUpdates()` korrekt definiert ist und die erforderlichen Operationen ausführt, wenn es aufgerufen wird.

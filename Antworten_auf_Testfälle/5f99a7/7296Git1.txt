@@ -1,0 +1,12 @@
+Das Problem in diesem Code liegt in der Verwendung von aria-not-checked anstelle des korrekten ARIA-Attributs aria-checked für ein Element mit der Rolle menuitemcheckbox. Das Attribut aria-not-checked existiert nicht in den ARIA-Spezifikationen. Um das Problem zu beheben, sollte aria-not-checked="true" durch aria-checked="false" ersetzt werden, um korrekt anzugeben, dass das Kontrollkästchen nicht markiert ist.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <ul>
+        <li role="menuitemcheckbox" aria-checked="false">List Item</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Das Problem mit dem gegebenen Code besteht darin, dass die Verwendung von this innerhalb der Arrow-Funktion im onblur-Event nicht wie erwartet funktioniert. In Arrow-Funktionen bezieht sich this auf den umgebenden Kontext zur Zeit der Definition der Funktion, nicht auf das Element, das das Ereignis ausgelöst hat. In diesem Fall wird this nicht auf das Button-Element verweisen, das den Fokus verloren hat, sondern wahrscheinlich auf das globale Objekt (im Browser ist das window), was nicht das gewünschte Verhalten ist.
+
+Um das Problem zu beheben, können wir eine traditionelle Funktion verwenden, die ihr eigenes this basierend auf dem Kontext, in dem sie aufgerufen wird, hat. Das bedeutet, dass this innerhalb einer solchen Funktion auf das Element verweisen wird, das das Ereignis ausgelöst hat.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <button onblur="setTimeout(function() { this.focus(); }, 10)">Button 1</button>
+    <button>Button 2</button>
+    <button onblur="setTimeout(function() { this.focus(); }, 10)">Button 3</button>
+</body>
+</html>

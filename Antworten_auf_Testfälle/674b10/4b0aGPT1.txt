@@ -1,0 +1,24 @@
+Das Problem in diesem HTML-Code liegt im Attribut `role="lnik"` im `<span>`-Element. Dieses Attribut enthält einen Schreibfehler und sollte `role="link"` sein, um die semantische Rolle des Elements als Link korrekt anzugeben.
+
+Hier ist der korrigierte HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 1</title>
+</head>
+<body>
+	<style>
+		.link {
+			color: #0000ee;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	</style>
+	I love <span class="link" onclick="location.href='https://act-rules.github.io/'" role="link">ACT rules</span>.
+</body>
+</html>
+```
+
+In diesem korrigierten Code wurde `role="lnik"` zu `role="link"` geändert, um die semantische Bedeutung des `<span>`-Elements als Link zu kennzeichnen. Damit wird die Barrierefreiheit verbessert und Nutzer mit assistiven Technologien können das Element als Link identifizieren.

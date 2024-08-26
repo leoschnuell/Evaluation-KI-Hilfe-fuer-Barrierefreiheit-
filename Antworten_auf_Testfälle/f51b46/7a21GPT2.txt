@@ -1,0 +1,42 @@
+Um die Barrierefreiheitsprobleme in Ihrem HTML-Code zu lösen, können Sie einige Verbesserungen vornehmen, um sicherzustellen, dass das Video für alle Benutzer zugänglich ist. Hier sind die Schritte, die Sie durchführen können:
+
+1. **Beschriftung für das Video hinzufügen**: Fügen Sie eine Beschriftung für das Video hinzu, um sicherzustellen, dass auch hörgeschädigte Benutzer den Inhalt verstehen können.
+
+2. **Alternative Texte für das Video**: Geben Sie einen alternativen Text für das Video an, damit Benutzer mit Sehbehinderungen oder Benutzer, die keine Videos abspielen können, den Inhalt verstehen können.
+
+3. **Titel für das Video hinzufügen**: Fügen Sie dem Video ein Titel-Attribut hinzu, um zusätzliche Informationen bereitzustellen, wenn das Video nicht angezeigt wird oder nicht abgespielt werden kann.
+
+Hier ist der aktualisierte HTML-Code unter Berücksichtigung der Barrierefreiheitsrichtlinien:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Accessible Example</title>
+</head>
+<body>
+	<p>
+		The video below shows a man working on a keyboard. A voiceover is heard saying the following text: Web accessibility
+		perspectives. Keyboard compatibility. Not being able to use your computer because your mouse doesn't work, is
+		frustrating. Many people use only the keyboard to navigate websites. Either through preference or circumstance.
+	</p>
+	<video src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls
+		poster="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/poster.jpg"
+		title="Web Accessibility Perspectives Video">
+		<!-- Alternative Text für das Video -->
+		<source src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" type="video/mp4">
+		<p>Ihr Browser unterstützt das Video-Tag nicht.</p>
+	</video>
+	<!-- Beschriftung für das Video -->
+	<figcaption>Ein Mann arbeitet an einer Tastatur, während im Hintergrund eine Stimme über Webzugänglichkeitsperspektiven spricht.</figcaption>
+</body>
+</html>
+```
+
+**Erläuterungen zu den Änderungen:**
+
+- **poster**: Ein Posterbild wird hinzugefügt, das angezeigt wird, wenn das Video nicht abgespielt wird. Dies ist besonders hilfreich für Benutzer mit langsameren Internetverbindungen oder Technologien, die das direkte Abspielen von Videos einschränken.
+
+- **Alternative Texte und Beschriftung**: Diese beiden Elemente sind entscheidend für die Zugänglichkeit. Der alternative Text `<p>` innerhalb des `<video>`-Tags wird angezeigt, wenn der Browser das Video-Tag nicht unterstützt oder das Video nicht abgespielt werden kann. Die `<figcaption>` bietet eine Textbeschreibung des Videos, die für alle Benutzer sichtbar ist.
+
+Durch diese Änderungen wird sichergestellt, dass das Video für eine breitere Benutzerbasis zugänglich ist, einschließlich Menschen mit Seh- und Hörbehinderungen sowie solche, die spezielle Browser oder Technologien verwenden.

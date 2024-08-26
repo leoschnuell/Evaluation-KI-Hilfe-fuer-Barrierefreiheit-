@@ -1,0 +1,42 @@
+Das Problem in diesem HTML-Code liegt in der Anwendung von `word-spacing` mit `!important` in einem Inline-CSS-Stil. Das `!important` wird normalerweise verwendet, um die Priorität einer CSS-Regel zu erhöhen und andere Regeln zu überschreiben. Im vorliegenden Fall wird `word-spacing` mit einem Wert von `0.1em` angewendet, was dazu führt, dass zwischen den Wörtern im Paragraphen ein zusätzlicher Abstand eingefügt wird.
+
+Wenn du das Problem lösen möchtest, gibt es mehrere Ansätze:
+
+1. **Entfernen des `!important`**: Wenn du das `!important` entfernst, wird die Regel nicht mehr so stark priorisiert und kann von anderen CSS-Regeln überschrieben werden, die möglicherweise auf die gleiche Eigenschaft abzielen.
+
+   ```html
+   <p style="word-spacing: 0.1em;">
+       The toy brought back fond memories of being lost in the rain forest.
+   </p>
+   ```
+
+2. **Verwenden einer externen CSS-Datei**: Statt Inline-CSS könntest du eine externe CSS-Datei erstellen und dort die Formatierungsregeln für `p`-Elemente festlegen. Dies fördert eine bessere Trennung von Inhalt und Präsentation und erleichtert das Debuggen und die Wartung des Codes.
+
+   Beispiel für eine externe CSS-Datei (`styles.css`):
+
+   ```css
+   p {
+       word-spacing: 0.1em;
+   }
+   ```
+
+   Und im HTML-Code:
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <title>Failed Example 1</title>
+       <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+       <p>
+           The toy brought back fond memories of being lost in the rain forest.
+       </p>
+   </body>
+   </html>
+   ```
+
+3. **Überprüfen und Anpassen anderer CSS-Regeln**: Falls andere CSS-Regeln die `word-spacing` ebenfalls ändern oder überschreiben könnten, solltest du sicherstellen, dass die Reihenfolge der Regeln oder die Spezifität der Selektoren korrekt eingestellt sind.
+
+Indem du diese Schritte befolgst, kannst du das Problem mit dem `word-spacing` im HTML-Code beheben und sicherstellen, dass die Darstellung deiner Webseite wie gewünscht erfolgt.

@@ -1,0 +1,22 @@
+Um die Barrierefreiheitsprobleme im gegebenen Code zu lösen, sind einige Änderungen erforderlich. Der aktuelle Code hat ein Bild mit leerem `alt`-Attribut und verwendet `aria-labelledby`, um das Bild zu beschreiben. Dies ist nicht optimal, da `aria-labelledby` für Bilder nicht immer zuverlässig funktioniert und der `span` mit der `id="label"` ausgeblendet ist.
+
+Hier sind die Verbesserungen:
+
+1. Verwenden eines sinnvollen `alt`-Attributs für das Bild, damit es auch ohne zusätzliche ARIA-Attribute für Screenreader und andere Hilfsmittel verständlich ist.
+2. Entfernen des `aria-labelledby`-Attributs, da es für diese Anwendung nicht notwendig ist.
+
+Hier ist der verbesserte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Improved Example</title>
+</head>
+<body>
+	<img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C logo" />
+</body>
+</html>
+```
+
+Durch diese Änderung erhält das Bild ein sinnvolles `alt`-Attribut, was die Barrierefreiheit verbessert und die Nutzung des Bildes für alle Benutzer verständlicher macht.

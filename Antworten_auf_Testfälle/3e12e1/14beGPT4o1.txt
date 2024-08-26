@@ -1,0 +1,29 @@
+Der HTML-Code enthält ein Problem, das sich auf den fehlenden `href`-Attribut im ersten Link bezieht. Ohne das `href`-Attribut ist der Link nicht klickbar und führt den Benutzer nirgendwohin. Um dies zu beheben, sollte dem ersten Link ein `href`-Attribut mit einer gültigen URL hinzugefügt werden.
+
+Hier ist die korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Three Kingdoms, Chapter 1</title>
+	</head>
+	<body>
+		<nav id="chapters-navigation">
+			<ol>
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter1.html">Chapter 1</a></li>
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+			</ol>
+		</nav>
+
+		<div id="main">
+			<p>
+				Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span
+				of time.
+			</p>
+		</div>
+	</body>
+</html>
+```
+
+Mit dieser Änderung ist der Link für "Chapter 1" jetzt korrekt und führt zu einer gültigen URL, wenn darauf geklickt wird.

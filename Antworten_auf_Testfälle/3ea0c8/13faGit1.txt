@@ -1,0 +1,22 @@
+Das Problem in diesem Code liegt darin, dass zwei Elemente dieselbe ID label verwenden. IDs sollten innerhalb eines HTML-Dokuments eindeutig sein. Um dieses Problem zu lösen, sollten die IDs eindeutig gemacht werden. Zusätzlich sollte das aria-labelledby Attribut des input Elements aktualisiert werden, um auf die korrekte ID zu verweisen, die den visuellen Label darstellt, den der Benutzer sehen soll.
+
+Pseudocode:
+
+Ändere die ID des div Elements von label zu nameLabel.
+Ändere die ID des svg Elements von label zu cityLabel.
+Aktualisiere das aria-labelledby Attribut des input Elements, um auf die neue ID cityLabel zu verweisen.
+HTML-Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+</head>
+<body>
+    <div id="nameLabel">Name</div>
+    <svg id="cityLabel">
+        <text x="0" y="15">City</text>
+    </svg>
+    
+    <input aria-labelledby="cityLabel" type="text" name="city" />
+</body>
+</html>

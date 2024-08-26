@@ -1,0 +1,62 @@
+Um die Barrierefreiheitsprobleme im gegebenen HTML-Code zu lösen, müssen wir sicherstellen, dass die Links klar und unterscheidbar sind, insbesondere für Screenreader und andere assistive Technologien. Hier sind die Probleme und die Lösungen:
+
+1. **Fehlendes `<head>`-Element und `<title>`-Element**:
+   - Jede HTML-Seite sollte ein `<head>`-Element enthalten, das Metadaten und andere wichtige Informationen über das Dokument enthält. Ein `<title>`-Element innerhalb des `<head>` definiert den Titel der Seite, der in Browser-Tabs und Lesezeichen angezeigt wird.
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Accessibility Test Page</title>
+   </head>
+   <body>
+       <!-- Hier kommen die Links -->
+   </body>
+   </html>
+   ```
+
+2. **Links mit identischem Text ("Contact us")**:
+   - Der identische Text für mehrere Links kann für Screenreader problematisch sein, da sie Schwierigkeiten haben könnten, zwischen ihnen zu unterscheiden. Dies verstößt gegen das Prinzip der Unterscheidbarkeit.
+
+   Um dies zu beheben, sollten die Links entweder unterschiedlichen Text haben oder zusätzliche Informationen enthalten, die sie voneinander unterscheidbar machen.
+
+   Beispiel für unterschiedliche Texte:
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Accessibility Test Page</title>
+   </head>
+   <body>
+       <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/about/contact.html">Contact us (About)</a>
+       <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/admissions/contact.html">Contact us (Admissions)</a>
+   </body>
+   </html>
+   ```
+
+3. **Fehlender Abschluss des `<a>`-Elements**:
+   - Der zweite `<a>`-Tag im Originalcode ist nicht ordnungsgemäß geschlossen. Dies muss korrigiert werden, um gültiges HTML zu gewährleisten.
+
+   Korrigierter Code:
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Accessibility Test Page</title>
+   </head>
+   <body>
+       <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/about/contact.html">Contact us (About)</a>
+       <a href="/WAI/content-assets/wcag-act-rules/test-assets/links-with-identical-names-serve-equivalent-purpose-b20e66/admissions/contact.html">Contact us (Admissions)</a>
+   </body>
+   </html>
+   ```
+
+Diese Änderungen sorgen dafür, dass die Seite zugänglicher wird, indem sie klare und unterscheidbare Links verwendet und die strukturellen Anforderungen an HTML einhält.

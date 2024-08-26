@@ -1,0 +1,35 @@
+Das Problem mit dem gegebenen HTML-Code ist, dass die Quellpfade für die Videoquellen (`src`-Attribute) relativ angegeben sind. Wenn du diesen Code lokal ausführst oder auf eine Webseite einfügst, müssen die Video-Dateien relativ zu der Position des HTML-Dokuments existieren. Hier sind die potenziellen Lösungen, abhängig von deinem Szenario:
+
+### Lösung 1: Stelle sicher, dass die Video-Dateien vorhanden sind
+
+Wenn die Video-Dateien (`silent.mp4` und `silent.webm`) tatsächlich unter den angegebenen relativen Pfaden existieren, dann sollte der Code korrekt funktionieren, wenn er in einer Umgebung ausgeführt wird, die diese Dateien unterstützt (z.B. lokal auf deinem Computer mit einem unterstützten Browser).
+
+### Lösung 2: Verwende absolute Pfade
+
+Wenn du sicherstellen möchtest, dass die Videos unabhängig von ihrem Speicherort auf dem Server oder der Dateistruktur geladen werden können, könntest du absolute Pfade verwenden. Zum Beispiel:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Beispiel</title>
+</head>
+<body>
+    <video controls>
+        <source src="https://example.com/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4" />
+        <source src="https://example.com/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm" />
+    </video>
+</body>
+</html>
+```
+
+Ersetze `https://example.com` durch die tatsächliche Basis-URL, von der aus die Videos geladen werden sollen.
+
+### Weitere Hinweise:
+
+- Stelle sicher, dass die Browser, die deine Webseite besuchen, die Videoformate unterstützen, die du bereitstellst (MP4 und WebM sind gute Auswahlmöglichkeiten für eine breite Browserkompatibilität).
+- Überprüfe die Dateipfade sorgfältig, um Tippfehler oder falsche Verzeichnisse auszuschließen.
+
+Durch die Anpassung der Pfade und das Beachten der genannten Punkte sollte das Video in deiner Webseite korrekt eingebettet werden können.

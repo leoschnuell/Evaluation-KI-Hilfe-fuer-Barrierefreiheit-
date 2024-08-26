@@ -1,0 +1,61 @@
+Der gegebene HTML- und CSS-Code versucht, eine Webseite im Hochformat zu drehen, damit sie im Querformat angezeigt wird. Jedoch gibt es einige Probleme und Optimierungen, die berücksichtigt werden sollten, um sicherzustellen, dass dies richtig funktioniert.
+
+1. **Unnötige Komplexität mit Rad-Werten**:
+   Die Rotation in Rad-Werten ist nicht sehr intuitiv und kann durch Grad-Werte ersetzt werden, was lesbarer und wartbarer ist.
+
+2. **Verwendung von `transform-origin`**:
+   Um die Drehung korrekt zu zentrieren, sollte `transform-origin` verwendet werden.
+
+3. **Beheben des Layoutproblems**:
+   Die Drehung allein reicht nicht aus, um das Layoutproblem zu lösen. Man muss sicherstellen, dass die Größe und Positionierung des Inhalts richtig angepasst wird.
+
+Hier ist der verbesserte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Page with some content</title>
+	<style>
+		@media (orientation: portrait) {
+			html {
+				transform: rotate(90deg);
+				transform-origin: center center;
+				width: 100vh;
+				height: 100vw;
+				overflow: hidden;
+			}
+			body {
+				width: 100vh;
+				height: 100vw;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transform: rotate(-90deg);
+				transform-origin: center center;
+				margin: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	Page Content
+</body>
+</html>
+```
+
+### Erläuterungen:
+
+1. **Rotation und Transformationsursprung**:
+   Die `html`-Element wird um 90 Grad gedreht, wobei der Ursprung der Transformation zentriert ist (`transform-origin: center center`).
+
+2. **Anpassen der Dimensionen**:
+   Die Dimensionen (`width` und `height`) des `html`- und `body`-Elements werden so angepasst, dass sie sich der neuen Orientierung anpassen.
+
+3. **Vermeidung von Überlauf**:
+   Das `overflow`-Attribut wird auf `hidden` gesetzt, um eventuelle Überläufe zu verhindern.
+
+4. **Zentrierung und Drehung des Inhalts**:
+   Der `body`-Inhalt wird ebenfalls gedreht und zentriert, damit der Inhalt lesbar bleibt.
+
+Diese Anpassungen sollten sicherstellen, dass die Seite korrekt im Querformat angezeigt wird, wenn das Gerät im Hochformat ist.

@@ -1,0 +1,21 @@
+Das Problem in diesem HTML-Code liegt darin, dass der Link `<a href="#desc">this product</a>` nicht wie erwartet zum Abschnitt mit der ID `desc` innerhalb des Dokuments springt. Normalerweise sollte ein Link mit `href="#desc"` den Benutzer zum ersten Element mit der entsprechenden ID (`id="desc"`) auf derselben Seite scrollen lassen.
+
+Das Problem tritt auf, weil der `<p>`-Tag mit der ID `desc` im Dokument vorhanden ist, aber der Link nicht ordnungsgemäß funktioniert. Dies liegt daran, dass der `<p>`-Tag direkt im Body liegt und daher bei der Verwendung eines relativen Links der Hash (`#`) nicht ausreicht, um zum Abschnitt innerhalb der Seite zu navigieren.
+
+Um das Problem zu lösen, müssen wir sicherstellen, dass der Link ordnungsgemäß auf das ID-Attribut des Elements verweist. Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Example with Correct Anchor Link</title>
+</head>
+<body>
+	<p>See the description of <a href="#desc">this product</a>.</p>
+	
+	<p id="desc">This product consists of several web pages.</p>
+</body>
+</html>
+```
+
+In diesem korrigierten Beispiel verweist der Link `<a href="#desc">this product</a>` auf `#desc`, was bedeutet, dass er zum `<p id="desc">` springen wird, sobald der Link geklickt wird. Dies sollte jetzt ordnungsgemäß funktionieren, um den Benutzer zur Beschreibung des Produkts innerhalb der Seite zu führen.

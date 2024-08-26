@@ -1,0 +1,52 @@
+The HTML code you provided has an accessibility issue related to the use of multiple `<nav>` elements. According to the Web Content Accessibility Guidelines (WCAG), each `<nav>` element should have a unique purpose and be distinguishable for assistive technologies. 
+
+The problem here is the use of two `<nav>` elements without providing a clear distinction between them. This can confuse users who rely on screen readers, as they won't know the specific purpose of each navigation section.
+
+To fix this issue, you should add `aria-label` attributes to each `<nav>` element to describe their purpose. This will help screen readers convey the correct information to users.
+
+Here is the revised code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Fixed Example</title>
+		<link rel="stylesheet" type="text/css" href="/WAI/content-assets/wcag-act-rules/test-assets/non-visual-reference-alternative-9bd38c/columns.css" />
+	</head>
+	<body>
+		<nav aria-label="Main navigation">
+			<ul>
+				<li>
+					<a href="https://www.w3.org/">W3C homepage</a>
+				</li>
+				<li>
+					<a href="https://www.w3.org/standards/">Standards</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="col-container">
+			<div class="col">
+				<p>Find the navigation on the right, for the non-essential links</p>
+			</div>
+			<nav aria-label="Secondary navigation">
+				<div class="col">
+					<ul>
+						<li>
+							<a href="https://www.w3.org/Consortium/contact">Contact</a>
+						</li>
+						<li>
+							<a href="https://www.w3.org/Help/">Help and FAQ</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</body>
+</html>
+```
+
+In this revised version:
+- The main navigation `<nav>` element has an `aria-label="Main navigation"`.
+- The secondary navigation `<nav>` element has an `aria-label="Secondary navigation"`.
+
+These `aria-label` attributes provide clear distinctions between the two navigation sections, improving accessibility for users relying on screen readers.

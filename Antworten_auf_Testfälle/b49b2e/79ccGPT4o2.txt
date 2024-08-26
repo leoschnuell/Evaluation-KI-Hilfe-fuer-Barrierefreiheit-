@@ -1,0 +1,36 @@
+Um die Barrierefreiheitsprobleme in dem HTML-Code zu lösen, sollten folgende Änderungen vorgenommen werden:
+
+1. Ein korrektes HTML-Dokument sollte den `<html>`-Tag schließen und den `<head>`-Tag für Meta-Informationen und den `<body>`-Tag für den Hauptinhalt verwenden.
+2. Es sollte sichergestellt werden, dass der Inhalt korrekt strukturiert ist. Das bedeutet, dass der `<h1>`-Tag und der `<p>`-Tag sich innerhalb des `<body>`-Tags befinden sollten.
+3. Es sollte eine Zugänglichkeitsebene wie ARIA-Rollen und Landmarken eingeführt werden, um die Struktur klarer und für Screenreader benutzbarer zu machen.
+
+Hier ist der überarbeitete Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    <header>
+        <h1>Weather</h1>
+    </header>
+    <main>
+        <p>We are open Monday through Friday from 10 to 16</p>
+    </main>
+</body>
+</html>
+```
+
+### Erläuterungen:
+1. **DOCTYPE**: Gibt die Dokumentart an und hilft dem Browser, das Dokument richtig zu interpretieren.
+2. **`<html lang="en">`**: Gibt die Sprache des Dokuments an, was für Screenreader wichtig ist.
+3. **`<head>`**: Enthält Meta-Informationen wie die Zeichencodierung und den Titel der Seite.
+4. **`<meta charset="UTF-8">`**: Setzt die Zeichencodierung auf UTF-8, was die meisten Zeichen unterstützt.
+5. **`<meta name="viewport" content="width=device-width, initial-scale=1.0">`**: Stellt sicher, dass die Seite auf mobilen Geräten korrekt angezeigt wird.
+6. **`<title>Weather</title>`**: Gibt den Titel des Dokuments an, der in der Titelleiste des Browsers angezeigt wird.
+7. **`<header>`**: Enthält den Haupttitel der Seite.
+8. **`<main>`**: Enthält den Hauptinhalt der Seite und verbessert die Zugänglichkeit.

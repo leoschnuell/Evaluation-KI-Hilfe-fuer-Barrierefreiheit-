@@ -1,0 +1,30 @@
+Das Problem mit dem gegebenen Code besteht darin, dass er versucht, den Inhalt der Seite zu drehen, wenn das Gerät im Porträtmodus (Hochformat) ist, was zu einer unerwarteten und möglicherweise verwirrenden Benutzererfahrung führen kann. Die Absicht scheint zu sein, den Inhalt im Hochformat so zu drehen, dass er wie im Landschaftsmodus (Querformat) angezeigt wird. Dies kann jedoch zu Problemen mit der Benutzerinteraktion und der Darstellung führen, da die Seite außerhalb des sichtbaren Bereichs des Viewports geraten kann.
+
+Eine bessere Lösung wäre, das Design der Seite so anzupassen, dass es sowohl im Hoch- als auch im Querformat gut aussieht, ohne den Inhalt zu drehen. Dies kann durch responsives Webdesign erreicht werden, bei dem CSS-Media-Queries verwendet werden, um das Layout basierend auf der Größe und Orientierung des Bildschirms anzupassen.
+
+Hier ist ein überarbeiteter Ansatz, der die Drehung entfernt und stattdessen ein einfaches Beispiel für responsives Design bietet:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page with some content</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            font-family: Arial, sans-serif;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                max-width: 600px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    Page Content
+</body>
+</html>
+In diesem überarbeiteten Beispiel wird ein einfaches responsives Layout bereitgestellt, das den Inhalt in einem zentrierten Container mit einer maximalen Breite von 600px anzeigt, wenn der Bildschirm breit genug ist (z.B. im Querformat auf den meisten Geräten). Im Hochformat oder auf schmaleren Bildschirmen nimmt der Inhalt die volle Breite ein, mit einem kleinen Rand für eine bessere Lesbarkeit.

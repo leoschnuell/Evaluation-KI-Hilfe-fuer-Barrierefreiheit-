@@ -1,0 +1,12 @@
+Der HTML-Code, den du bereitgestellt hast, enthält einen kleinen Fehler in der Sprachdeklaration im `html`-Tag. Der Sprachcode für Englisch sollte "en" sein und nicht "eng". Der korrekte Sprachcode für die englische Sprache ist "en". Hier ist der korrigierte HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<p lang="en">I love ACT rules!</p>
+	</body>
+</html>
+```
+
+Mit dieser Korrektur ist der Sprachcode jetzt korrekt gesetzt und der HTML-Code ist korrekt.

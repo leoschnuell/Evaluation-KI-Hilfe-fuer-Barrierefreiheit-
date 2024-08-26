@@ -1,0 +1,43 @@
+Der gegebene HTML-Code enthält einige Fehler, die behoben werden müssen, um die Seite korrekt zugänglich und semantisch korrekt zu machen. Hier sind die Fehler und die entsprechenden Lösungen:
+
+1. **`role="none"` beim `<h1>`-Tag**:
+   - Das `role`-Attribut "none" (oder "presentation") sollte nicht bei strukturellen oder semantischen Elementen wie `<h1>` verwendet werden, da es die semantische Bedeutung des Elements entfernt.
+   - Lösung: Entferne das `role="none"`-Attribut vom `<h1>`-Tag.
+
+2. **Leeres `aria-label` beim `<h1>`-Tag**:
+   - Ein leeres `aria-label`-Attribut hat keinen Sinn und sollte entfernt werden. Wenn der `<h1>`-Tag keinen zusätzlichen Text benötigt, kann das Attribut komplett weggelassen werden.
+   - Lösung: Entferne das leere `aria-label`-Attribut vom `<h1>`-Tag.
+
+3. **`aria-hidden="true"` beim `<span>`-Tag**:
+   - `aria-hidden="true"` bedeutet, dass der Inhalt des `<span>`-Tags für assistive Technologien verborgen wird. Wenn dies beabsichtigt ist, sollte es entsprechend kommentiert oder dokumentiert werden.
+   - Überlege, ob das Verbergen des Inhalts für assistive Technologien notwendig ist.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Example 8</title>
+</head>
+<body>
+	<h1><span aria-hidden="true">ACT rules</span></h1>
+</body>
+</html>
+```
+
+Wenn das Verbergen des Textes im `<span>`-Tag gewollt ist, kannst du den `aria-hidden`-Attribut belassen:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Example 8</title>
+</head>
+<body>
+	<h1><span aria-hidden="true">ACT rules</span></h1>
+</body>
+</html>
+```
+
+Diese Änderungen stellen sicher, dass der HTML-Code sowohl semantisch korrekt als auch zugänglich ist.

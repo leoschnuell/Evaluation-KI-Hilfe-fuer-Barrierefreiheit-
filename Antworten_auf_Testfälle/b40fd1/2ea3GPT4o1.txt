@@ -1,0 +1,27 @@
+Der gegebene HTML-Code hat einen kleinen Fehler: Der Anker-Tag (```<a>```) für "Chapter 1" fehlt das `href`-Attribut. Ohne das `href`-Attribut ist der Anker-Tag kein funktionaler Hyperlink. Um dies zu beheben, sollte dem Anker-Tag für "Chapter 1" ein `href`-Attribut hinzugefügt werden, auch wenn es auf dieselbe Seite verweist oder einen Platzhalter hat. 
+
+Hier ist die korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Three Kingdoms, Chapter 1</title>
+	</head>
+	<body>
+		<nav id="chapters-navigation">
+			<ol>
+				<li><a href="#">Chapter 1</a></li> <!-- Added href attribute -->
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+			</ol>
+		</nav>
+
+		<p>
+			Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span of
+			time.
+		</p>
+	</body>
+</html>
+```
+
+Die Änderungen umfassen das Hinzufügen des `href="#"`-Attributs zum Anker-Tag für "Chapter 1". Dadurch wird der Anker-Tag zu einem funktionalen Link, auch wenn er momentan nirgendwohin führt. Wenn dieser Link auf die gleiche Seite verweisen soll, kann man das `href="#"`-Attribut verwenden.

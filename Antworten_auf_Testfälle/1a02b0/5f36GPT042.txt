@@ -1,0 +1,39 @@
+
+Um die Barrierefreiheitsprobleme im angegebenen HTML-Code zu lösen, können wir einige Maßnahmen ergreifen. Dies beinhaltet das Hinzufügen von Beschreibungen und Textalternativen für Medieninhalte, damit sie für alle Benutzer zugänglich sind, einschließlich solcher, die Bildschirmlesegeräte verwenden oder Sehbehinderungen haben.
+
+Hier ist der verbesserte HTML-Code:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Video Example</title>
+</head>
+<body>
+  <video controls>
+    <source src="/mnt/data/video.mp4" type="video/mp4"></source>
+    <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/video.webm" type="video/webm"></source>
+    <track kind="captions" src="captions_en.vtt" srclang="en" label="English">
+    Your browser does not support the video tag. Please upgrade your browser.
+  </video>
+  <p>The above video shows a giant fat dog climbing out of a hole in the ground. He stretches, yawns, and then starts walking. Then he stops to scratch his bottom.</p>
+</body>
+</html>
+Verbesserungen:
+DOCTYPE und lang-Attribut:
+Das <!DOCTYPE html>-Tag und das lang-Attribut im <html>-Tag sind korrekt und stellen sicher, dass der Browser den HTML5-Dokumenttyp verwendet und die Sprachumgebung kennt.
+
+Beschriftung und Alternativtext für das Video:
+
+track-Element für Untertitel: Untertitel (captions) sind hinzugefügt, um die Zugänglichkeit für hörgeschädigte Benutzer zu verbessern. Eine Beispiel-Untertiteldatei (captions_en.vtt) sollte vorhanden sein.
+Textalternative: Der beschreibende Text unter dem Video erklärt den Inhalt des Videos für Benutzer, die das Video nicht sehen können.
+meta-Elemente im <head>:
+
+Das charset-Meta-Tag stellt sicher, dass die Zeichenkodierung korrekt ist.
+Das viewport-Meta-Tag stellt sicher, dass die Seite auf verschiedenen Geräten korrekt angezeigt wird.
+Anmerkungen:
+Der Pfad zur Videodatei wurde entsprechend angepasst, damit er auf die hochgeladene Datei verweist.
+Sie müssen eine captions_en.vtt Datei erstellen, die die Untertitel für das Video enthält. Diese Datei sollte sich im selben Verzeichnis wie das HTML-Dokument befinden oder einen korrekten Pfad zu dieser Datei haben.
+Falls Sie Hilfe beim Erstellen der Untertiteldatei benötigen, lassen Sie es mich wissen!

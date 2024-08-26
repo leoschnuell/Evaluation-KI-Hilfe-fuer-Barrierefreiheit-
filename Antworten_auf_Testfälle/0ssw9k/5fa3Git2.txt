@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Changed language to German (de) to match the content -->
+<head>
+    <meta charset="UTF-8"> <!-- Added for character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added for responsive design -->
+    <title>Beispiel 1 Korrektur</title>
+    <style>
+        /* Added styles for better readability and accessibility */
+        body {
+            font-family: Arial, sans-serif; /* Improved font for readability */
+            line-height: 1.6; /* Improved line height for readability */
+            color: #333; /* Improved contrast */
+            background-color: #f4f4f4; /* Improved contrast */
+        }
+        section {
+            border: 1px solid #ccc; /* Added border for better visibility */
+            padding: 20px; /* Added padding for space around content */
+            margin: 20px 0; /* Added margin for space outside the section */
+        }
+    </style>
+</head>
+<body>
+    <section style="height: auto; width: auto; overflow-y: auto"> <!-- Removed inline styles for better accessibility -->
+        <h1>WCAG 2.1 Zusammenfassung</h1> <!-- Changed to German -->
+        <p>
+            Die Richtlinien für barrierefreie Webinhalte (WCAG) 2.1 umfassen eine breite Palette von Empfehlungen, um Webinhalte
+            zugänglicher zu machen. Die Befolgung dieser Richtlinien macht Inhalte zugänglicher für eine breitere Palette von
+            Personen mit Behinderungen, einschließlich Anpassungen für Blindheit und Sehbehinderungen, Gehörlosigkeit und
+            Hörverlust, eingeschränkte Bewegungsfreiheit, Sprachbehinderungen, Lichtempfindlichkeit und Kombinationen davon sowie
+            einige Anpassungen für Lernbehinderungen und kognitive Einschränkungen; sie werden jedoch nicht jedem Bedürfnis von
+            Personen mit diesen Behinderungen gerecht. Diese Richtlinien befassen sich mit der Zugänglichkeit von Webinhalten auf
+            Desktops, Laptops, Tablets und mobilen Geräten. Die Befolgung dieser Richtlinien wird die Webinhalte oft auch für
+            allgemeine Benutzer nutzbarer machen.
+        </p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,50 @@
+Um den bereitgestellten HTML-Code barrierefreier zu gestalten, sind mehrere Anpassungen erforderlich. Diese Anpassungen betreffen unter anderem die Navigationslinks, die Struktur und die Beschriftung des Inhalts. Hier sind die konkreten Schritte zur Verbesserung der Barrierefreiheit:
+
+1. **Hinzufügen von Text zu Navigationselementen**: Links sollten beschreibende Texte enthalten, damit Screenreader-Benutzer die Bedeutung der Links verstehen können.
+2. **Verwenden von `href`-Attributen für Links**: Auch wenn der Link keine echte URL hat, sollte ein `href`-Attribut angegeben werden. Ein leeres `href`-Attribut (`href="#"`) ist besser als keines.
+3. **Verwenden von Überschriften für die Seitenstruktur**: Verwenden von HTML-Überschriften (`<h1>`, `<h2>`, etc.) zur Strukturierung des Inhalts.
+4. **Sicherstellen, dass Links eindeutig und beschreibend sind**: Die Linktexte sollten klar und eindeutig sein.
+
+Hier ist der verbesserte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<title>The Three Kingdoms, Chapter 1</title>
+	</head>
+	<body>
+		<header>
+			<h1>The Three Kingdoms</h1>
+		</header>
+		<nav id="chapters-navigation" aria-label="Kapitel-Navigation">
+			<ol>
+				<li><a href="#">Chapter 1</a></li>
+				<li><a href="/WAI/content-assets/wcag-act-rules/test-assets/bypass-blocks-cf77f2/chapter2.html">Chapter 2</a></li>
+			</ol>
+		</nav>
+
+		<main>
+			<article>
+				<header>
+					<h2>Chapter 1</h2>
+				</header>
+				<p>
+					Unity succeeds division and division follows unity. One is bound to be replaced by the other after a long span of time.
+				</p>
+			</article>
+		</main>
+	</body>
+</html>
+```
+
+### Änderungen im Detail:
+1. **Sprache des Dokuments festgelegt**: Hinzufügen von `lang="de"` im `<html>`-Tag zur Angabe der Dokumentsprache (in diesem Fall Deutsch).
+2. **Zeichensatz festgelegt**: Hinzufügen von `<meta charset="UTF-8">` im `<head>`-Tag zur Festlegung des Zeichensatzes.
+3. **Beschreibung des Navigationsbereichs**: Hinzufügen von `aria-label="Kapitel-Navigation"` im `<nav>`-Tag zur Beschreibung des Navigationsbereichs.
+4. **Link zu Chapter 1 korrigiert**: Hinzufügen eines `href="#"`-Attributs zum Link "Chapter 1", auch wenn es keine echte URL ist.
+5. **Überschriften hinzugefügt**: Hinzufügen von `<h1>` und `<h2>` zur Strukturierung des Inhalts.
+6. **Inhalt in `<main>` und `<article>` eingebettet**: Verwendung der semantischen Tags `<main>` und `<article>` zur besseren Strukturierung des Inhalts.
+
+Diese Änderungen machen die Seite für Benutzer von Screenreadern und andere unterstützende Technologien zugänglicher und verbessern die allgemeine Benutzerfreundlichkeit.

@@ -1,0 +1,17 @@
+Das Problem bei dem gegebenen HTML-Code ist, dass der `srcdoc`-Attribut des `iframe`-Elements ungültig ist. Der `srcdoc`-Attribut erwartet einen gültigen HTML-Inhalt, aber hier wird ein Anker-Tag `<a>` direkt verwendet, was nicht korrekt ist. Um das Problem zu beheben, sollten Sie den HTML-Inhalt korrekt in das `srcdoc`-Attribut einfügen. Das bedeutet, dass die doppelten Anführungszeichen im `srcdoc`-Inhalt korrekt entwertet werden müssen, damit sie nicht mit den äußeren doppelten Anführungszeichen kollidieren.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example 1</title>
+</head>
+<body>
+	<iframe tabindex="-1" srcdoc="&lt;a href='/'&gt;Home&lt;/a&gt;"></iframe>
+</body>
+</html>
+```
+
+In diesem Beispiel habe ich die `<` und `>` Zeichen im `srcdoc`-Inhalt entwertet, indem ich sie durch ihre HTML-Entitäten (`&lt;` für `<` und `&gt;` für `>`) ersetzt habe. Dies stellt sicher, dass der HTML-Inhalt korrekt im `iframe` dargestellt wird.

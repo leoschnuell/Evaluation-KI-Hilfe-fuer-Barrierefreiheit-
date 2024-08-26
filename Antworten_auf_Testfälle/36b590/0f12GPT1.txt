@@ -1,0 +1,22 @@
+Das Problem bei diesem HTML-Code ist, dass der Button innerhalb des Formulars mit `type="button"` deklariert ist. Ein Button mit `type="button"` löst standardmäßig kein Submit-Ereignis aus, wenn er innerhalb eines Formulars platziert ist. Stattdessen wird er als einfacher Button behandelt, der keine Daten sendet.
+
+Um das Formular korrekt zu implementieren und sicherzustellen, dass es Daten senden kann, muss der Button mit `type="submit"` versehen werden. Hier ist der korrigierte HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example 2</title>
+</head>
+<body>
+	<form>
+		<label for="age">Age (years)</label>
+		<input type="number" id="age" />
+		<span id="error">Please enter a correct age.</span><br />
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>
+```
+
+In dieser korrigierten Version wurde der `input`-Tag für den Button von `type="button"` zu `type="submit"` geändert. Dadurch wird der Button als Submit-Button behandelt, der das Formular absendet, wenn er geklickt wird.

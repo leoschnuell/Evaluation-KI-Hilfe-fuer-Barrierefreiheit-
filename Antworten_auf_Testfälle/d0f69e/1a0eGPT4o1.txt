@@ -1,0 +1,43 @@
+Der gegebene HTML-Code hat einige Probleme in Bezug auf die korrekte Verwendung von ARIA-Rollen und der Struktur eines tabellarischen Layouts. Hier sind die Probleme und ihre Lösungen:
+
+1. **Fehlende `rowheader` Rolle in den Zeilen**:
+   Jede Zeile in einem Grid sollte eine `rowheader` Zelle haben, um die Zeile zu identifizieren.
+
+2. **Inkonsistente Anzahl an Zellen in den Zeilen**:
+   Jede Zeile sollte die gleiche Anzahl an Zellen haben, um ein korrektes tabellarisches Layout zu gewährleisten.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Corrected Example 3</title>
+</head>
+<body>
+	<div role="grid">
+		<div role="row">
+			<div role="columnheader">Room</div>
+			<div role="columnheader">Occupant</div>
+		</div>
+		<div role="row">
+			<div role="rowheader">Room 1A</div>
+			<div role="gridcell">John Doe</div>
+		</div>
+		<div role="row">
+			<div role="rowheader">Room 2A</div>
+			<div role="gridcell">Jane Smith</div>
+		</div>
+	</div>
+</body>
+</html>
+```
+
+### Änderungen und Korrekturen:
+1. **Headerzeilen**:
+   Die Headerzeile bleibt unverändert mit `columnheader`.
+
+2. **Zeilen mit `rowheader` und `gridcell`**:
+   Jede Zeile hat jetzt eine `rowheader`-Zelle, die den Raum beschreibt, und eine `gridcell`-Zelle, die den Insassen beschreibt.
+
+Damit wird das semantische Layout einer Tabelle korrekt wiedergegeben, und die ARIA-Rollen sind sinnvoll und korrekt verteilt.

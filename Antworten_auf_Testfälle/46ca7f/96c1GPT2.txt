@@ -1,0 +1,35 @@
+Um die Barrierefreiheitsprobleme in deinem Code zu lösen, müssen wir sicherstellen, dass das Bild des W3C-Logos korrekt beschriftet ist. Derzeit verwendest du das `aria-labelledby`-Attribut, um das Bild mit einem versteckten `span`-Element zu beschreiben. Hier sind die Schritte, um das richtig zu machen:
+
+1. **Beschriftung des Bildes mit `alt`-Attribut:**
+   Das `alt`-Attribut ist erforderlich, um ein alternatives Text-Äquivalent für das Bild bereitzustellen. Es sollte beschreiben, was das Bild darstellt.
+
+   ```html
+   <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C logo">
+   ```
+
+   Durch das Hinzufügen des `alt`-Attributs wird sicherstellt, dass Benutzer mit Sehbehinderungen oder Benutzer von Screenreadern verstehen können, was das Bild darstellt, wenn es nicht geladen wird oder nicht angezeigt werden kann.
+
+2. **Verwendung des `aria-labelledby`-Attributs richtig anwenden:**
+   Das `aria-labelledby`-Attribut wird verwendet, um das Bild mit einem sichtbaren Label zu verknüpfen. Das zugehörige Label sollte jedoch nicht versteckt sein, da es sonst für Screenreader und andere Hilfstechnologien unsichtbar wäre.
+
+   Wenn du das Bild zusätzlich mit einem sichtbaren Label versehen möchtest, könntest du das Label direkt neben dem Bild platzieren:
+
+   ```html
+   <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C logo">
+   <span id="label">W3C logo</span>
+   ```
+
+   In diesem Fall könntest du das `aria-labelledby`-Attribut verwenden:
+
+   ```html
+   <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C logo" aria-labelledby="label">
+   <span id="label">W3C logo</span>
+   ```
+
+   Beachte, dass das `span`-Element nicht mehr versteckt ist und direkt neben dem Bild platziert wird. Dadurch wird sichergestellt, dass das Label für alle Benutzer sichtbar ist, während es gleichzeitig als Beschreibung für das Bild dient.
+
+3. **Zusätzliche Überlegungen:**
+   - Stelle sicher, dass das Bild selbst eine geeignete Beschreibung im `alt`-Attribut hat.
+   - Vermeide es, redundante oder unklare Beschreibungen im `alt`-Attribut zu verwenden, da Screenreader diese vorlesen werden.
+
+Zusammenfassend: Nutze das `alt`-Attribut, um das Bild direkt zu beschreiben, und das `aria-labelledby`-Attribut in Verbindung mit einem sichtbaren Label, um eine detaillierte Beschreibung bereitzustellen. So wird die Barrierefreiheit deines Codes verbessert.

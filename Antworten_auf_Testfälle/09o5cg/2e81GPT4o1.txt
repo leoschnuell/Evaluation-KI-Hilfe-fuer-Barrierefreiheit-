@@ -1,0 +1,58 @@
+Dein Code scheint ein semantisches Problem zu haben. Du verwendest ein `div`-Element mit der Rolle "button", aber das `div`-Element verhält sich nicht wie ein echtes `button`-Element, da es keine standardmäßigen Button-Funktionalitäten hat (z.B. Fokus, Tastatursteuerung).
+
+Um das Problem zu lösen, kannst du das `div`-Element durch ein echtes `button`-Element ersetzen. Hier ist der aktualisierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 13</title>
+</head>
+<body>
+	<button style="color: #555; background: #EEE;">My button!</button>
+</body>
+</html>
+```
+
+Falls du jedoch aus bestimmten Gründen ein `div`-Element verwenden musst, kannst du das Verhalten eines Buttons mit etwas JavaScript und zusätzlichem HTML-Attributen nachahmen. Hier ist ein Beispiel dafür:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 13</title>
+	<style>
+		.button-like {
+			color: #555;
+			background: #EEE;
+			display: inline-block;
+			padding: 10px 20px;
+			cursor: pointer;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			text-align: center;
+		}
+		.button-like:focus {
+			outline: none;
+			box-shadow: 0 0 2px 2px #0055ff;
+		}
+	</style>
+</head>
+<body>
+	<div role="button" tabindex="0" class="button-like" onclick="alert('Button clicked!')" onkeypress="if(event.key === 'Enter' || event.key === ' ') { this.click(); }">My button!</div>
+	<script>
+		// Optional: Adding keyboard accessibility
+		document.querySelectorAll('[role="button"]').forEach(function(button) {
+			button.addEventListener('keydown', function(event) {
+				if (event.key === 'Enter' || event.key === ' ') {
+					event.preventDefault();
+					button.click();
+				}
+			});
+		});
+	</script>
+</body>
+</html>
+```
+
+Hier wird das `div`-Element so gestaltet, dass es wie ein Button aussieht und sich auch so verhält, einschließlich der Unterstützung für Tastatursteuerung.

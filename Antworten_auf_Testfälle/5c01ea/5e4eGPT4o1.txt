@@ -1,0 +1,63 @@
+The HTML code you provided has an issue with the `aria-sort` attribute. The `aria-sort` attribute is used to indicate the current sort direction of a sortable column, and it should only be applied to elements within a table that can be sorted (like a `th` element). Additionally, the `aria-sort` attribute should have a valid value such as `"ascending"`, `"descending"`, `"none"`, or `"other"`. 
+
+Here’s how you can correct the code:
+
+1. Remove the `aria-sort` attribute from the `button` element because it is not applicable outside the context of a sortable table column.
+2. Optionally, if you intend to indicate sorting functionality on the button, consider using a different approach, such as a data attribute or visually indicating the sort state.
+
+Here’s the corrected version of your code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example</title>
+</head>
+<body>
+	<button>Sort by year</button>
+</body>
+</html>
+```
+
+If you are looking to implement sorting functionality and indicate the sort state with ARIA attributes in a table, here’s an example of how to use `aria-sort` correctly:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sortable Table Example</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col" aria-sort="none">Year</th>
+				<th scope="col">Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>2021</td>
+				<td>John Doe</td>
+			</tr>
+			<tr>
+				<td>2020</td>
+				<td>Jane Doe</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script>
+		const th = document.querySelector('th[aria-sort]');
+		th.addEventListener('click', () => {
+			let sortOrder = th.getAttribute('aria-sort');
+			sortOrder = (sortOrder === 'ascending' || sortOrder === 'none') ? 'descending' : 'ascending';
+			th.setAttribute('aria-sort', sortOrder);
+			// Add your sorting logic here
+		});
+	</script>
+</body>
+</html>
+```
+
+In this example, the `aria-sort` attribute is correctly used on a table header cell (`th`). The script toggles the `aria-sort` attribute between `ascending` and `descending` when the header is clicked.

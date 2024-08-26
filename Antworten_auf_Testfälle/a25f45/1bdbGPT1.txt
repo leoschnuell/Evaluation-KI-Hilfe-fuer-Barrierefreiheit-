@@ -1,0 +1,38 @@
+Das Problem in diesem HTML-Code liegt in der Verwendung der `headers`-Attribut in den `<td>`-Elementen. Gemäß HTML-Spezifikation (insbesondere seit HTML5) wird das `headers`-Attribut normalerweise mit `<th>`-Elementen verwendet, um eine Verbindung zu `<td>`-Elementen in einer anderen Zeile herzustellen. Es ist nicht üblich, `headers` direkt in `<td>` zu verwenden.
+
+Hier ist, wie der Code korrigiert werden sollte:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Corrected Example</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th id="headerProject">Projects</th>
+				<th id="headerObjective">Objective</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>15%</td>
+				<td>10%</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+```
+
+### Korrekturen im Code:
+
+1. **Verwendung von `<th>` in `<thead>`**: Die Überschriften "Projects" und "Objective" sollten in `<th>`-Elementen innerhalb des `<thead>`-Tags stehen. Dies ist die semantisch korrekte Verwendung für Tabellenüberschriften.
+
+2. **Entfernung von `headers`-Attributen**: Die `<td>`-Elemente haben keine `headers`-Attribute mehr. Stattdessen werden sie durch die Position innerhalb der Tabelle mit den `<th>`-Elementen in `<thead>` verbunden.
+
+3. **Strukturierung mit `<thead>` und `<tbody>`**: Für bessere Struktur und semantische Bedeutung werden `<thead>` für Tabellenüberschriften und `<tbody>` für Tabellenkörper verwendet. Dies hilft bei der Trennung von Tabellenüberschriften und Daten.
+
+Durch diese Änderungen wird der Code korrigiert und entspricht den modernen HTML-Standards und Best Practices für die Verwendung von Tabellen in Webseiten.

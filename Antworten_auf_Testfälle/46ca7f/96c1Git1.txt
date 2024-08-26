@@ -1,0 +1,33 @@
+Das Problem mit dem gegebenen Code liegt in der Verwendung des aria-labelledby Attributs in Kombination mit einem span-Element, das mit hidden ausgeblendet ist. Das aria-labelledby Attribut soll einem Element einen zugänglichen Namen geben, indem es auf die ID eines anderen Elements verweist, das den Namenstext enthält. Wenn das referenzierte Element jedoch mit hidden ausgeblendet ist, kann es sein, dass Screenreader diesen Text nicht korrekt vorlesen, da sie normalerweise ausgeblendete Inhalte ignorieren.
+
+Um das Problem zu lösen, sollte man das span-Element so ändern, dass es für Screenreader zugänglich ist, ohne visuell auf der Seite angezeigt zu werden. Dies kann erreicht werden, indem man anstelle von hidden eine CSS-Klasse verwendet, die den Text visuell verbirgt, aber für Screenreader zugänglich macht.
+
+Pseudocode:
+
+Entferne das hidden Attribut vom span-Element.
+Füge eine CSS-Klasse hinzu, die das span-Element für visuelle Benutzer verbirgt, aber für Screenreader zugänglich macht.
+Definiere die CSS-Klasse, um das span-Element visuell zu verbergen, ohne display: none oder visibility: hidden zu verwenden, da diese Eigenschaften den Inhalt auch für Screenreader ausblenden würden.
+Lösung:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="" aria-labelledby="label" />
+    <span class="sr-only" id="label">W3C logo</span>
+</body>
+</html>
+In dieser Lösung wird das span-Element mit der Klasse sr-only versehen, die es visuell verbirgt, aber für Screenreader zugänglich macht.

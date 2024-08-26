@@ -1,0 +1,31 @@
+Das Problem mit dem ersten Code ist, dass es kein sichtbares Label für das `<object>`-Element gibt, das das Bild (`w3c-logo.png`) enthält. Gemäß den Web Content Accessibility Guidelines (WCAG) muss jedes `<object>`-Element, das ein Bild oder eine Grafik enthält, ein Textlabel haben, das diese beschreibt.
+
+Hier ist der korrigierte Code, der das `<object>`-Element zugänglich macht:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Example 3</title>
+</head>
+<body>
+    <span id="label">W3C Logo</span> 
+    <object aria-labelledby="label" data="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" type="image/png">
+        <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C Logo">
+        Your browser does not support embedded objects. Here is the <a href="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png">link to the image</a>.
+    </object>
+</body>
+</html>
+```
+
+### Änderungen im Code:
+
+1. **Label hinzufügen:** Ein `<span>`-Element mit der ID `label` wurde hinzugefügt, das den Text "W3C Logo" enthält. Dieses Label wird verwendet, um das `<object>`-Element zu beschreiben.
+
+2. **aria-labelledby Attribut:** Das `aria-labelledby`-Attribut im `<object>`-Element verweist auf die ID des Labels (`label`). Dadurch wird das `<object>`-Element mit dem Textinhalt des Labels assoziiert und für Screenreader zugänglich gemacht.
+
+3. **Alternativer Inhalt für Nicht-Unterstützung:** Innerhalb des `<object>`-Elements wurde ein `<img>`-Element hinzugefügt, das das Bild direkt lädt und ein alternatives Textattribut (`alt`) enthält. Dies stellt sicher, dass Benutzer, deren Browser `<object>` nicht unterstützt, das Bild dennoch sehen können.
+
+Durch diese Änderungen wird das `<object>`-Element barrierefrei gemäß den WCAG-Richtlinien gestaltet.

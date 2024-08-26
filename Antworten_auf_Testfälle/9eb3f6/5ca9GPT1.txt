@@ -1,0 +1,24 @@
+Das Problem mit dem gegebenen HTML-Code liegt darin, dass das `<img>`-Element nicht innerhalb eines gültigen Container-Tags platziert ist. Ein `<img>`-Element sollte normalerweise innerhalb eines `<body>`-Tags in HTML platziert werden, um gültiges HTML zu erstellen.
+
+Hier ist eine korrigierte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/WAI/content-assets/wcag-act-rules/test-assets/image-filename-as-accessible-name-9eb3f6/nyhavn.jpeg" alt="nyhavn.jpeg" />
+</body>
+</html>
+```
+
+In dieser korrigierten Version:
+
+1. Ein `<head>`-Tag wurde hinzugefügt, das die Metadaten der Seite enthält (z. B. die Zeichenkodierung und den Titel).
+2. Ein `<body>`-Tag wurde hinzugefügt, um den Inhalt des Dokuments zu umschließen, einschließlich des `<img>`-Elements.
+3. Das `<img>`-Element befindet sich jetzt innerhalb des `<body>`-Tags, was den HTML-Standard respektiert.
+
+Diese Korrektur stellt sicher, dass der HTML-Code gültig ist und ordnungsgemäß gerendert wird, wenn er in einem Webbrowser angezeigt wird.

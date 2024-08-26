@@ -1,0 +1,22 @@
+The issue with the provided HTML code is that the src attribute of the img tag is incorrectly formatted for embedding the SVG data. In particular, the SVG data URL is not correctly encoded, and there is a line break within the src attribute value, which is not allowed.
+
+Here is the corrected version of your HTML code:
+
+html
+Code kopieren
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example 5</title>
+</head>
+<body>
+	<img
+		alt="WCAG Rocks"
+		src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='20px' width='80px'><text x='0' y='15'>WCAG Rocks</text></svg>"
+	/>
+</body>
+</html>
+Explanation
+Remove the line break: The src attribute value should be a single continuous string without any line breaks.
+Proper encoding: Although the inline SVG here does not include any special characters that need to be URL-encoded, in more complex SVGs, characters such as spaces and quotes should be properly encoded.
+This corrected version should display the SVG image correctly.

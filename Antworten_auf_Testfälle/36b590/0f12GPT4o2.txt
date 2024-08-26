@@ -1,0 +1,71 @@
+Um die Barrierefreiheitsprobleme im gegebenen HTML-Code zu lösen, sollten mehrere Aspekte berücksichtigt werden:
+
+1. **Beschriftungen und Fehlermeldungen zugänglich machen**: Stellen Sie sicher, dass Beschriftungen und Fehlermeldungen für assistive Technologien zugänglich sind.
+2. **Button-Funktionalität**: Verwenden Sie ein `input`-Element mit dem Typ `submit`, um die Formulardaten zu senden.
+3. **Fehlermeldungen mit ARIA**: Verwenden Sie ARIA (Accessible Rich Internet Applications), um die Fehlermeldungen für Screenreader zugänglich zu machen.
+
+Hier ist der verbesserte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Accessible Form Example</title>
+</head>
+<body>
+	<form>
+		<label for="age">Age (years)</label>
+		<input type="number" id="age" aria-describedby="ageError" aria-required="true" />
+		<span id="ageError" role="alert" aria-live="assertive" style="display:none;">Please enter a correct age.</span><br />
+		<input type="submit" value="Submit" />
+	</form>
+
+	<script>
+		// Beispielhafte Überprüfung und Anzeige der Fehlermeldung
+		document.querySelector('form').addEventListener('submit', function(event) {
+			var ageInput = document.getElementById('age');
+			var errorSpan = document.getElementById('ageError');
+			if (ageInput.value === '' || ageInput.value < 0) {
+				event.preventDefault();
+				errorSpan.style.display = 'inline';
+				ageInput.setAttribute('aria-invalid', 'true');
+			} else {
+				errorSpan.style.display = 'none';
+				ageInput.removeAttribute('aria-invalid');
+			}
+		});
+	</script>
+</body>
+</html>
+```
+
+### Erklärungen zu den Änderungen:
+
+1. **`aria-describedby` und `aria-required` Attributen für Eingabefelder**:
+    ```html
+    <input type="number" id="age" aria-describedby="ageError" aria-required="true" />
+    ```
+    Diese Attribute stellen sicher, dass der Fehlerhinweis und die Pflichtfeldangabe für Screenreader lesbar sind.
+
+2. **`role="alert"` und `aria-live="assertive"` für Fehlermeldungen**:
+    ```html
+    <span id="ageError" role="alert" aria-live="assertive" style="display:none;">Please enter a correct age.</span>
+    ```
+    Diese Attribute sorgen dafür, dass Fehlermeldungen sofort von Screenreadern vorgelesen werden, wenn sie angezeigt werden.
+
+3. **Eingabefeldvalidierung und Fehlermeldungen ein- und ausblenden**:
+    ```javascript
+    document.querySelector('form').addEventListener('submit', function(event) {
+        var ageInput = document.getElementById('age');
+        var errorSpan = document.getElementById('ageError');
+        if (ageInput.value === '' || ageInput.value < 0) {
+            event.preventDefault();
+            errorSpan.style.display = 'inline';
+            ageInput.setAttribute('aria-invalid', 'true');
+        } else {
+            errorSpan.style.display = 'none';
+            ageInput.removeAttribute('aria-invalid');
+        }
+    });
+    ```
+    Dieser Code sorgt dafür, dass die Fehlermeldung angezeigt wird, wenn das Feld leer ist oder einen negativen Wert enthält. Andernfalls wird die Fehlermeldung ausgeblendet und das `aria-invalid` Attribut entfernt.

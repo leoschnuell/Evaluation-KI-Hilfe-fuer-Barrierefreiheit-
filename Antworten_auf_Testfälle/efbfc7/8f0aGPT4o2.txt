@@ -1,0 +1,53 @@
+Um die Barrierefreiheitsprobleme in dem gegebenen HTML-Code zu lösen, sollten wir mehrere Aspekte berücksichtigen. Hier sind die Schritte, die wir unternehmen können, um den Code barrierefrei zu gestalten:
+
+1. **Lang-Attribut für die Sprache:**
+   Stellen Sie sicher, dass das `lang`-Attribut korrekt gesetzt ist, um die Sprache des Inhalts anzugeben. Das ist bereits erledigt (`lang="en"`).
+
+2. **Alternativtext für Skript:**
+   Fügen Sie eine alternative Methode oder eine Beschreibung hinzu, falls das Skript nicht funktioniert oder deaktiviert ist.
+
+3. **Beschreibung des Inhalts:**
+   Der Inhalt sollte klar und verständlich sein. Dies betrifft insbesondere dynamische Inhalte wie die zufällige Zahl, die angezeigt wird.
+
+4. **JavaScript-Warnungen:**
+   Informieren Sie Benutzer, dass JavaScript aktiviert sein muss, um den vollen Funktionsumfang zu nutzen.
+
+5. **Aria-Attribute:**
+   Verwenden Sie ARIA (Accessible Rich Internet Applications)-Attribute, um interaktive Inhalte für Screenreader zugänglich zu machen.
+
+Hier ist der überarbeitete Code mit diesen Verbesserungen:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Example 1</title>
+</head>
+<body onload="startUpdates()">
+    <p>
+        The W3C Web Accessibility Initiative (WAI) develops standards and support materials to help you understand and
+        implement accessibility.
+    </p>
+
+    <p>Random number: <span id="target" aria-live="polite">1</span></p>
+
+    <noscript>
+        <p>
+            JavaScript is required for the full functionality of this page. Please enable JavaScript in your browser settings.
+        </p>
+    </noscript>
+
+    <script type="text/javascript" src="/WAI/content-assets/wcag-act-rules/test-assets/efbfc7/script.js"></script>
+</body>
+</html>
+```
+
+### Erläuterungen:
+1. **Viewport-Meta-Tag:** Hinzufügen eines `meta`-Tags zur Steuerung des Ansichtsfensters, um sicherzustellen, dass die Seite auf verschiedenen Geräten gut aussieht.
+2. **Charset-Meta-Tag:** Hinzufügen des `charset`-Tags, um die Zeichencodierung anzugeben.
+3. **Aria-Attribut (`aria-live`):** Verwenden des `aria-live="polite"`-Attributs für dynamische Inhalte (wie die zufällige Zahl), damit Screenreader diese Änderungen mitteilen.
+4. **Noscript-Tag:** Hinzufügen eines `noscript`-Tags, um Benutzer zu informieren, wenn JavaScript deaktiviert ist.
+
+Mit diesen Anpassungen ist die Seite barrierefreier und bietet eine bessere Benutzererfahrung für Menschen mit Behinderungen.

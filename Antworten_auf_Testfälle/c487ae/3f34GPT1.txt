@@ -1,0 +1,38 @@
+Das Problem in diesem HTML-Code liegt darin, dass das Bild (`<img>`) mit `aria-labelledby` attributiert ist, um auf das `<div>`-Element mit der ID `id1` zu verweisen. Jedoch ist das `<div>`-Element leer, es enthält keinen Text oder Inhalt, auf den das Bild verweisen könnte. Dies führt zu einer inkorrekten Verwendung von `aria-labelledby`.
+
+Das `aria-labelledby` Attribut sollte verwendet werden, um das Bild mit einem Textelement zu verbinden, das seine Bedeutung erklärt. Hier sind zwei korrekte Ansätze, wie man das Problem lösen könnte:
+
+### Lösung 1: Verwendung von `aria-label`
+
+Verwenden Sie das `aria-label` Attribut direkt auf dem `<img>`-Tag, um eine textuelle Beschreibung für das Bild anzugeben:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 6</title>
+</head>
+<body>
+	<a href="https://www.w3.org/WAI"><img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" aria-label="W3C logo"/></a>
+</body>
+</html>
+```
+
+### Lösung 2: Verwendung von `aria-labelledby` mit einem textuellen Element
+
+Fügen Sie einen Text (z.B. innerhalb eines `<span>` oder `<p>` Tags) hinzu und verweisen Sie darauf mit `aria-labelledby`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 6</title>
+</head>
+<body>
+	<a href="https://www.w3.org/WAI"><img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" aria-labelledby="id1"/></a>
+	<span id="id1">W3C logo</span>
+</body>
+</html>
+```
+
+In diesen Lösungen wird das Bild entweder direkt mit einer beschreibenden Bezeichnung (`aria-label`) versehen oder das `aria-labelledby` Attribut wird korrekt verwendet, um das Bild mit einem sichtbaren Textelement zu verknüpfen.

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändern Sie den lang-Attributwert von "en" zu "de", um die Sprache der Seite korrekt anzugeben -->
+<head>
+    <title>Beispiel für Barrierefreiheitsprobleme</title>
+</head>
+<body>
+    <!-- Entfernen Sie das aria-labelledby Attribut und fügen Sie einen sinnvollen alt-Text hinzu -->
+    <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C logo" /> 
+</body>
+</html>

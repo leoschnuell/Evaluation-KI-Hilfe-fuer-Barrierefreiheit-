@@ -1,0 +1,32 @@
+Um die Barrierefreiheitsprobleme in diesem HTML-Code zu lösen, können wir einige Verbesserungen vornehmen, damit das Video für alle Nutzer zugänglicher wird:
+
+1. **Hinzufügen von Textalternativen**: Für Videos ist es wichtig, eine Textalternative bereitzustellen, damit Nutzer mit Sehbehinderungen oder diejenigen, deren Geräte das Video nicht wiedergeben können, den Inhalt verstehen können.
+
+2. **Weitere Bedienbarkeitsoptionen**: Sicherstellen, dass die Steuerelemente des Videos für alle Nutzer leicht zugänglich sind, einschließlich der Bedienung per Tastatur und der Unterstützung für Screenreader.
+
+Hier ist eine verbesserte Version des Codes, die diese Prinzipien berücksichtigt:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessible Video Example</title>
+</head>
+<body>
+    <video controls>
+        <source src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" type="video/mp4">
+        <!-- Alternative Text für Screenreader -->
+        <p>Your browser does not support the video tag.</p>
+    </video>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+- **Textalternative für das Video**: Innerhalb des `<video>`-Tags wurde eine `<source>`-Tag hinzugefügt, das die URL und den Typ des Videos angibt. Dies ermöglicht es dem Browser, das Video abzuspielen, wenn das Format unterstützt wird, oder den alternativen Text anzuzeigen, wenn nicht.
+
+- **Fehlertext für den Fall, dass das Video nicht unterstützt wird**: Zwischen den `<video>`-Tags wurde ein `<p>`-Element eingefügt, das angezeigt wird, wenn der Browser das Videoformat nicht unterstützt oder das Video aus anderen Gründen nicht abgespielt werden kann. Dies hilft sicherzustellen, dass die Nutzer verstehen, warum das Video nicht angezeigt wird.
+
+Diese Änderungen verbessern die Zugänglichkeit des Videos erheblich, indem sie sicherstellen, dass sowohl sehbehinderte Nutzer als auch Nutzer mit technischen Einschränkungen den Inhalt des Videos verstehen können.

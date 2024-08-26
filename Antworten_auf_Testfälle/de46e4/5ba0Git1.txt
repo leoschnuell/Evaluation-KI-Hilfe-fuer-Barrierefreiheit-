@@ -1,0 +1,9 @@
+Das Problem in diesem Code liegt darin, dass das div-Element ein lang-Attribut mit dem Wert "invalid" verwendet, was kein gültiger Sprachcode ist. Sprachcodes sollten gemäß dem IETF BCP 47 Standard festgelegt werden. Um das Problem zu beheben, sollte das lang-Attribut entweder auf einen gültigen Sprachcode gesetzt oder entfernt werden, falls die Sprache des Inhalts der des umgebenden Elements entspricht.
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div>
+            <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/fireworks.jpg" alt="Fireworks over Paris" />
+        </div>
+    </body>
+</html>

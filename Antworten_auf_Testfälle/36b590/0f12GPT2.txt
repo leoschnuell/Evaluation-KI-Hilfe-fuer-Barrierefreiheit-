@@ -1,0 +1,40 @@
+Um das Formular barrierefrei zu gestalten, sollten wir sicherstellen, dass es für alle Nutzer zugänglich und benutzbar ist, insbesondere für Menschen mit Behinderungen. Hier sind einige Verbesserungsvorschläge:
+
+1. **Label-Element verbinden**: Das `<label>`-Element sollte mit dem entsprechenden `<input>`-Element verbunden werden, um sicherzustellen, dass Screenreader korrekt vorlesen können.
+
+2. **Fehlertext verstecken**: Der Fehlerhinweis (`<span id="error">Please enter a correct age.</span>`) sollte standardmäßig nicht sichtbar sein und nur bei Bedarf angezeigt werden.
+
+3. **Verwendung eines Submit-Buttons**: Ein `<input type="button">` ist nicht standardmäßig mit dem Absenden eines Formulars verbunden. Stattdessen sollte `<input type="submit">` verwendet werden, um eine korrekte Benutzererfahrung zu gewährleisten.
+
+Hier ist der optimierte HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Accessible Example</title>
+</head>
+<body>
+	<form>
+		<label for="age">Age (years)</label>
+		<input type="number" id="age" aria-describedby="error-message" required />
+		<span id="error-message" style="display: none;">Please enter a correct age.</span><br />
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>
+```
+
+### Erläuterung der Änderungen:
+
+- **`<meta>`-Tags**: Hinzufügen von `<meta charset="UTF-8">` und `<meta name="viewport" content="width=device-width, initial-scale=1.0">` für korrekte Zeichenkodierung und Responsive Design.
+
+- **`aria-describedby`-Attribut**: Das `aria-describedby`-Attribut im `<input>`-Element verweist auf die ID des `<span>`-Elements, das den Fehlerhinweis enthält. Dadurch wird der Bildschirmleser automatisch auf den Fehlerhinweis hingewiesen, wenn das Eingabefeld nicht korrekt ausgefüllt ist.
+
+- **`style="display: none;"`**: Der Fehlerhinweis wird standardmäßig ausgeblendet (`display: none;`). Dies verbessert die Usability, da er nur sichtbar wird, wenn das Eingabefeld nicht korrekt ausgefüllt ist.
+
+- **`<input type="submit">`**: Statt `<input type="button">` wird `<input type="submit">` verwendet, um das Formular beim Klicken auf "Submit" abzusenden.
+
+Durch diese Änderungen wird das Formular barrierefreier und besser zugänglich für alle Benutzer, einschließlich denen mit Behinderungen, die Technologien wie Screenreader verwenden.

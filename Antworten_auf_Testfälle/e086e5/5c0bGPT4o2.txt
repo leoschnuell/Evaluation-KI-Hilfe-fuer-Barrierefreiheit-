@@ -1,0 +1,29 @@
+Um die Barrierefreiheitsprobleme in deinem HTML-Code zu lösen, müssen wir sicherstellen, dass das HTML-Dokument zugänglicher ist und den WAI-ARIA (Web Accessibility Initiative – Accessible Rich Internet Applications) Spezifikationen entspricht. Hier sind einige Änderungen und Ergänzungen, um die Barrierefreiheit zu verbessern:
+
+1. **Fehlende Beschriftung für das Eingabefeld**: Ein `input`-Element sollte immer ein zugehöriges `label`-Element haben, um sicherzustellen, dass Nutzer von Bildschirmlesegeräten wissen, was das Eingabefeld darstellt.
+
+2. **Hinweis auf das deaktivierte Eingabefeld**: Ein deaktiviertes Eingabefeld kann für manche Nutzer verwirrend sein. Es ist wichtig, den Grund anzugeben oder das deaktivierte Feld für Bildschirmlesegeräte zu erklären.
+
+Hier ist die überarbeitete Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 2</title>
+</head>
+<body>
+    <label for="input1">This input is currently disabled</label>
+    <input id="input1" disabled aria-describedby="input1-desc"/>
+    <span id="input1-desc">This input is disabled because [provide reason or context]</span>
+</body>
+</html>
+```
+
+**Erklärungen zu den Änderungen:**
+
+1. **Label**: Ein `label`-Element wurde hinzugefügt und mit dem `input`-Element über das `for`-Attribut verknüpft. Das `for`-Attribut im `label`-Element muss mit der `id` des `input`-Elements übereinstimmen, damit die Verknüpfung korrekt funktioniert.
+
+2. **aria-describedby**: Das `aria-describedby`-Attribut im `input`-Element verweist auf ein `span`-Element, das den Grund für die Deaktivierung des Eingabefeldes erklärt. Dies gibt Nutzern von Hilfstechnologien zusätzlichen Kontext.
+
+Diese Änderungen verbessern die Zugänglichkeit des Codes, indem sie sicherstellen, dass alle Nutzer, einschließlich derjenigen, die Bildschirmlesegeräte verwenden, den Zweck und den Zustand des Eingabefeldes verstehen.

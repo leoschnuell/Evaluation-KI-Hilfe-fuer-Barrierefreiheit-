@@ -1,0 +1,31 @@
+Das Problem in diesem HTML-Code ist, dass der `<a>`-Tag (Anchor-Tag) keinen sichtbaren Inhalt hat, außer dem Text "ACT rules". Gemäß den Web Content Accessibility Guidelines (WCAG) sollte ein Link jedoch auch ohne das Anzeigen von Textinhalt oder sichtbarem Text zugänglich sein.
+
+Um das Problem zu lösen und den Link barrierefrei zu gestalten, könntest du eine der folgenden Maßnahmen ergreifen:
+
+1. **Textinhalt hinzufügen:** Füge sichtbaren Text hinzu, der den Zweck des Links beschreibt. Zum Beispiel:
+   ```html
+   <a href="https://act-rules.github.io/" aria-label="WCAG">ACT rules website</a>
+   ```
+   Hier wird der Linktext "ACT rules website" angezeigt, während das `aria-label`-Attribut weiterhin dazu beiträgt, die Barrierefreiheit sicherzustellen, indem es eine beschreibende Textalternative bereitstellt.
+
+2. **Leeres alt-Attribut verwenden:** Wenn der Link aus Designgründen keinen sichtbaren Text haben soll, kannst du das `alt`-Attribut leer lassen. Dies stellt sicher, dass der Link immer noch für Screenreader und andere Assistenztechnologien zugänglich ist:
+   ```html
+   <a href="https://act-rules.github.io/" aria-label="WCAG" alt="">ACT rules</a>
+   ```
+   Das `alt`-Attribut darf leer sein, um zu signalisieren, dass der Link zwar keine sichtbaren Informationen enthält, aber dennoch bedeutend ist.
+
+3. **CSS-Techniken:** Verwende CSS, um den Link visuell zu verstecken, während er für Assistenztechnologien zugänglich bleibt. Dies wird häufig verwendet, wenn ein visuell auffälliger Link nicht gewünscht ist:
+   ```html
+   <style>
+   .hidden-link {
+       position: absolute;
+       left: -9999px;
+       top: -9999px;
+   }
+   </style>
+   <!-- Im HTML -->
+   <a href="https://act-rules.github.io/" aria-label="WCAG" class="hidden-link">ACT rules</a>
+   ```
+   Dies versteckt den Link visuell außerhalb des sichtbaren Bereichs der Seite, während er für Screenreader immer noch zugänglich ist.
+
+Die Wahl der Methode hängt von den spezifischen Designanforderungen und der Kontextualität des Links ab. In den meisten Fällen ist es jedoch ratsam, einen klaren und verständlichen Text für Links bereitzustellen, um die Benutzerfreundlichkeit und Barrierefreiheit zu verbessern.

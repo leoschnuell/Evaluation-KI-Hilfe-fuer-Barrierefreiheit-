@@ -1,0 +1,30 @@
+Der von dir gepostete HTML-Code hat einen Fehler im `lang`-Attribut des `div`-Elements. Das `lang`-Attribut sollte eine gültige Sprachkennzeichnung enthalten. In diesem Fall ist "invalid" keine gültige Sprachkennzeichnung. Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<div lang="en">
+			<img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/fireworks.jpg" alt="Fireworks over Paris" />
+		</div>
+	</body>
+</html>
+```
+
+Ich habe das `lang`-Attribut des `div`-Elements auf "en" (für Englisch) gesetzt, um es mit dem `lang`-Attribut des `html`-Elements übereinzustimmen. Hier sind die wichtigen Punkte, die beachtet werden sollten:
+
+1. **Validität der Sprachkennzeichnung**: Das `lang`-Attribut sollte eine gültige Sprachkennzeichnung gemäß BCP 47 enthalten.
+2. **Konsistenz**: Es ist eine gute Praxis, konsistente Sprachkennzeichnungen im gesamten Dokument zu verwenden, um die Zugänglichkeit und Verständlichkeit zu verbessern.
+
+Falls die Sprache des `div`-Inhalts tatsächlich eine andere als Englisch sein sollte, kannst du die entsprechende Sprachkennzeichnung verwenden. Zum Beispiel, wenn der Inhalt auf Deutsch wäre, würde es so aussehen:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<div lang="de">
+			<img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/fireworks.jpg" alt="Fireworks over Paris" />
+		</div>
+	</body>
+</html>
+```

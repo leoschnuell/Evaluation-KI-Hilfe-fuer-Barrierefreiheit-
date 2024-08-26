@@ -1,0 +1,27 @@
+Das Problem mit dem gegebenen HTML-Code ist, dass der Pfad zur Videodatei im `<video>`-Tag relativ ist:
+
+```html
+<video src="/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls></video>
+```
+
+Dies bedeutet, dass der Browser versucht, die Videodatei relativ zur aktuellen URL des HTML-Dokuments zu finden. Zum Beispiel, wenn das HTML-Dokument unter `http://example.com/path/to/page.html` geladen wird, würde der Browser versuchen, das Video unter `http://example.com/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4` zu finden.
+
+Wenn die angegebene Pfadstruktur nicht korrekt ist oder das Video sich nicht an diesem Ort befindet, wird das Video nicht korrekt geladen oder angezeigt.
+
+Um dieses Problem zu lösen, stellen Sie sicher, dass der Pfad zur Videodatei korrekt ist und dass das Video tatsächlich unter diesem Pfad erreichbar ist. Hier sind einige mögliche Lösungsansätze:
+
+1. **Überprüfen Sie den Pfad zur Videodatei**: Stellen Sie sicher, dass der Pfad `/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4` tatsächlich existiert und dass die Datei dort liegt.
+
+2. **Verwenden Sie einen absoluten Pfad**: Verwenden Sie einen absoluten Pfad, der die Domain oder den vollständigen Pfad zur Videodatei enthält, z.B.:
+
+   ```html
+   <video src="http://example.com/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls></video>
+   ```
+
+   Hier wird `http://example.com` durch die tatsächliche Domain ersetzt, auf der Ihre Dateien gehostet werden.
+
+3. **Testen Sie lokal und auf dem Server**: Stellen Sie sicher, dass das Video sowohl lokal als auch auf dem Server funktioniert, auf dem Ihre Website gehostet wird.
+
+4. **Konsultieren Sie die Entwicklerdokumentation**: Überprüfen Sie die Dokumentation Ihrer Entwicklungsplattform oder Ihres Webhosts, um sicherzustellen, dass Sie den richtigen Pfad verwenden.
+
+Durch die Implementierung eines der oben genannten Ansätze sollte das Video im Browser korrekt geladen und abgespielt werden können.

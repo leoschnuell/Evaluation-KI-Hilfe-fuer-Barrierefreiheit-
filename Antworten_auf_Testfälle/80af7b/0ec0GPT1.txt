@@ -1,0 +1,27 @@
+Das Problem mit diesem Code liegt darin, dass die `onblur`-Ereignisattribute für die Buttons verwendet werden, um nach 10 Millisekunden den Fokus wieder auf sich selbst zu setzen. Dies führt zu einem ständigen Fokus-Wechsel zwischen den Buttons, wenn sie angeklickt werden oder wenn der Nutzer versucht, sie anzuklicken.
+
+Um dieses Problem zu lösen und ein angemessenes Verhalten zu erreichen, sollten die `onblur`-Attribute entfernt und stattdessen JavaScript verwendet werden, um das gewünschte Verhalten zu implementieren. Hier ist eine verbesserte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example</title>
+	<script>
+		// JavaScript function to handle focus behavior
+		function handleFocus(button) {
+			setTimeout(() => button.focus(), 10);
+		}
+	</script>
+</head>
+<body>
+	<button onclick="handleFocus(this)">Button 1</button>
+	<button>Button 2</button>
+	<button onclick="handleFocus(this)">Button 3</button>
+</body>
+</html>
+```
+
+In dieser verbesserten Version wurde das `onblur`-Attribut entfernt und durch eine JavaScript-Funktion namens `handleFocus` ersetzt, die über den `onclick`-Handler aufgerufen wird. Diese Funktion verwendet `setTimeout`, um den Fokus auf den betreffenden Button nach einer kurzen Verzögerung wiederherzustellen.
+
+Durch diese Änderung wird vermieden, dass die Buttons den Fokus ständig untereinander hin- und herwechseln, und das gewünschte Verhalten wird erreicht, wenn ein Nutzer einen Button anklickt.

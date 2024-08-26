@@ -1,0 +1,20 @@
+In deinem HTML-Code liegt das Problem darin, dass das `aria-not-checked` Attribut nicht existiert. Anstelle dessen sollte das `aria-checked` Attribut verwendet werden, das den Status eines kontrollierbaren Elements wie eines Checkbox-Menüitems anzeigt.
+
+Hier ist die korrigierte Version deines Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Failed Example 1</title>
+</head>
+<body>
+	<ul>
+		<li role="menuitemcheckbox" aria-checked="false">List Item</li>
+	</ul>
+</body>
+</html>
+```
+
+Änderungen:
+- Ersetze `aria-not-checked="true"` durch `aria-checked="false"`. Das `aria-checked` Attribut kann die Werte "true", "false" oder "mixed" annehmen, um den Zustand eines kontrollierbaren Elements korrekt darzustellen.

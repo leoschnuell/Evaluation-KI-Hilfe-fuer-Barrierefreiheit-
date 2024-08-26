@@ -1,0 +1,86 @@
+Um die Barrierefreiheitsprobleme des gegebenen Codes zu beheben, sollten folgende Aspekte berücksichtigt werden:
+
+1. **Tastaturbedienbarkeit**: Stellen Sie sicher, dass die Webseite vollständig mit der Tastatur bedienbar ist.
+2. **Focus Management**: Vergewissern Sie sich, dass der Fokus nach einer Benutzerinteraktion sinnvoll gesetzt wird.
+3. **Screen Reader Kompatibilität**: Fügen Sie ARIA-Attribute hinzu, um die Kompatibilität mit Screen Readern zu verbessern.
+4. **Ankündigung von dynamischen Inhalten**: Machen Sie dynamisch hinzugefügte Inhalte für Screen Reader nutzbar.
+
+Hier ist eine überarbeitete Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Liste</title>
+    <script>
+        function registerShortcut(options) {
+            document.addEventListener('keydown', function(event) {
+                if (event.key === options.shortcutKey && !options.disabled) {
+                    event.preventDefault();
+                    addToList();
+                }
+            });
+        }
+
+        function activateShortcuts() {
+            registerShortcut({ shortcutKey: '+', disabled: false });
+        }
+
+        function addToList() {
+            const input = document.getElementById('target');
+            const list = document.getElementById('list');
+            const newItem = document.createElement('li');
+            newItem.textContent = input.value;
+            list.appendChild(newItem);
+            input.value = '';
+            // Set focus back to input field after adding item
+            input.focus();
+            // Announce new item for screen readers
+            announceNewItem(newItem.textContent);
+        }
+
+        function announceNewItem(item) {
+            const liveRegion = document.getElementById('live-region');
+            liveRegion.textContent = `${item} hinzugefügt`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            activateShortcuts();
+        });
+    </script>
+</head>
+<body>
+    <label for="target">Zur Liste hinzufügen (drücken Sie "+" zum Hinzufügen):</label>
+    <input type="text" id="target" aria-describedby="shortcut-info" />
+    <br />
+    <div>
+        To-Do Liste
+    </div>
+    <ul id="list" aria-live="polite"></ul>
+    <div id="live-region" aria-live="assertive" style="position: absolute; left: -9999px; top: -9999px;"></div>
+</body>
+</html>
+```
+
+### Änderungen und Verbesserungen:
+
+1. **Sprache und Zeichensatz**:
+   - `lang="de"` im `<html>`-Tag hinzugefügt, um die Sprache der Seite anzugeben.
+   - `<meta charset="UTF-8">` hinzugefügt, um den Zeichensatz festzulegen.
+
+2. **Tastaturbedienbarkeit**:
+   - Die Funktion `addToList()` wird bei Drücken der "+"-Taste ausgelöst und verhindert die Standardaktion (`event.preventDefault()`).
+
+3. **Focus Management**:
+   - Der Fokus wird nach dem Hinzufügen eines neuen Elements zurück auf das Eingabefeld gesetzt (`input.focus()`).
+
+4. **Screen Reader Kompatibilität**:
+   - Ein Live-Region-Element (`<div id="live-region">`) hinzugefügt, um neue Elemente anzukündigen.
+   - ARIA-Attribute wie `aria-live` für die Liste und das Live-Region-Element hinzugefügt, um Änderungen an der Liste anzukündigen.
+
+5. **Beschreibungen**:
+   - `aria-describedby="shortcut-info"` hinzugefügt, um das Eingabefeld mit einer Beschreibung zu versehen (hier könnte noch ein entsprechendes Element mit der ID `shortcut-info` hinzugefügt werden, falls nötig).
+
+Diese Änderungen verbessern die Zugänglichkeit und die Benutzererfahrung für Personen, die auf Tastaturnavigation und Screen Reader angewiesen sind.

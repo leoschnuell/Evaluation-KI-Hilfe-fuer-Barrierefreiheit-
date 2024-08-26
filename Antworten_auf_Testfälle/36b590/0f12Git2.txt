@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändere das lang-Attribut zu "de" für Deutsch -->
+<head>
+    <title>Beispiel für Barrierefreiheit</title>
+</head>
+<body>
+    <form>
+        <label for="age">Alter (Jahre)</label>
+        <input type="number" id="age" aria-describedby="error" required /> <!-- Füge aria-describedby hinzu, um die Beziehung zwischen Eingabefeld und Fehlermeldung herzustellen. Füge außerdem das required-Attribut hinzu, um die Eingabe zu erzwingen. -->
+        <span id="error" style="display:none;">Bitte geben Sie ein korrektes Alter ein.</span><br /> <!-- Initial verstecke die Fehlermeldung -->
+        <input type="submit" value="Absenden" /> <!-- Ändere den Typ zu "submit" für korrektes Formularverhalten -->
+    </form>
+    <script>
+        document.querySelector('form').onsubmit = function(event) {
+            var age = document.getElementById('age').value;
+            if(age === '' || age < 0) { // Einfache Validierung für das Alter
+                document.getElementById('error').style.display = 'inline'; // Zeige Fehlermeldung, wenn das Alter ungültig ist
+                event.preventDefault(); // Verhindere das Absenden des Formulars
+            } else {
+                document.getElementById('error').style.display = 'none'; // Verstecke Fehlermeldung, wenn das Alter gültig ist
+            }
+        };
+    </script>
+</body>
+</html>

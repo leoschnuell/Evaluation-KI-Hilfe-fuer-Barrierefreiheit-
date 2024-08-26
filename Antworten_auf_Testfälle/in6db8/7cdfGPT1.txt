@@ -1,0 +1,39 @@
+Das Problem mit diesem HTML-Code liegt darin, dass das `<div>`-Element eine Rolle (`role="scrollbar"`) zugewiesen bekommt, die es nicht nativ unterstützt. Das `role="scrollbar"` ist nicht Teil der Standard-Rollen gemäß der ARIA-Spezifikation (Accessible Rich Internet Applications). Dadurch könnte es zu Problemen bei der Barrierefreiheit und der korrekten Semantik kommen.
+
+Wenn du ein Scrollbar-Element benötigst, solltest du stattdessen ein `<div>`-Element verwenden und dieses mit CSS so gestalten, dass es als Scrollleiste fungiert. Die ARIA-Attribute (`aria-controls`, `aria-orientation`, `aria-valuemax`, `aria-valuemin`, `aria-valuenow`) sind korrekt, um die Rolle und Eigenschaften des Elements für Zugänglichkeitszwecke zu beschreiben, aber `role="scrollbar"` ist nicht geeignet.
+
+Hier ist eine mögliche Lösung, indem wir das `<div>`-Element durch eine CSS-Stilisierung als Scrollbar ersetzen:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Example with Custom Scrollbar</title>
+	<style>
+		.scrollbar {
+			overflow-y: scroll; /* Zeigt die vertikale Scrollleiste an, wenn nötig */
+			width: 300px; /* Beispielmaße */
+			height: 200px; /* Beispielmaße */
+			border: 1px solid #ccc; /* Beispielgrenzen */
+			padding: 10px; /* Beispielabstand */
+		}
+	</style>
+</head>
+<body>
+	<main>Lorem ipsum...</main>
+	<div class="scrollbar"
+		aria-controls="content-1 content-2"
+		aria-orientation="vertical"
+		aria-valuemax="100"
+		aria-valuemin="0"
+		aria-valuenow="25"
+	>
+		<!-- Inhalte hier -->
+	</div>
+</body>
+</html>
+```
+
+In diesem Beispiel wird das `<div>` mit der Klasse `scrollbar` versehen und mittels CSS als Scrollbar gestaltet. Beachte, dass die genauen CSS-Stile je nach den spezifischen Designanforderungen angepasst werden sollten.
+
+Auf diese Weise wird vermieden, dass nicht standardmäßige ARIA-Rollen verwendet werden, was die Zugänglichkeit und die semantische Struktur der Webseite verbessert.

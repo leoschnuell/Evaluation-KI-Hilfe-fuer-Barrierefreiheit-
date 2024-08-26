@@ -1,0 +1,55 @@
+Here are some suggestions to improve the accessibility of your HTML code:
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrierefreies Beispiel</title>
+    <script src="/WAI/content-assets/wcag-act-rules/test-assets/ffbc54/shortcut.js" defer></script>
+</head>
+<body onload="registerShortcut({shortcutKey: '+', disabled: false}); activateShortcuts();">
+    <label for="target">Add to list (press "+" to add):</label>
+    <input type="text" id="target" aria-label="Add item to list" />
+    <button id="addButton" aria-label="Add item to the list">Add</button>
+    <br />
+    <div role="heading" aria-level="2">To do list</div>
+    <ul id="list" role="list" aria-labelledby="listLabel">
+        <span id="listLabel" class="visually-hidden">Items in the to do list</span>
+    </ul>
+
+    <script>
+        // Add event listener for button click
+        document.getElementById('addButton').addEventListener('click', function() {
+            const input = document.getElementById('target');
+            const list = document.getElementById('list');
+            if (input.value) {
+                const li = document.createElement('li');
+                li.textContent = input.value;
+                list.appendChild(li);
+                input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
+```
+
+### Barrierefreiheit Verbesserungen:
+
+1. **Sprachattribut (`lang`):** Füge `lang="de"` im `<html>` Tag hinzu, um die Sprache der Seite zu kennzeichnen.
+
+2. **Metadaten:** Verwende `<meta charset="UTF-8">` und `<meta name="viewport" content="width=device-width, initial-scale=1.0">` für bessere Darstellung auf Mobilgeräten und um die Zeichencodierung zu definieren.
+
+3. **Aria-Labels:** Füge `aria-label` zu Eingabefeldern und Buttons hinzu, um die Funktionalität klarer zu machen.
+
+4. **Visuell versteckter Text:** Verwende einen `span` mit `class="visually-hidden"` für einen unsichtbaren Text, der den Inhalt der Liste beschreibt.
+
+5. **Button für Interaktion:** Füge einen Button hinzu, um die Interaktion mit der Liste zu erleichtern, und binde die Logik zum Hinzufügen eines Listenelements an diesen Button.
+
+6. **Rollen:** Verwende `role="list"` und `role="heading"` für eine bessere Strukturierung der Seite.
+
+7. **Script-Tag:** Verwende `defer` im Script-Tag, um sicherzustellen, dass das Skript nach dem Laden des DOMs ausgeführt wird.
+
+Diese Änderungen machen die Seite zugänglicher für Screenreader und verbessern die allgemeine Benutzerfreundlichkeit.

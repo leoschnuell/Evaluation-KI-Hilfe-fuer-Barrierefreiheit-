@@ -1,0 +1,38 @@
+Das Problem mit dem gegebenen Code ist, dass es keine Logik gibt, um die Eingabe des Alters zu validieren oder eine Aktion auszuführen, wenn der Benutzer auf die Schaltfläche "Submit" klickt. Um dieses Problem zu lösen, fügen wir JavaScript hinzu, um die Altersvalidierung durchzuführen und eine Fehlermeldung anzuzeigen, wenn das Alter nicht korrekt eingegeben wurde. Hier ist ein Schritt-für-Schritt-Plan, gefolgt vom aktualisierten Code:
+
+JavaScript-Funktion hinzufügen: Eine Funktion validateAge() erstellen, die überprüft, ob das eingegebene Alter gültig ist (z.B. größer als 0).
+Fehlermeldung verstecken: Standardmäßig sollte die Fehlermeldung versteckt sein und nur angezeigt werden, wenn das Alter ungültig ist.
+Ereignis-Handler hinzufügen: Dem "Submit"-Button einen Ereignis-Handler hinzufügen, der die validateAge() Funktion aufruft, wenn der Benutzer darauf klickt.
+Validierung durchführen: In der validateAge() Funktion, überprüfen, ob das Alter gültig ist. Wenn nicht, die Fehlermeldung anzeigen.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example</title>
+    <style>
+        #error { display: none; color: red; }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="age">Age (years)</label>
+        <input type="number" id="age" />
+        <span id="error">Please enter a correct age.</span><br />
+        <input type="button" value="Submit" onclick="validateAge()" />
+    </form>
+    <script>
+        function validateAge() {
+            var age = document.getElementById('age').value;
+            var errorMessage = document.getElementById('error');
+            if(age <= 0 || age === '') {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                // Hier können Sie weitere Aktionen durchführen, z.B. das Formular absenden
+                alert('Form submitted successfully!');
+            }
+        }
+    </script>
+</body>
+</html>
+Dieser Code fügt die erforderliche Logik hinzu, um das Alter zu validieren und eine Fehlermeldung anzuzeigen, wenn das Alter ungültig ist.

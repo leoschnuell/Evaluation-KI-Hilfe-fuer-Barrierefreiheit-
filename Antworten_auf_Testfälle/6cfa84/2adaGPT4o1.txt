@@ -1,0 +1,27 @@
+Der bereitgestellte HTML-Code enthält einige potenzielle Fehler und Verbesserungsmöglichkeiten. Lassen Sie uns diese nacheinander betrachten und lösen:
+
+1. **`aria-hidden` auf dem `div`-Element:** Das `aria-hidden`-Attribut gibt an, dass ein Element für assistive Technologien (wie Screenreader) unsichtbar ist. Wenn ein `div`-Element `aria-hidden="true"` gesetzt hat, werden alle seine Kinder auch versteckt. Dies bedeutet, dass das `input`-Element von assistiven Technologien nicht erkannt wird. Wenn das nicht das beabsichtigte Verhalten ist, sollte `aria-hidden` entfernt werden.
+
+2. **`aria-disabled` auf dem `input`-Element:** Das `aria-disabled`-Attribut gibt an, dass ein Element deaktiviert ist, aber es ändert nicht das tatsächliche Verhalten des Elements im Browser. Stattdessen sollte das `disabled`-Attribut verwendet werden, um ein `input`-Element zu deaktivieren.
+
+Hier ist der überarbeitete Code, der diese Probleme löst:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example</title>
+</head>
+<body>
+	<div>
+		<input disabled />
+	</div>
+</body>
+</html>
+```
+
+### Zusammenfassung der Änderungen:
+1. Entfernt `aria-hidden="true"` aus dem `div`-Element.
+2. Ersetzt `aria-disabled="true"` im `input`-Element durch das HTML-Standardattribut `disabled`.
+
+Diese Änderungen stellen sicher, dass das `input`-Element für assistive Technologien zugänglich ist und tatsächlich deaktiviert wird.

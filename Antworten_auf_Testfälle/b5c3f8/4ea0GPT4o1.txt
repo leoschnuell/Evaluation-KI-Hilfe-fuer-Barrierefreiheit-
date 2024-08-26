@@ -1,0 +1,25 @@
+Das Problem des Codes liegt in der Angabe des `lang`-Attributs im `<html>`-Tag. Der Wert des `lang`-Attributs sollte den Sprachcode enthalten, der die Sprache des Inhalts angibt. Ein leerer Wert ist ungültig.
+
+Hier ist der korrigierte Code, bei dem das `lang`-Attribut auf Englisch (`en`) gesetzt wurde:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		The quick brown fox jumps over the lazy dog.
+	</body>
+</html>
+```
+
+Wenn der Inhalt in einer anderen Sprache ist, ersetzen Sie `en` mit dem entsprechenden Sprachcode. Zum Beispiel, wenn der Inhalt auf Deutsch ist, verwenden Sie `de`:
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+	<body>
+		Der schnelle braune Fuchs springt über den faulen Hund.
+	</body>
+</html>
+```
+
+Stellen Sie sicher, dass der Sprachcode den tatsächlichen Inhalt der Seite widerspiegelt.

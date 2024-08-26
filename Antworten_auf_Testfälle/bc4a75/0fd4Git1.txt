@@ -1,0 +1,17 @@
+Das Problem in diesem Code liegt in der Verwendung von ungültigen Kind-Elementen innerhalb eines <div>-Elements, das die Rolle list hat. Gemäß der ARIA (Accessible Rich Internet Applications) Spezifikation sollten Elemente mit der Rolle list nur Elemente mit der Rolle listitem als direkte Kinder haben. Außerdem ist <li> außerhalb eines <ul>, <ol>, oder <menu>-Elements nicht gültig. Hier ist eine korrigierte Version des Codes:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <ul role="list">
+        <li role="listitem">Item 1</li>
+        <li role="listitem"><a href="#" role="link">Item 2</a></li>
+    </ul>
+</body>
+</html>
+Änderungen:
+
+Das <div>-Element wurde durch ein <ul>-Element ersetzt, um eine gültige Liste zu erstellen.
+Das <span>-Element, das als link fungiert, wurde in ein <li>-Element eingefügt, um die Struktur der Liste korrekt zu halten. Innerhalb dieses <li>-Elements wurde ein <a>-Tag verwendet, um einen tatsächlichen Link darzustellen, was sinnvoller ist, wenn die Rolle link verwendet wird.

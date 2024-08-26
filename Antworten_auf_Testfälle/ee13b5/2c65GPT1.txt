@@ -1,0 +1,34 @@
+Das Problem mit diesem HTML-Code liegt in der Verwendung von `<source>`-Tags innerhalb des `<video>`-Tags. Die `<source>`-Tags sollten nicht mit `</source>` geschlossen werden, da sie leere Elemente sind und in HTML nicht geschlossen werden müssen.
+
+Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Example</title>
+</head>
+<body>
+  <video controls>
+    <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4">
+    <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  <p style="text-indent: -9999px;">The above video shows a giant fat rabbit climbing out of a hole in the ground.
+    He stretches, yawns, and then starts walking.
+    Then he stops to scratch his bottom.</p>
+</body>
+</html>
+```
+
+### Korrekturen:
+
+1. **Entfernung der schließenden `</source>`-Tags:** In HTML5 werden leere Elemente wie `<source>` nicht geschlossen. Stattdessen wird der Schließtag `>` am Ende der Öffnungsmarkierung verwendet.
+   
+2. **Meta-Tags im `<head>`-Bereich:** Es wurden `<meta>`-Tags für Zeichensatz und Viewport hinzugefügt, um sicherzustellen, dass die Seite korrekt gerendert wird.
+
+3. **Fehlertext für ältere Browser:** Ein Fallback-Text "Your browser does not support the video tag." wurde hinzugefügt, um Benutzer zu informieren, deren Browser das `<video>`-Tag nicht unterstützen.
+
+Mit diesen Änderungen sollte der Video-Player korrekt funktionieren und der beschreibende Text sollte für Bildschirmleser korrekt offensichtlich sein.

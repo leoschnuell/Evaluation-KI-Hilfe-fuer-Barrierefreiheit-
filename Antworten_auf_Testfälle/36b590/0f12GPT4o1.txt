@@ -1,0 +1,51 @@
+Der HTML-Code enthält ein Formular mit einem Eingabefeld für das Alter und eine Fehlermeldung, die immer angezeigt wird. Der Code enthält keinen Mechanismus zur Überprüfung des Alters oder zur Anzeige oder Ausblendung der Fehlermeldung basierend auf der Eingabe des Benutzers. Hier ist eine verbesserte Version des Codes, der das Problem löst, indem er JavaScript verwendet, um das Alter zu überprüfen und die Fehlermeldung entsprechend anzuzeigen oder auszublenden:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Improved Example 2</title>
+    <style>
+        #error {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="ageForm">
+        <label for="age">Age (years)</label>
+        <input type="number" id="age" name="age" />
+        <span id="error">Please enter a correct age.</span><br />
+        <input type="button" value="Submit" onclick="validateAge()" />
+    </form>
+
+    <script>
+        function validateAge() {
+            const ageInput = document.getElementById('age');
+            const errorSpan = document.getElementById('error');
+            const age = ageInput.value;
+
+            if (age < 1 || age > 120 || isNaN(age)) {
+                errorSpan.style.display = 'inline';
+            } else {
+                errorSpan.style.display = 'none';
+                alert("Form submitted successfully!");
+                // Optionally, you can submit the form here
+                // document.getElementById('ageForm').submit();
+            }
+        }
+    </script>
+</body>
+</html>
+```
+
+### Erläuterung der Änderungen:
+
+1. **CSS-Styles**: Der Fehlertext (`#error`) wird standardmäßig auf `display: none` gesetzt, sodass er nicht angezeigt wird, wenn die Seite geladen wird.
+
+2. **JavaScript-Funktion**: Die `validateAge()`-Funktion überprüft den Wert des Eingabefelds `age`. Wenn der Wert ungültig ist (weniger als 1, mehr als 120 oder kein numerischer Wert), wird die Fehlermeldung angezeigt. Andernfalls wird die Fehlermeldung ausgeblendet und eine Erfolgsmeldung angezeigt.
+
+3. **Formular-Button**: Der Button `Submit` hat jetzt ein `onclick`-Attribut, das die `validateAge()`-Funktion aufruft, wenn der Button geklickt wird.
+
+Diese Änderungen sorgen dafür, dass die Fehlermeldung nur dann angezeigt wird, wenn der Benutzer eine ungültige Altersangabe macht.

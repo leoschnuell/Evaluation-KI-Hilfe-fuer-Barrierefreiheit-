@@ -1,0 +1,29 @@
+Das vorgestellte HTML-Beispiel zeigt einen Audioplayer und einen Link zu einem Transkript. Das Problem mit diesem Code könnte sein, dass er nicht vollständig barrierefrei ist. Um die Barrierefreiheit zu verbessern, sollten wir folgende Änderungen vornehmen:
+
+Fügen Sie alt-Text für den Audioplayer hinzu: Obwohl alt-Attribute typischerweise für Bilder verwendet werden, ist es wichtig, eine textuelle Alternative für alle Medien bereitzustellen. Da das audio-Element kein alt-Attribut unterstützt, können wir eine Beschreibung in einem umgebenden Element hinzufügen.
+
+Stellen Sie sicher, dass der Link zum Transkript klar identifizierbar ist: Der Link zum Transkript sollte klar beschreiben, was er enthält, damit Benutzer mit Sehbehinderungen oder kognitiven Einschränkungen leicht verstehen können, wohin der Link führt.
+
+Verwenden Sie lang-Attribute korrekt: Das lang-Attribut im <html>-Tag sollte die primäre Sprache des Inhalts widerspiegeln. Wenn der Inhalt des Audioclips und das Transkript nicht auf Englisch sind, sollte das lang-Attribut entsprechend angepasst werden.
+
+Fügen Sie ARIA-Attribute hinzu: ARIA (Accessible Rich Internet Applications) Attribute wie aria-label oder aria-describedby können zusätzliche Beschreibungen für den Audioplayer und den Link bieten.
+
+Hier ist ein verbessertes Beispiel:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accessible Audio Example</title>
+</head>
+<body>
+    <div aria-label="Moon speech audio">
+        <audio src="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech.mp3" controls></audio>
+        <p id="audioDescription">This audio clip contains a speech about the moon.</p>
+    </div>
+    <a href="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech-incorrect-transcript.html" aria-describedby="audioDescription">Transcript of Moon Speech</a>
+</body>
+</html>
+In diesem verbesserten Beispiel:
+
+Wir haben ein <div>-Element mit einem aria-label um den Audioplayer hinzugefügt, um eine textuelle Alternative bereitzustellen.
+Ein zusätzlicher Absatz (<p>) mit einer ID audioDescription wurde hinzugefügt, um eine Beschreibung des Audioinhalts zu geben.
+Der Link zum Transkript verwendet nun das aria-describedby-Attribut, um auf die Beschreibung des Audioinhalts zu verweisen, was die Verbindung zwischen dem Audioplayer und dem Transkript klarer macht.

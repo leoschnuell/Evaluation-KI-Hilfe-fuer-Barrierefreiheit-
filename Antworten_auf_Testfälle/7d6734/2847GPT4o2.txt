@@ -1,0 +1,29 @@
+Um die Barrierefreiheitsprobleme in diesem Code zu lösen, müssen wir sicherstellen, dass der SVG-Inhalt und der Text für Bildschirmlesegeräte zugänglich sind. Dazu gehört das Hinzufügen von alternativen Texten und die richtige Verwendung von ARIA-Attributen. Hier ist die verbesserte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Failed Example 1</title>
+</head>
+<body>
+    <p>How many circles are there?</p>
+    <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="circleTitle">
+        <title id="circleTitle">One yellow circle with a green border</title>
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow"></circle>
+    </svg>
+</body>
+</html>
+```
+
+Änderungen und Erklärungen:
+
+1. **SVG-Element mit `role="img"` und `aria-labelledby`**:
+   - Das `role="img"` Attribut gibt an, dass das SVG-Element als Bild betrachtet werden soll.
+   - Das `aria-labelledby` Attribut verweist auf das `title`-Element innerhalb des SVGs, welches eine Beschreibung des Bildes enthält.
+
+2. **`title`-Element im SVG**:
+   - Das `title`-Element wird mit einer ID (`circleTitle`) versehen, um von `aria-labelledby` referenziert werden zu können.
+   - Der Inhalt des `title`-Elements beschreibt das Bild („One yellow circle with a green border“), damit Bildschirmlesegeräte den Inhalt des SVGs interpretieren und vorlesen können.
+
+Diese Änderungen verbessern die Barrierefreiheit, indem sie sicherstellen, dass der Inhalt des SVG-Bildes für Nutzer von Hilfstechnologien zugänglich ist.

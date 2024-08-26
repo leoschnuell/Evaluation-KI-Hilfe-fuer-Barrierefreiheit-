@@ -1,0 +1,32 @@
+Um die Barrierefreiheitsprobleme im gegebenen HTML-Code zu lösen, gibt es ein paar Schritte, die du unternehmen kannst:
+
+1. **Verwendung von Semantik**: Stelle sicher, dass der HTML-Code semantisch korrekt ist. Der `<audio>`-Tag wird normalerweise innerhalb des `<body>`-Tags platziert, nicht direkt innerhalb des `<html>`-Tags.
+
+2. **Zugänglichkeit**: Um sicherzustellen, dass das Audio-Element barrierefrei ist, müssen einige Attribute hinzugefügt werden.
+
+Hier ist eine verbesserte Version des Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barrierefreies Audio</title>
+</head>
+<body>
+    <h1>Moon Speech Audio</h1>
+    <audio src="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech.mp3" controls>
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
+```
+
+### Erklärung:
+
+- **`<head>`-Bereich**: Füge den `<head>`-Bereich hinzu, um den Zeichensatz und den Titel der Webseite zu definieren.
+- **`<body>`-Bereich**: Platziere den `<audio>`-Tag innerhalb des `<body>`-Tags. Um die Barrierefreiheit zu verbessern:
+  - **`controls`-Attribut**: Fügt das `controls`-Attribut hinzu, damit Benutzer das Audio abspielen, pausieren und die Lautstärke einstellen können.
+  - **Alternative Inhalte**: Der Text "Your browser does not support the audio element." wird angezeigt, falls der Browser das Audio-Element nicht unterstützt.
+
+Durch diese Änderungen wird das Audio-Element semantisch korrekt und zugänglich eingebunden.

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändere das lang-Attribut zu "de" für Deutsch -->
+<head>
+  <title>Barrierefreies Video</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<video controls aria-describedby="videoDesc"> <!-- Füge aria-describedby hinzu, um die Beschreibung mit dem Video zu verknüpfen -->
+  <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.mp4" type="video/mp4">
+  <source src="/WAI/content-assets/wcag-act-rules/test-assets/rabbit-video/silent.webm" type="video/webm">
+  Ihr Browser unterstützt das Video-Tag nicht. <!-- Füge einen Fallback-Text für Browser hinzu, die das Video-Tag nicht unterstützen -->
+</video>
+<p id="videoDesc">Das obige Video zeigt einen riesigen, dicken Hasen, der aus einem Loch im Boden klettert. Er streckt sich, gähnt und beginnt dann zu laufen. Dann hält er an, um sich am Hintern zu kratzen.</p> <!-- Füge eine ID hinzu, um die Beschreibung mit dem Video zu verknüpfen -->
+</body>
+</html>

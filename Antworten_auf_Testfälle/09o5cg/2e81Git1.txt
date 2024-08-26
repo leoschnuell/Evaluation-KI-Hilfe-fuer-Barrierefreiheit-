@@ -1,0 +1,38 @@
+Das Problem mit dem gegebenen Code liegt darin, dass das div-Element als Button verwendet wird, aber keine Tastaturinteraktion (wie die Fokussierung oder das Auslösen von Ereignissen durch Tastatureingaben) unterstützt. Um es barrierefrei zu machen, sollten wir entweder ein echtes button-Element verwenden oder dem div-Element entsprechende ARIA-Attribute (Accessible Rich Internet Applications) und Ereignis-Handler für die Tastaturinteraktion hinzufügen.
+
+Lösung mit einem echten button-Element:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example 13</title>
+</head>
+<body>
+    <button style="color: #555; background: #EEE;">My button!</button>
+</body>
+</html>
+Lösung mit ARIA-Attributen und Tastaturinteraktion:
+
+In der zweiten Lösung wird das div-Element durch Hinzufügen von role="button" und tabindex="0" zugänglich gemacht, was bedeutet, dass es fokussierbar ist und als Button erkannt wird. Die Ereignis-Handler für click und keypress ermöglichen die Interaktion sowohl mit der Maus als auch mit der Tastatur.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fixed Example 13</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var divButton = document.getElementById("divButton");
+            divButton.addEventListener("click", function() {
+                alert("Button clicked!");
+            });
+            divButton.addEventListener("keypress", function(e) {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault(); // Verhindert das Scrollen bei der Leertaste
+                    this.click(); // Löst das Klickereignis aus
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="divButton" role="button" tabindex="0" style="color: #555; background: #EEE;">My button!</div>
+</body>
+</html>

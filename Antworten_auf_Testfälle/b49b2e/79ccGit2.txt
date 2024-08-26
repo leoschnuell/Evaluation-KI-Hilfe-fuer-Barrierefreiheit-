@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Ändere das lang-Attribut zu "de" für Deutsch -->
+<head>
+    <title>Wetter</title> <!-- Füge einen Titel-Tag hinzu, um die Barrierefreiheit zu verbessern -->
+    <meta charset="UTF-8"> <!-- Stelle sicher, dass die Kodierung als UTF-8 festgelegt ist -->
+</head>
+<body>
+    <h1>Wetter</h1> <!-- Stelle sicher, dass der Inhalt innerhalb des body-Tags ist -->
+    <p>Wir haben von Montag bis Freitag von 10 bis 16 Uhr geöffnet</p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+Das vorgestellte Problem scheint zu sein, dass der HTML-Code nicht vollständig barrierefrei ist. Um das Problem zu lösen, sollten wir den <audio>-Tag um eine Textalternative erweitern, damit der Inhalt für Nutzer zugänglich ist, die den Audioinhalt nicht hören können. Dies kann durch die Verwendung des aria-label Attributs oder durch Bereitstellung eines Transkripts in einem sichtbaren Textbereich nahe dem Audio-Element erreicht werden. Da bereits ein Transkript im <p>-Tag vorhanden ist, ist es sinnvoll, dieses als Textalternative zu nutzen und zusätzlich das aria-describedby Attribut im <audio>-Tag zu verwenden, um eine Verbindung zwischen dem Audio-Element und dem Transkript herzustellen.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accessible Audio Example</title>
+</head>
+<body>
+    <audio src="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech.mp3" controls aria-describedby="audio-description"></audio>
+    <p id="audio-description">
+        The above audio contains the following speech: We are going to the North Pole in this decade with puppies, not
+        because they are easy, but because they are cute, because that goal will serve to organize and measure the best of
+        our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to
+        postpone, and one which we intend to win, and the others, too.
+    </p>
+</body>
+</html>
+Durch Hinzufügen des aria-describedby Attributs zum <audio>-Tag und Zuweisung einer ID, die dem <p>-Tag entspricht, wird eine Verbindung zwischen dem Audio-Element und seiner Textbeschreibung hergestellt. Dies verbessert die Zugänglichkeit des Inhalts erheblich.

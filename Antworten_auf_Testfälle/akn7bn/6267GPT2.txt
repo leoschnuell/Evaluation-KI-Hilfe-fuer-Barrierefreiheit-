@@ -1,0 +1,60 @@
+Um die Barrierefreiheitsprobleme in deinem HTML-Code zu lösen, müssen wir sicherstellen, dass die Inhalte für alle Benutzer zugänglich und verständlich sind, insbesondere für Menschen mit Behinderungen. Hier sind die spezifischen Probleme und wie man sie beheben kann:
+
+### Probleme im Code:
+
+1. **Verwendung eines `<iframe>` für primären Inhalt**: Ein `<iframe>` sollte normalerweise nicht für den Hauptinhalt einer Webseite verwendet werden, da dies die Benutzerfreundlichkeit und Barrierefreiheit beeinträchtigen kann.
+   
+2. **Inhalt im `<srcdoc>` des `<iframe>`**: Der Inhalt im `srcdoc` des `<iframe>` besteht nur aus einem `<a>`-Tag mit einem absoluten Link (`href='/'`). Dies ist problematisch, da:
+
+   - Ein einzelnes `<a>`-Tag ohne weiteren Kontext oder sinnvollen Inhalt nicht barrierefrei ist.
+   - Der Link könnte für Screenreader-Benutzer nicht sinnvoll sein, da der Text "Home" ohne Kontext möglicherweise nicht erklärt, wohin der Link führt.
+
+### Lösungsansätze:
+
+1. **Verwendung von semantisch sinnvollen Tags**: Statt eines `<iframe>` solltest du semantisch korrekte HTML-Tags verwenden, um den Inhalt der Webseite darzustellen. Zum Beispiel `<header>`, `<nav>`, `<main>`, `<footer>` usw., je nachdem, wie deine Webseite strukturiert ist.
+
+2. **Bereitstellung sinnvollen Inhalts**: Stelle sicher, dass der Inhalt deiner Webseite klar und verständlich ist. Verwende aussagekräftige Texte und beschreibende Links, die für alle Benutzer klar sind.
+
+### Überarbeiteter Code:
+
+Hier ist ein Beispiel für überarbeiteten HTML-Code, der die Barrierefreiheit verbessert:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Improved Example</title>
+</head>
+<body>
+	<header>
+		<h1>Navigation</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h1>Welcome to Our Website!</h1>
+		<p>Here you can find information about us.</p>
+	</main>
+
+	<footer>
+		<p>&copy; 2024 Your Company. All rights reserved.</p>
+	</footer>
+</body>
+</html>
+```
+
+### Erklärung:
+
+- **Strukturierter Aufbau**: Der HTML-Code verwendet `<header>`, `<nav>`, `<main>` und `<footer>`, um die Webseite semantisch zu strukturieren.
+- **Nutzerfreundliche Links**: Die Navigationslinks innerhalb von `<nav>` sind klar und beschreibend. Screenreader-Benutzer können den Kontext leichter verstehen.
+- **Sinnvolle Inhalte**: Der `<main>`-Bereich enthält einen einleitenden Text, der den Benutzern den Zweck der Seite erklärt.
+
+Diese Änderungen verbessern die Barrierefreiheit und die Benutzererfahrung erheblich, indem sie klare Strukturen und sinnvolle Inhalte bieten.

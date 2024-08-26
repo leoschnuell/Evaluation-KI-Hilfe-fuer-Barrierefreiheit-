@@ -1,0 +1,10 @@
+Das Problem mit dem gegebenen Code liegt in der Verwendung des meta-Tags für die Weiterleitung. Der content-Attributwert ist falsch formatiert, um eine Weiterleitung nach einer bestimmten Zeit (hier 20 Stunden) zu erreichen. Der korrekte Weg, eine Weiterleitung nach einer bestimmten Zeit zu implementieren, ist die Angabe der Zeit in Sekunden, gefolgt von der URL, zu der weitergeleitet werden soll, getrennt durch ein Semikolon. Da 20 Stunden 72000 Sekunden entsprechen, ist der Teil für die Zeit korrekt, aber die URL muss mit url= eingeleitet werden.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="72000; url=https://w3.org" />
+</head>
+<body>
+    <p>This page redirects after exactly 20 hours.</p>
+</body>
+</html>

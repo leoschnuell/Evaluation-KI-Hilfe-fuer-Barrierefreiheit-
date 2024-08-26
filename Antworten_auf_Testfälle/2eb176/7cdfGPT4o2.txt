@@ -1,0 +1,35 @@
+Um die Barrierefreiheitsprobleme in deinem HTML-Code zu lösen, sollten wir sicherstellen, dass das Dokument den HTML-Standards entspricht und dass die Struktur semantisch korrekt ist. Hier sind die Schritte zur Korrektur:
+
+1. **Fügen Sie fehlende Kopf- und Körper-Tags hinzu**: Ein vollständiges HTML-Dokument sollte immer den Kopf (`<head>`) und den Körper (`<body>`) enthalten.
+
+2. **Verwenden Sie semantische Tags**: Der `<audio>`-Tag sollte innerhalb des `<body>`-Tags platziert werden.
+
+3. **Aria-Labels hinzufügen**: Fügen Sie Aria-Labels oder Beschreibungen hinzu, um den Inhalt zugänglicher zu machen.
+
+Hier ist die korrigierte Version des HTML-Codes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Audio Example</title>
+</head>
+<body>
+    <audio src="/WAI/content-assets/wcag-act-rules/test-assets/moon-audio/moon-speech.mp3" controls aria-label="Moon speech audio">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
+```
+
+### Änderungen im Detail:
+
+1. **`<head>`- und `<body>`-Tags hinzugefügt**: Diese sind notwendig, um die Struktur des Dokuments korrekt zu gestalten.
+2. **`<meta charset="UTF-8">` und `meta name="viewport"`-Tags hinzugefügt**: Diese Tags sorgen für die richtige Zeichenkodierung und ermöglichen eine gute Darstellung auf mobilen Geräten.
+3. **`<title>`-Tag hinzugefügt**: Es ist wichtig, jedem Dokument einen Titel zu geben.
+4. **Aria-Label für `<audio>`-Tag**: Das `aria-label`-Attribut bietet eine Beschreibung des Audioinhalts für Benutzer von Bildschirmlesegeräten.
+5. **Fallback-Text für nicht unterstützende Browser**: Dies stellt sicher, dass Benutzer informiert werden, wenn ihr Browser das `<audio>`-Element nicht unterstützt.
+
+Diese Änderungen verbessern die Barrierefreiheit und die semantische Struktur des HTML-Dokuments erheblich.

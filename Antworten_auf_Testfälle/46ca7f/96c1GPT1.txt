@@ -1,0 +1,28 @@
+Das Problem bei diesem HTML-Code liegt in der Verwendung des Attributs `aria-labelledby` zusammen mit dem `hidden`-Attribut auf dem `span`-Element. Hier sind die Punkte, die korrigiert werden sollten:
+
+1. **aria-labelledby**: Das Attribut `aria-labelledby` wird verwendet, um das Element zu kennzeichnen, dessen Inhalt oder dessen `aria-label`-Attribut verwendet werden soll, um den Zugänglichkeitsnamen für das Bild bereitzustellen.
+   
+2. **hidden-Attribut**: Das `hidden`-Attribut versteckt das `span`-Element vor der Darstellung im Browser, was bedeutet, dass es für die Barrierefreiheit (Accessibility) nicht zugänglich ist.
+
+Um das Problem zu lösen und sicherzustellen, dass das Bild barrierefrei ist und korrekt beschrieben wird, können Sie Folgendes tun:
+
+- Entfernen Sie das `hidden`-Attribut vom `span`-Element.
+- Geben Sie dem `span`-Element eine sichtbare Textkennzeichnung, die das Bild beschreibt.
+- Verwenden Sie dann `aria-labelledby` zusammen mit der ID des `span`-Elements, um das Bild zu beschreiben.
+
+Hier ist der korrigierte HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fixed Example 2</title>
+</head>
+<body>
+	<img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="" aria-labelledby="label" /> 
+	<span id="label">W3C logo</span>
+</body>
+</html>
+```
+
+In dieser korrigierten Version wurde das `hidden`-Attribut vom `span`-Element entfernt und stattdessen wurde dem `span`-Element eine sichtbare Textkennzeichnung "W3C logo" gegeben. Das `aria-labelledby`-Attribut des `img`-Elements verweist nun auf die ID des `span`-Elements, um sicherzustellen, dass das Bild korrekt beschrieben wird und für Benutzer mit Einschränkungen zugänglich ist.

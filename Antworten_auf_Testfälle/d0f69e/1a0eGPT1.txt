@@ -1,0 +1,48 @@
+Das Problem mit diesem Code ist, dass er nicht korrekt strukturiert ist, um die semantische Bedeutung von Tabellen oder Tabellenähnlichem korrekt darzustellen. Hier sind die wesentlichen Probleme:
+
+1. **Fehlende Spaltenüberschriften**: In einer Tabelle sollten die Spaltenüberschriften (column headers) verwendet werden, um die Bedeutung der einzelnen Spalten anzugeben. Im vorliegenden Code werden zwar `role="columnheader"`-Elemente verwendet, aber es gibt keine Inhalte für die Spaltenüberschriften selbst.
+
+2. **Fehlende Zellen für die zweite Spalte**: Es werden nur Werte für die erste Spalte (`1A`, `2A`) bereitgestellt, aber es fehlen die entsprechenden Zellen für die zweite Spalte (`Occupant`).
+
+Um dieses Problem zu lösen und die Tabelle korrekt zu strukturieren, können wir die Struktur des HTML-Codes wie folgt anpassen:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Example Table</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Room</th>
+				<th>Occupant</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1A</td>
+				<td>Occupant 1</td>
+			</tr>
+			<tr>
+				<td>2A</td>
+				<td>Occupant 2</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+```
+
+### Erklärung der Änderungen:
+
+- **Verwendung von `<table>`**: Statt `<div role="grid">` verwenden wir `<table>`, um eine semantische Tabelle zu erstellen.
+  
+- **Verwendung von `<thead>` und `<tbody>`**: Diese Tags helfen dabei, den Kopf (headers) und den Körper (body) der Tabelle klar zu trennen.
+
+- **Verwendung von `<th>` für Spaltenüberschriften**: In `<th>`-Tags werden die Spaltenüberschriften definiert.
+
+- **Verwendung von `<td>` für Zellen**: In `<td>`-Tags werden die einzelnen Zellen mit Daten gefüllt.
+
+Diese Struktur stellt sicher, dass die Tabelle korrekt interpretiert wird und für Benutzer mit Assistenztechnologien (wie Screenreadern) besser zugänglich ist.

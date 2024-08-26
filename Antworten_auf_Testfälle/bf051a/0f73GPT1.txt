@@ -1,0 +1,12 @@
+Das Problem in diesem HTML-Code liegt darin, dass die Sprachangabe ("lang") nicht korrekt definiert ist. Hier ist der korrigierte Code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<p lang="en">I love ACT rules!</p>
+	</body>
+</html>
+```
+
+Die Änderung besteht darin, dass die Sprachangabe von `lang="eng"` zu `lang="en"` geändert wurde, um den ISO 639-1 Standard für die Sprachkennzeichnung zu verwenden. In HTML wird die Sprachkennzeichnung für den Inhalt verwendet, um die korrekte Sprachverarbeitung und mögliche Sprachanpassungen durch Browser oder andere Werkzeuge zu ermöglichen.

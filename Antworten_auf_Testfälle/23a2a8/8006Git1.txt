@@ -1,0 +1,13 @@
+Das Problem in diesem Code liegt darin, dass das <img>-Element kein alt-Attribut hat. Das alt-Attribut ist wichtig für die Zugänglichkeit, da es Bildschirmlesegeräten ermöglicht, eine Beschreibung des Bildes vorzulesen. Ohne dieses Attribut können Nutzer, die auf solche Technologien angewiesen sind, nicht verstehen, was das Bild darstellt.
+
+Hier ist der korrigierte Code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corrected Example</title>
+</head>
+<body>
+    <img src="/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png" alt="W3C Logo" />
+</body>
+</html>

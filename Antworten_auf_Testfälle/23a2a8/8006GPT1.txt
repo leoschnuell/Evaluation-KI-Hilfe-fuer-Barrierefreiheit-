@@ -1,0 +1,26 @@
+Das Problem mit dem Code liegt wahrscheinlich darin, dass der Pfad zum Bild möglicherweise nicht korrekt ist. Der `<img>`-Tag versucht, das Bild von `/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png` zu laden. Dieser Pfad ist relativ und bedeutet, dass das Bild relativ zum aktuellen Verzeichnis geladen wird, in dem sich die HTML-Datei befindet.
+
+Hier sind einige mögliche Probleme und Lösungen:
+
+1. **Pfadüberprüfung**: Stelle sicher, dass der Pfad zum Bild korrekt ist. Das Bild `w3c-logo.png` befindet sich relativ zum aktuellen Verzeichnis, in dem die HTML-Datei gespeichert ist.
+
+   - Wenn die HTML-Datei und das Bild im gleichen Verzeichnis sind, sollte der Pfad stimmen.
+   - Wenn das Bild in einem Unterordner liegt, müsste der Pfad entsprechend angepasst werden, z.B. `src="images/w3c-logo.png"`.
+
+2. **Serverpfad vs. Lokaler Pfad**: Wenn du das Bild lokal auf deinem Computer anschaust (z.B. per Doppelklick auf die HTML-Datei), wird der Pfad anders behandelt als auf einem Webserver. Auf einem Webserver muss der Pfad relativ zum Server-Root oder dem aktuellen Verzeichnis der Webseite angegeben werden.
+
+3. **Dateinamen und Groß-/Kleinschreibung**: Achte darauf, dass die Schreibweise des Dateinamens und die Groß- und Kleinschreibung im Pfad übereinstimmen müssen. Die meisten Server sind bezüglich Groß- und Kleinschreibung sensibel.
+
+Um das Problem zu lösen, überprüfe die folgenden Punkte:
+
+- Stelle sicher, dass das Bild `w3c-logo.png` tatsächlich existiert und im angegebenen Pfad verfügbar ist.
+- Überprüfe den Pfad relativ zum Speicherort der HTML-Datei.
+- Teste das Laden der HTML-Seite auf einem Webserver, um sicherzustellen, dass der Pfad auch in einem richtigen Serverkontext funktioniert.
+
+Beispiel für einen korrigierten Pfad, wenn das Bild sich im Unterordner `images` befindet und die HTML-Datei direkt im Hauptverzeichnis liegt:
+
+```html
+<img src="images/w3c-logo.png" />
+```
+
+Passe den Pfad entsprechend deiner Verzeichnisstruktur und dem Speicherort des Bildes an, um sicherzustellen, dass das Bild korrekt angezeigt wird.
